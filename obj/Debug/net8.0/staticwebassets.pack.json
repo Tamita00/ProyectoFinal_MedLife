@@ -9,8 +9,12 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\favicon.ico",
-      "PackagePath": "staticwebassets\\favicon.ico"
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\favicon.ico",
+      "PackagePath": "staticwebassets\\img\\favicon.ico"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\logoGarrahan.png",
+      "PackagePath": "staticwebassets\\img\\logoGarrahan.png"
     },
     {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\js\\site.js",

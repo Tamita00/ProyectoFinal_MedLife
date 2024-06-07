@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Kt7C/EkOEfk/Sw+GIMf7sTgLktOTs3Tka7QZ/2scV7M=",
+  "Hash": "eXPbv3aASms2yjfEYKSqiubMelH/ui/Jrvy/y1rpsfM=",
   "Source": "ProyectoFinal_MedLife",
   "BasePath": "_content/ProyectoFinal_MedLife",
   "Mode": "Default",
@@ -55,12 +55,12 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\favicon.ico",
+      "Identity": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\favicon.ico",
       "SourceId": "ProyectoFinal_MedLife",
       "SourceType": "Discovered",
       "ContentRoot": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal_MedLife",
-      "RelativePath": "favicon.ico",
+      "RelativePath": "img/favicon.ico",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -71,7 +71,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
+      "OriginalItemSpec": "wwwroot\\img\\favicon.ico"
+    },
+    {
+      "Identity": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\logoGarrahan.png",
+      "SourceId": "ProyectoFinal_MedLife",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinal_MedLife",
+      "RelativePath": "img/logoGarrahan.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logoGarrahan.png"
     },
     {
       "Identity": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\js\\site.js",
