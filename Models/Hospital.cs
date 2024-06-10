@@ -29,7 +29,7 @@ public class Hospital {
         }
 
         // Copiar los telefonos
-        for (int i = 0; i < 5 && i < telefonos.Length; i++) {
+         for (int i = 0; i < 5 && i < telefonos.Length; i++) {
             TelefonosRef[i] = telefonos[i];
         }
 
