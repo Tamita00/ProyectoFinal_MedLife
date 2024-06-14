@@ -80,10 +80,21 @@ public static class BD{
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
-                string sql = "BuscarPerfilPorId"; // Nombre del procedimiento almacenado
+                string sql = "SeleccionarPerfilPorId"; // Nombre del procedimiento almacenado
                 var parameters = new { IdPerfil = idPerfil };
 
                 return db.QueryFirstOrDefault<Perfil>(sql, parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        // Método para seleccionar perfiles
+        public static Perfil SeleccionarPerfiles()
+        {
+            using (SqlConnection db = new SqlConnection(ConnectionString))
+            {
+                string sql = "SeleccionarPerfiles"; // Nombre del procedimiento almacenado
+
+                return db.QueryFirstOrDefault<Perfil>(sql, commandType: CommandType.StoredProcedure);
             }
         }
 
