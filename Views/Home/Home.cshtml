@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div>
+    <h1>Hospital Garrahan</h1>
+    <p>Bienvenidos al sitio web del Hospital de Pediatría Garrahan</p>
+    @for(int i = 0; i < @ViewBag.titulos.length(); i++){
+        <button>@ViewBag.titulos[i]</button>
+    }
+</div>

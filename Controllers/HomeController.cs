@@ -24,6 +24,7 @@ public class HomeController : Controller
         ViewBag.idUsuario = idUsuario;
         string[] titulos = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
         ViewBag.titulos = titulos;
+        
         return View();
     }
 //SUBIR MUESTRA
