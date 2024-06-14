@@ -17,4 +17,13 @@ public class HomeController : Controller
     {
         return View();
     }
+
+    [HttpPost]
+    public IActionResult Home(int idUsuario)
+    {
+        ViewBag.idUsuario = idUsuario;
+        string[] titulos = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
+        ViewBag.titulos = titulos;
+        return View();
+    }
 }

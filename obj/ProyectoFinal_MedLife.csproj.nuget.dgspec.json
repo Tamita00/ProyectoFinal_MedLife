@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj": {}
+    "Z:\\2024\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj": {}
   },
   "projects": {
-    "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj": {
+    "Z:\\2024\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
+        "projectUniqueName": "Z:\\2024\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
         "projectName": "ProyectoFinal_MedLife",
-        "projectPath": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
-        "packagesPath": "C:\\Users\\47807159\\.nuget\\packages\\",
-        "outputPath": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\obj\\",
+        "projectPath": "Z:\\2024\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
+        "packagesPath": "C:\\Users\\47574710\\.nuget\\packages\\",
+        "outputPath": "Z:\\2024\\ProyectoFinal_MedLife\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\47807159\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\47574710\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -48,6 +48,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
