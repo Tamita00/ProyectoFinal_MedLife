@@ -75,7 +75,20 @@ public static class BD{
             }
         }
 
-    //Actualizar
+        // Método para buscar un perfil por su Id
+        public static Perfil BuscarPerfilPorId(int idPerfil)
+        {
+            using (SqlConnection db = new SqlConnection(ConnectionString))
+            {
+                string sql = "BuscarPerfilPorId"; // Nombre del procedimiento almacenado
+                var parameters = new { IdPerfil = idPerfil };
+
+                return db.QueryFirstOrDefault<Perfil>(sql, parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+
+    //......Actualizar
 
         // Método para actualizar una muestra en la base de datos
         public static void ActualizarMuestra(int idMuestra, int idResultado, DateTime fechaEnvio, DateTime fechaLlegada, string observaciones)
