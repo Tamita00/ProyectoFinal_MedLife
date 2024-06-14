@@ -20,13 +20,12 @@ public class HomeController : Controller
 
 //PÁGINA PRINCIPAL
 
-    [HttpPost]
-    public IActionResult Home(int idUsuario)
+    public IActionResult C_Home(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         string[] titulos = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
         ViewBag.titulos = titulos;
-        return View();
+        return View("Home");
     }
 
 //HOSPITALES
@@ -48,9 +47,10 @@ public IActionResult Contactos(int idUsuario)
     }
 //SUBIR MUESTRA
 
-    public IActionResult SubirMuestra(int idUsuario)
+    public IActionResult C_SubirMuestra(int idUsuario)
     {   
-        return View();
+        ViewBag.idUsuario = idUsuario;
+        return View("SubirMuestras");
     }
 
     public IActionResult GuardarSubirMuestra(

@@ -87,7 +87,7 @@ public static class BD{
             }
         }
 
-        // Método para seleccionar perfiles
+        // Método para seleccionar perfiles 
         public static Perfil SeleccionarPerfiles()
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
