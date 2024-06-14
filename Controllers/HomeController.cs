@@ -18,12 +18,32 @@ public class HomeController : Controller
         return View();
     }
 
+//PÁGINA PRINCIPAL
+
     [HttpPost]
     public IActionResult Home(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         string[] titulos = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
         ViewBag.titulos = titulos;
+        return View();
+    }
+
+//HOSPITALES
+
+public IActionResult Hospitales(int idUsuario)
+    {
+        ViewBag.idUsuario = idUsuario;
+        ViewBag.Hospitales = BD.SeleccionarHospitales();
+        return View();
+    }
+
+//CONTACTOS
+
+public IActionResult Contactos(int idUsuario)
+    {
+        ViewBag.idUsuario = idUsuario;
+        ViewBag.Contactos = BD.SeleccionarPerfiles();
         return View();
     }
 //SUBIR MUESTRA
@@ -129,4 +149,6 @@ public class HomeController : Controller
             Observaciones);
         return View();
     }
+
+
 }
