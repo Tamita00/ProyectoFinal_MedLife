@@ -1,1 +1,10 @@
-<a href='@Url.Action("C_SubirMuestra", new {idUsuario = 1})'>Subir Muestras</a>
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div>
+    <h1>Hospital Garrahan</h1>
+    <p>Bienvenidos al sitio web del Hospital de Pediatría Garrahan</p>
+    
+    <a href='@Url.Action("C_SubirMuestra", new {idUsuario = 4})'>Home</a>
+</div>
