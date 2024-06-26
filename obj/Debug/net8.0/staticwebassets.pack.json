@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\bd\\MedLife.sql"
     },
     {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\ActualizarResultado.sql",
+      "PackagePath": "staticwebassets\\bd\\sp por las dudas\\ActualizarResultado.sql"
+    },
+    {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\Insertar paciente.sql",
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\Insertar paciente.sql"
     },
@@ -15,6 +19,10 @@
     {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\SQLQuery1.sql",
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\SQLQuery1.sql"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\insertarMuestra.sql",
+      "PackagePath": "staticwebassets\\bd\\sp por las dudas\\insertarMuestra.sql"
     },
     {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\css\\site.css",

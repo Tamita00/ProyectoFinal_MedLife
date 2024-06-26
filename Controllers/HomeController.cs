@@ -34,7 +34,7 @@ public IActionResult Hospitales(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
-        return View();
+        return View("Home");
     }
 
 //CONTACTOS
@@ -43,7 +43,7 @@ public IActionResult Contactos(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         ViewBag.Contactos = BD.SeleccionarPerfiles();
-        return View();
+        return View("Home");
     }
 //SUBIR MUESTRA
 
@@ -55,9 +55,8 @@ public IActionResult Contactos(int idUsuario)
 
     public IActionResult GuardarSubirMuestra(
         int idUsuario,
-        int IdResultado,
         string InstitucionNacimiento, 
-        int IdHospitalMuestra, 
+        string HospitalMuestra, 
         string ApellidoBebe, 
         string NombreBebe, 
         DateTime FechaHoraNacimiento, 
@@ -99,10 +98,10 @@ public IActionResult Contactos(int idUsuario)
         string FirmaSello, 
         DateTime FechaEnvio, 
         DateTime FechaLlegada, 
-        string Observaciones)
+        string observaciones)
     {   
+        int IdHospitalMuestra = BD.SeleccionarHospitalPorNombre(HospitalMuestra).IdHospital;
         BD.InsertarMuestra(
-            IdResultado,
             InstitucionNacimiento, 
             IdHospitalMuestra, 
             ApellidoBebe, 
@@ -146,8 +145,8 @@ public IActionResult Contactos(int idUsuario)
             FirmaSello, 
             FechaEnvio, 
             FechaLlegada, 
-            Observaciones);
-        return View();
+            observaciones);
+        return View("SubirMuestras");
     }
 
 

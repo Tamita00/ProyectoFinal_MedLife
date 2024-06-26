@@ -32,14 +32,14 @@ public static class BD{
         }
     
         // Método para seleccionar un hospital por su nombre
-        public static List<Hospital> SeleccionarHospitalPorNombre(string nombreHospital)
+        public static Hospital SeleccionarHospitalPorNombre(string nombreHospital)
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
                 string sql = "SeleccionarHospitalPorNombre"; // Nombre del procedimiento almacenado
                 var parameters = new { NombreHospital = nombreHospital };
 
-                return db.Query<Hospital>(sql, parameters, commandType: CommandType.StoredProcedure).AsList();
+                return db.QueryFirstOrDefault<Hospital>(sql, parameters, commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -215,7 +215,7 @@ public static class BD{
         }
 
     // Método para insertar una nueva muestra en la base de datos
-        public static void InsertarMuestra(int idResultado, string institucionNacimiento, int idHospitalMuestra,
+        public static void InsertarMuestra( string institucionNacimiento, int idHospitalMuestra,
             string apellidoBebe, string nombreBebe, DateTime fechaHoraNacimiento, DateTime fechaHoraExtraccion,
             string sexo, string alimentacion, DateTime fechaIngestaLeche, int semanasGestacion, int peso,
             string condicionRN, string patologiaBase, string parto, bool embarazoMultiple, bool embarazoGemelar,
@@ -231,7 +231,6 @@ public static class BD{
                 string sql = "InsertarMuestra"; // Nombre del procedimiento almacenado
                 var parameters = new
                 {
-                    IdResultado = idResultado,
                     InstitucionNacimiento = institucionNacimiento,
                     IdHospitalMuestra = idHospitalMuestra,
                     ApellidoBebe = apellidoBebe,
@@ -275,7 +274,7 @@ public static class BD{
                     FirmaSello = firmaSello,
                     FechaEnvio = fechaEnvio,
                     FechaLlegada = fechaLlegada,
-                    Observaciones = observaciones
+                    ObservacionesMuestra = observaciones
                 };
 
                 db.Execute(sql, parameters, commandType: CommandType.StoredProcedure);

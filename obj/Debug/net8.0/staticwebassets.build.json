@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qJc6EBBIhjZkMzkJhjhuJPozmQyTfZIVtLYiSL7ReTc=",
+  "Hash": "EnPtbLr9C5oEC9yHrWyn36zVmo34qVYLxlJt3jTb+Nk=",
   "Source": "ProyectoFinal_MedLife",
   "BasePath": "_content/ProyectoFinal_MedLife",
   "Mode": "Default",
@@ -36,6 +36,25 @@
       "OriginalItemSpec": "wwwroot\\bd\\MedLife.sql"
     },
     {
+      "Identity": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\ActualizarResultado.sql",
+      "SourceId": "ProyectoFinal_MedLife",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinal_MedLife",
+      "RelativePath": "bd/sp por las dudas/ActualizarResultado.sql",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bd\\sp por las dudas\\ActualizarResultado.sql"
+    },
+    {
       "Identity": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\Insertar paciente.sql",
       "SourceId": "ProyectoFinal_MedLife",
       "SourceType": "Discovered",
@@ -53,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\bd\\sp por las dudas\\Insertar paciente.sql"
+    },
+    {
+      "Identity": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\insertarMuestra.sql",
+      "SourceId": "ProyectoFinal_MedLife",
+      "SourceType": "Discovered",
+      "ContentRoot": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinal_MedLife",
+      "RelativePath": "bd/sp por las dudas/insertarMuestra.sql",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bd\\sp por las dudas\\insertarMuestra.sql"
     },
     {
       "Identity": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\Query Guardar Muestra.sql",
