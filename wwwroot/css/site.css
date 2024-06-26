@@ -1,23 +1,163 @@
-html {
-  font-size: 14px;
-  min-height: 100%;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
 body {
-  margin: 10px;
-  padding: 10px;
+  margin: 0;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+header {
+  background-color: #F9F9F9;
+  padding: 10px 0;
+  border-bottom: 2px solid #003A9F; 
 
-footer {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+}
+
+a{
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.3em;
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em;
+}
+
+.logo img {
+  max-width: 16em; 
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 2em;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links a {
+  color: #00276A;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #7d99e5;
+}
+
+/*BOTONES*/
+
+.button-container {
+  margin-top: 4.5em;
+  padding: 3em;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.button-with-image {
+  display: flex;
+  align-items: center;
+}
+
+.button-with-image img {
+  height: 4.7em; 
+  width: auto;
+  margin-right: 1em; 
+}
+
+button {
+  width: 17em;
+  height: 3em;
+  background-color: #ffffff;
+  margin-right: 3em;
+  color: #003A9F;
+  border: none;
+  border-radius: 0.6em;
+  box-shadow: 2px 2px 8px rgba(97, 93, 93, 0.5);
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c2e1ee;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+.form-section legend {
+  font-size: 20px;
+  font-weight: bold; /* Mantener el grosor del texto para los títulos */
+  color: #333;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.form-section legend + * {
+  font-weight: lighter; /* Reducir el grosor del texto para los subtítulos */
+}
+
+.form-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold; /* Mantener el grosor del texto para las etiquetas */
+}
+
+.form-section input[type="text"],
+.form-section input[type="number"],
+.form-section input[type="tel"],
+.form-section input[type="date"],
+.form-section select,
+.form-section textarea {
+  width: calc(100% - 12px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-section textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-section select {
+  width: 100%;
+}
+
+/* Ajustes para los campos de fecha */
+.form-section input[type="datetime-local"],
+.form-section input[type="datetime-local"] + br {
+  margin-bottom: 15px; /* Aumenta el espacio entre campos de fecha */
+}
+
+.form-section input[type="submit"]:hover {
+  background-color: #03348a;
 }

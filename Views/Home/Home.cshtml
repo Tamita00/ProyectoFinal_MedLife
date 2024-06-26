@@ -2,9 +2,46 @@
     ViewData["Title"] = "Home";
 }
 
-<div>
-    <h1>Hospital Garrahan</h1>
-    <p>Bienvenidos al sitio web del Hospital de Pediatría Garrahan</p>
+<div class="button-container">
+        <div class="button-row">
+            <div class="button-with-image">
+                <img class="imgBoton" src="/img/Hosppp-Photoroom.png" alt="Hospital">
+                <button> Hospitales</button>
+            </div>
+            <div class="button-with-image">
+                <img class="imgBoton" src="/img/muestrasEnviadas.png" alt="MuestrasEnviadas">
+                <button>Muestras enviadas</button>
+            </div>
+        </div>
+        <div class="button-row">
+            <div class="button-with-image">
+                <img class="imgBoton" src="/img/contacto-Photoroom.png" alt="Contacto">
+                <button>Contacto</button>
+            </div>
+            <div class="button-with-image">
+                <img class="imgBoton" src="/img/crearPerfil.png" alt="CrearPerfil">
+                <button>Crear Perfil</button>
+            </div>
+        </div>
+        <div class="button-row">
+            <div class="button-with-image">
+                <img class="imgBoton" src="/img/listasProcesadas.png" alt="ListaProcesados">
+                <button>Lista procesados</button>
+            </div>
+            <div class="button-with-image">
+                <img class="imgBoton" src="/img/ListaNoProcesados.png" alt="ListaSinprocesar">
+                <button>Lista sin procesar</button>
+            </div>
+        </div>
+        <div class="button-row">
+            <div class="button-with-image">
+                <img class="imgBoton" src="/img/subirMuestra.png" alt="SubirMuestra">
+                <button><a href='@Url.Action("C_SubirMuestra", new {idUsuario = 1})'>Subir Muestra</a></button>
+            </div>
+            <div class="button-with-image">
+                <img class="imgBoton" src="/img/estadisticas.png" alt="Estadisticas">
+                <button>Estadísticas</button>
+            </div>
+        </div>
+    </div>
     
-    <a href='@Url.Action("C_SubirMuestra", new {idUsuario = 1})'>Home</a>
-</div>

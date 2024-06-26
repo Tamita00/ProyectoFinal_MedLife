@@ -29,12 +29,52 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\Hosppp-Photoroom.png",
+      "PackagePath": "staticwebassets\\img\\Hosppp-Photoroom.png"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\ListaNoProcesados.png",
+      "PackagePath": "staticwebassets\\img\\ListaNoProcesados.png"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\Thumbs.db",
+      "PackagePath": "staticwebassets\\img\\Thumbs.db"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\contacto-Photoroom.png",
+      "PackagePath": "staticwebassets\\img\\contacto-Photoroom.png"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\crearPerfil.png",
+      "PackagePath": "staticwebassets\\img\\crearPerfil.png"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\estadisticas.png",
+      "PackagePath": "staticwebassets\\img\\estadisticas.png"
+    },
+    {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\favicon.ico",
       "PackagePath": "staticwebassets\\img\\favicon.ico"
     },
     {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\listasProcesadas.png",
+      "PackagePath": "staticwebassets\\img\\listasProcesadas.png"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\logo2.png",
+      "PackagePath": "staticwebassets\\img\\logo2.png"
+    },
+    {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\logoGarrahan.png",
       "PackagePath": "staticwebassets\\img\\logoGarrahan.png"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\muestrasEnviadas.png",
+      "PackagePath": "staticwebassets\\img\\muestrasEnviadas.png"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\subirMuestra.png",
+      "PackagePath": "staticwebassets\\img\\subirMuestra.png"
     },
     {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\js\\site.js",
