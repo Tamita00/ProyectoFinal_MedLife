@@ -23,14 +23,14 @@ public class HomeController : Controller
     public IActionResult C_Home(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
-        string[] titulos = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
-        ViewBag.titulos = titulos;
+        string[] titulosHome = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
+        ViewBag.titulos = titulosHome;
         return View("Home");
     }
 
 //HOSPITALES
 
-public IActionResult Hospitales(int idUsuario)
+public IActionResult C_Hospitales(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         ViewBag.Hospitales = BD.SeleccionarHospitales();

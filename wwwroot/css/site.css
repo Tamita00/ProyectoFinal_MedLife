@@ -42,13 +42,13 @@ nav {
   margin-right: 0;
 }
 
-.nav-links a {
+.nav-links .linkHeader {
   color: #00276A;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links .linkHeader:hover {
   color: #7d99e5;
 }
 
@@ -78,7 +78,7 @@ nav {
   margin-right: 1em; 
 }
 
-button {
+.linkHome {
   width: 17em;
   height: 3em;
   background-color: #ffffff;
@@ -90,9 +90,29 @@ button {
   cursor: pointer;
   font-size: 1.2em;
   transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 
-button:hover {
+.botonHeader{
+  width: 17em;
+  height: 3em;
+  background-color: #ffffff;
+  margin-right: 3em;
+  color: #003A9F;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.linkHome:hover {
   background-color: #c2e1ee;
 }
 
