@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GuDS/LaSyBwFv9Xy/tgMtZCoGLfx1XJfV9qa0hRhZbo=",
+  "Hash": "64yK5T3jO6rYG4TUTPYUQhVQ6jiZaNz3pn0vNX7J0i0=",
   "Source": "ProyectoFinal_MedLife",
   "BasePath": "_content/ProyectoFinal_MedLife",
   "Mode": "Default",
@@ -587,12 +587,12 @@
       "OriginalItemSpec": "wwwroot\\img\\favicon.ico"
     },
     {
-      "Identity": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\firma1.jfif",
+      "Identity": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\Firmas\\firma1.jfif",
       "SourceId": "ProyectoFinal_MedLife",
       "SourceType": "Discovered",
       "ContentRoot": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\",
       "BasePath": "_content/ProyectoFinal_MedLife",
-      "RelativePath": "img/firma1.jfif",
+      "RelativePath": "img/Firmas/firma1.jfif",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -603,7 +603,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\firma1.jfif"
+      "OriginalItemSpec": "wwwroot\\img\\Firmas\\firma1.jfif"
     },
     {
       "Identity": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\Hosppp-Photoroom.png",

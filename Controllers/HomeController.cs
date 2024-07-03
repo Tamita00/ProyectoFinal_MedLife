@@ -39,7 +39,7 @@ public IActionResult C_Hospitales(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
-        return View("Home");
+        return View("Hospitales");
     }
 
 //CONTACTOS
@@ -108,7 +108,7 @@ public IActionResult Contactos(int idUsuario)
         IFormFile MyFile)
     {   
         if(MyFile.Length > 0){
-            string wwwRootLocal = this._environment.ContentRootPath + @"\wwwroot\img\" + MyFile.FileName;
+            string wwwRootLocal = this._environment.ContentRootPath + @"\wwwroot\img\Firmas\" + MyFile.FileName;
             using(var stream = System.IO.File.Create(wwwRootLocal)){
                 MyFile.CopyToAsync(stream);
             }
@@ -164,6 +164,14 @@ public IActionResult Contactos(int idUsuario)
         ViewBag.idUsuario = idUsuario;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
         return View("SubirMuestras");
+    }
+
+
+// LISTA SIN PROCESAR
+    public IActionResult C_ListaSinProcesar(int idUsuario)
+    {   
+        ViewBag.idUsuario = idUsuario;
+        return View("ListaSinProcesar");
     }
 
 

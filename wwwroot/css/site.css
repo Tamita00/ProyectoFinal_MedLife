@@ -85,14 +85,14 @@ nav {
 .button-with-image img {
   height: 4.7em; 
   width: auto;
-  margin-right: 1em; 
+  margin-right: 2em; 
 }
 
 .linkHome {
   width: 17em;
   height: 3em;
   background-color: #ffffff;
-  margin-right: 3em;
+  margin-right: 5em;
   color: #003A9F;
   border: none;
   border-radius: 0.6em;

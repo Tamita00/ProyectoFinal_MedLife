@@ -105,6 +105,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\Firmas\\firma1.jfif",
+      "PackagePath": "staticwebassets\\img\\Firmas\\firma1.jfif"
+    },
+    {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\Hosppp-Photoroom.png",
       "PackagePath": "staticwebassets\\img\\Hosppp-Photoroom.png"
     },
@@ -131,10 +135,6 @@
     {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\favicon.ico",
       "PackagePath": "staticwebassets\\img\\favicon.ico"
-    },
-    {
-      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\firma1.jfif",
-      "PackagePath": "staticwebassets\\img\\firma1.jfif"
     },
     {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\listasProcesadas.png",
