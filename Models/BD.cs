@@ -218,13 +218,13 @@ public static class BD{
         public static void InsertarMuestra( string institucionNacimiento, int idHospitalMuestra,
             string apellidoBebe, string nombreBebe, DateTime fechaHoraNacimiento, DateTime fechaHoraExtraccion,
             string sexo, string alimentacion, DateTime fechaIngestaLeche, int semanasGestacion, int peso,
-            string condicionRN, string patologiaBase, string parto, bool embarazoMultiple, bool embarazoGemelar,
+            string condicionRN, string patologiaBase, string patologia, string parto, bool embarazoMultiple, bool embarazoGemelar,
             string apellidoMama, string nombreMama, int documento, string domicilio, string localidad,
             int telefono, string lugarControlEmbarazo, bool antibioticos, bool desinfectantesYodados,
             bool transfusion, DateTime fechaTransfusion, bool dopamina, bool dobutamina, bool corticoidesMadre,
             bool corticoidesBebe, bool tiroidepatias, string otras, bool repiteMuestra, bool prematuro,
             bool malaMuestra, bool resultadoAlterado, int analitico, string responsable, string rolResponsable,
-            string firmaSello, DateTime fechaEnvio, DateTime fechaLlegada, string observaciones)
+            string MyFile, DateTime fechaEnvio, DateTime fechaLlegada, string observaciones)
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
@@ -244,6 +244,7 @@ public static class BD{
                     Peso = peso,
                     CondicionRN = condicionRN,
                     PatologiaBase = patologiaBase,
+                    Patologia = patologia,
                     Parto = parto,
                     EmbarazoMultiple = embarazoMultiple,
                     EmbarazoGemelar = embarazoGemelar,
@@ -271,7 +272,7 @@ public static class BD{
                     Analitico = analitico,
                     Responsable = responsable,
                     RolResponsable = rolResponsable,
-                    FirmaSello = firmaSello,
+                    FirmaSello = MyFile,
                     FechaEnvio = fechaEnvio,
                     FechaLlegada = fechaLlegada,
                     ObservacionesMuestra = observaciones

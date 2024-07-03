@@ -1,4 +1,5 @@
 <body>
+<br><br><br>
     <div class="container">
         <form method="post" action='@Url.Action("GuardarSubirMuestra")' enctype="multipart/form-data">
             <input type="hidden" id="idUsuario" name="idUsuario" value="@ViewBag.idUsuario">
@@ -8,8 +9,14 @@
                 <label for="InstitucionNacimiento">Institución de Nacimiento:</label>
                 <input type="text" id="InstitucionNacimiento" name="InstitucionNacimiento" autocomplete="off" required><br>
 
-                <label for="HospitalMuestra">Hospital Muestra:</label>
-                <input type="text" id="HospitalMuestra" name="HospitalMuestra" autocomplete="off" required><br>
+               <label for="HospitalMuestraInput">Hospital Muestra:</label>
+                <input type="text" id="HospitalMuestraInput" name="HospitalMuestra" autocomplete="off" placeholder="Hospital de la Muestra" required><br>
+                <datalist id="datalistHospitalesMuestra">
+                    @foreach (Hospital hospital in ViewBag.Hospitales)
+                    {
+                        <option value="@hospital.Nombre"></option>
+                    }
+                </datalist>
 
                 <label for="ApellidoBebe">Apellido del Bebé:</label>
                 <input type="text" id="ApellidoBebe" name="ApellidoBebe" autocomplete="off" required><br>
@@ -55,15 +62,13 @@
                 </select><br>
 
                 <label for="PatologiaBase">Patología Base:</label>
-                <select id="PatologiaBaseSelect" name="PatologiaBase" onchange="mostrarCampoExtra('PatologiaBaseSelect');">
+                <select id="PatologiaBaseSelect" name="PatologiaBase">
                     <option value="no">No</option>
                     <option value="si">Sí</option>
                 </select><br>
 
-                <div id="campoExtraPatologiaBase" style="display: none;">
-                    <label for="DetallePatologiaBase">Detalles de la Patología Base:</label>
-                    <input type="text" id="DetallePatologiaBase" name="DetallePatologiaBase" autocomplete="off"><br>
-                </div>
+                <label for="Patologia">Patología *Opcional</label>
+                <input type="text" id="Patologia" name="Peso" autocomplete="off"><br>
 
                 <label for="Parto">Tipo de Parto:</label>
                 <select id="Parto" name="Parto">
@@ -203,8 +208,8 @@
                 <label for="RolResponsable">Rol del Responsable:</label>
                 <input type="text" id="RolResponsable" name="RolResponsable" autocomplete="off"><br>
 
-                <label for="FirmaSello">Firma o Sello:</label>
-                <input type="text" id="FirmaSello" name="FirmaSello" autocomplete="off"><br>
+                <label for="MyFile">Firma o Sello:</label>
+                <input name = "MyFile" id="MyFile" type="file" placeholder="Subir Foto de la Mascota" required><br><br>
             </div>
 
             <div class="form-section">

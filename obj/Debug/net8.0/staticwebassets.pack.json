@@ -1,6 +1,78 @@
 {
   "Files": [
     {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\NOTICE.txt",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\NOTICE.txt"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Black.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Black.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BlackItalic.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-BlackItalic.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Bold.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Bold.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BoldCondensed.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-BoldCondensed.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BoldCondensedItalic.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-BoldCondensedItalic.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BoldItalic.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-BoldItalic.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Condensed.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Condensed.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-CondensedItalic.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-CondensedItalic.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Italic.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Italic.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Light.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Light.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-LightItalic.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-LightItalic.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Medium.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Medium.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-MediumItalic.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-MediumItalic.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Regular.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Regular.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Thin.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Thin.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-ThinItalic.ttf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-ThinItalic.ttf"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto_Specimen_Book.pdf",
+      "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto_Specimen_Book.pdf"
+    },
+    {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\MedLife.sql",
       "PackagePath": "staticwebassets\\bd\\MedLife.sql"
     },
@@ -11,6 +83,10 @@
     {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\Insertar paciente.sql",
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\Insertar paciente.sql"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\InsertarMuestraActualizado.sql",
+      "PackagePath": "staticwebassets\\bd\\sp por las dudas\\InsertarMuestraActualizado.sql"
     },
     {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\Query Guardar Muestra.sql",
@@ -55,6 +131,10 @@
     {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\favicon.ico",
       "PackagePath": "staticwebassets\\img\\favicon.ico"
+    },
+    {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\firma1.jfif",
+      "PackagePath": "staticwebassets\\img\\firma1.jfif"
     },
     {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\listasProcesadas.png",

@@ -1,20 +1,25 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+
 body {
   margin: 0;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
 }
 
 header {
   background-color: #F9F9F9;
   padding: 10px 0;
   border-bottom: 2px solid #003A9F; 
-
 }
 
-a{
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+a {
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
   font-size: 1.3em;
-
+  text-decoration: none;
+  font-weight: lighter; /* Corregido el valor de font-weight */
 }
+
 
 nav {
   display: flex;
@@ -32,24 +37,29 @@ nav {
   padding: 0;
   margin: 0;
   display: flex;
+  font-weight: lighter;
 }
 
 .nav-links li {
   margin-right: 2em;
+  font-weight: lighter;
 }
 
 .nav-links li:last-child {
   margin-right: 0;
+  font-weight: lighter;
 }
 
 .nav-links .linkHeader {
   color: #00276A;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-weight: lighter;
 }
 
 .nav-links .linkHeader:hover {
   color: #7d99e5;
+  font-weight: lighter;
 }
 
 /*BOTONES*/
@@ -94,6 +104,7 @@ nav {
   justify-content: center;
   text-align: center;
   align-items: center;
+  font-weight: lighter;
 }
 
 .botonHeader{
@@ -114,6 +125,7 @@ nav {
 
 .linkHome:hover {
   background-color: #c2e1ee;
+  font-weight: lighter;
 }
 
 .container {
@@ -123,6 +135,8 @@ nav {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
 }
 
 .form-section {

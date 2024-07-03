@@ -1,15 +1,20 @@
 using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using ProyectoFinal_MedLife.Models;
-
+using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 namespace ProyectoFinal_MedLife.Controllers;
+using Microsoft.AspNetCore.Hosting;
+
 
 public class HomeController : Controller
 {
+    private readonly IWebHostEnvironment _environment;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(IWebHostEnvironment environment, ILogger<HomeController> logger)
     {
+        _environment = environment;
         _logger = logger;
     }
 
@@ -50,6 +55,7 @@ public IActionResult Contactos(int idUsuario)
     public IActionResult C_SubirMuestra(int idUsuario)
     {   
         ViewBag.idUsuario = idUsuario;
+        ViewBag.Hospitales = BD.SeleccionarHospitales();
         return View("SubirMuestras");
     }
 
@@ -68,6 +74,7 @@ public IActionResult Contactos(int idUsuario)
         int Peso, 
         string CondicionRN, 
         string PatologiaBase, 
+        string Patologia,
         string Parto, 
         bool EmbarazoMultiple, 
         bool EmbarazoGemelar, 
@@ -95,11 +102,18 @@ public IActionResult Contactos(int idUsuario)
         int Analitico, 
         string Responsable, 
         string RolResponsable, 
-        string FirmaSello, 
         DateTime FechaEnvio, 
         DateTime FechaLlegada, 
-        string observaciones)
+        string observaciones,
+        IFormFile MyFile)
     {   
+        if(MyFile.Length > 0){
+            string wwwRootLocal = this._environment.ContentRootPath + @"\wwwroot\img\" + MyFile.FileName;
+            using(var stream = System.IO.File.Create(wwwRootLocal)){
+                MyFile.CopyToAsync(stream);
+            }
+        }
+
         int IdHospitalMuestra = BD.SeleccionarHospitalPorNombre(HospitalMuestra).IdHospital;
         BD.InsertarMuestra(
             InstitucionNacimiento, 
@@ -115,6 +129,7 @@ public IActionResult Contactos(int idUsuario)
             Peso, 
             CondicionRN, 
             PatologiaBase, 
+            Patologia, 
             Parto, 
             EmbarazoMultiple, 
             EmbarazoGemelar, 
@@ -142,10 +157,12 @@ public IActionResult Contactos(int idUsuario)
             Analitico, 
             Responsable, 
             RolResponsable, 
-            FirmaSello, 
+            MyFile.FileName, 
             FechaEnvio, 
             FechaLlegada, 
             observaciones);
+        ViewBag.idUsuario = idUsuario;
+        ViewBag.Hospitales = BD.SeleccionarHospitales();
         return View("SubirMuestras");
     }
 
