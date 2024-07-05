@@ -1,0 +1,22 @@
+<form method="post" action='@Url.Action("C_BuscarFiltrado")' enctype="multipart/form-data">
+    <input type="hidden" id="idUsuario" name="idUsuario" value="@ViewBag.idUsuario">
+    <input type="text" id="provincia" name="provincia">
+    <input type="text" id="hospital" name="hospital">
+    <input type="text" id="apellidoBebe" name="apellidoBebe">
+    <input type="text" id="apellidoMama" name="apellidoMama">
+    <input type="datetime" id="fechaDesde" name="fechaDesde">
+    <input type="datetime" id="fechaHasta" name="fechaHasta">
+    <input type="text" id="ordenadoPor" name="ordenadoPor">
+            
+            <!-- Botón de envío con estilos en línea -->
+        <input type="submit" role="button" value="Siguiente" id="submit" name="submit"
+               style="background-color: #003a9f;
+                      color: white;
+                      padding: 12px 20px;
+                      border: none;
+                      border-radius: 4px;
+                      cursor: pointer;
+                      font-size: 16px;
+                      transition: background-color 0.3s ease;">
+        <br><br>
+        </form>

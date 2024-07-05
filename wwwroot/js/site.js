@@ -1,31 +1,60 @@
-﻿function mostrarCampoExtra(selectId) {
-    var valorSeleccionado = document.getElementById(selectId).value;
-    var campoExtraId = "campoExtra" + selectId.charAt(0).toUpperCase() + selectId.slice(1);
+﻿function ConfirmarDNI() {
+    let mensajeA = document.getElementById("mensajeB");
 
-    if (valorSeleccionado === "si") {
-        document.getElementById(campoExtraId).style.display = "block";
+    const dni = document.getElementById("Documento").value.trim();
+
+    let longitudValida = false;
+
+    // Validar longitud exacta de 8 caracteres
+    if (dni.length === 8) {
+        mensajeA.style.color = "green";
+        longitudValida = true;
     } else {
-        document.getElementById(campoExtraId).style.display = "none";
+        mensajeA.style.color = "red";
+        longitudValida = false;
+    }
+
+    // Devolver true si todas las condiciones son verdaderas
+    return longitudValida;
+}
+
+function ConfirmarMinimo(minimo) {
+    let mensajeA = document.getElementById("mensajeC");
+
+    const tel = document.getElementById("Telefono").value.trim();
+
+    let longitudValida = false;
+
+    // Validar longitud exacta de 8 caracteres
+    if (tel.length >= minimo) {
+        mensajeA.style.color = "green";
+        longitudValida = true;
+    } else {
+        mensajeA.style.color = "red";
+        longitudValida = false;
+    }
+
+    // Devolver true si todas las condiciones son verdaderas
+    return longitudValida;
+}
+
+function validarSemanasGestacion() {
+    const maximo = 50; // Definir el máximo de semanas de gestación permitido
+    let mensajeA = document.getElementById("mensajeA");
+    const semanas = document.getElementById("SemanasGestacion").value.trim();
+    
+    if (semanas === "") {
+        mensajeA.style.color = "red";
+        mensajeA.textContent = "Campo requerido";
+        return;
+    }
+
+    // Validar si es un número válido y menor o igual al máximo
+    if (!isNaN(semanas) && parseInt(semanas) <= maximo) {
+        mensajeA.style.color = "green";
+        mensajeA.textContent = "Semanas de gestación válidas";
+    } else {
+        mensajeA.style.color = "red";
+        mensajeA.textContent = "La cantidad de semanas supera el máximo permitido";
     }
 }
-
-
-// Función para establecer la fecha y hora máxima actual en campos datetime-local
-function setFechaMaxima(input) {
-    var now = new Date();
-    var year = now.getFullYear();
-    var month = now.getMonth() + 1;
-    var day = now.getDate();
-    var hours = now.getHours();
-    var minutes = now.getMinutes();
-    var formattedDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}T${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-    input.max = formattedDate;
-}
-
-// Llamar a la función para establecer la fecha y hora máxima al cargar la página
-window.onload = function() {
-    var inputsDateTime = document.querySelectorAll('input[type="datetime-local"]');
-    inputsDateTime.forEach(function(input) {
-        setFechaMaxima(input);
-    });
-};

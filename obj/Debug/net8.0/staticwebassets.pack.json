@@ -73,6 +73,10 @@
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto_Specimen_Book.pdf"
     },
     {
+      "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\Hospitales\\SQLQuery2.sql",
+      "PackagePath": "staticwebassets\\bd\\Hospitales\\SQLQuery2.sql"
+    },
+    {
       "Id": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\MedLife.sql",
       "PackagePath": "staticwebassets\\bd\\MedLife.sql"
     },

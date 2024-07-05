@@ -3,10 +3,23 @@ using System.Data;
 using Dapper;
 namespace ProyectoFinal_MedLife;
 
+//dotnet add package Dapper; Dotnet add package System.Data.SqlClient;
+
 public static class BD{
     private static string ConnectionString = @"Server=localhost;DataBase=MedLife;Trusted_Connection=True;";
 
     //Seleccionar
+
+    //Seleccionar Muestras por filtro
+    public static List<Muestra> SeleccionarMuestrasPorFiltro(string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
+        {
+            using (SqlConnection db = new SqlConnection(ConnectionString))
+            {
+                string sql = "SeleccionarMuestraPorFiltro"; // Nombre del procedimiento almacenado
+                var parameters = new { Provincia = provincia, Hospital = hospital, ApellidoBebe= apellidoBebe, ApellidoMama = apellidoMama, Fechadesde = fechaDesde, Fechahasta = fechaHasta, OrdenadoPor = ordenadoPor };
+                return db.Query<Muestra>(sql, parameters, commandType: CommandType.StoredProcedure).AsList();
+            }
+        }
 
     // Método para seleccionar todos los hospitales de la base de datos
         public static List<Hospital> SeleccionarHospitales()

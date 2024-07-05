@@ -4,8 +4,10 @@
 
 <body>
 <br><br><br>
-    <div class="contenedorListaSinProcesar">
-        
-    </div>
+    @foreach (Muestra muestra in ViewBag.Muestras)
+    {
+        <p>@muestra.NombreBebe</p>
+        <p>@muestra.ApellidoBebe</p>
+    }
 </body>
 </html>

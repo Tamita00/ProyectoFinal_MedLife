@@ -10,7 +10,7 @@
                 <input type="text" id="InstitucionNacimiento" name="InstitucionNacimiento" autocomplete="off" required><br>
 
                <label for="HospitalMuestraInput">Hospital Muestra:</label>
-                <input type="text" id="HospitalMuestraInput" name="HospitalMuestra" autocomplete="off" placeholder="Hospital de la Muestra" required><br>
+                <input type="text" id="HospitalMuestraInput" list="datalistHospitalesMuestra" name="HospitalMuestra" autocomplete="off" placeholder="Hospital de la Muestra" required><br>
                 <datalist id="datalistHospitalesMuestra">
                     @foreach (Hospital hospital in ViewBag.Hospitales)
                     {
@@ -49,7 +49,11 @@
                 <input type="date" id="FechaIngestaLeche" name="FechaIngestaLeche" autocomplete="off" required><br>
 
                 <label for="SemanasGestacion">Semanas de Gestación:</label>
-                <input type="number" id="SemanasGestacion" name="SemanasGestacion" autocomplete="off"><br>
+                <input type="number" id="SemanasGestacion" name="SemanasGestacion" onkeyup="validarSemanasGestacion()" autocomplete="off"><br>
+                <div class="alert alert-info" role="alert" style="padding:.10rem;">
+                    <span style="color: red; font-size: 0.85em;" id="mensajeA">El máximo es de 50 semanas de gestación</span><br><br>
+                </div>
+
 
                 <label for="Peso">Peso del Bebé (en gramos):</label>
                 <input type="number" id="Peso" name="Peso" autocomplete="off"><br>
@@ -67,8 +71,8 @@
                     <option value="si">Sí</option>
                 </select><br>
 
-                <label for="Patologia">Patología *Opcional</label>
-                <input type="text" id="Patologia" name="Peso" autocomplete="off"><br>
+                <label for="Patologia">Patología <span class="opcional">*Opcional</span></label>
+                <input type="text" id="Patologia" name="Patologia" autocomplete="off"><br>
 
                 <label for="Parto">Tipo de Parto:</label>
                 <select id="Parto" name="Parto">
@@ -98,7 +102,10 @@
                 <input type="text" id="NombreMama" name="NombreMama" autocomplete="off" required><br>
 
                 <label for="Documento">Documento de la Madre:</label>
-                <input type="number" id="Documento" name="Documento" autocomplete="off" required><br>
+                <input type="number" id="Documento" name="Documento" autocomplete="off" onkeyup="ConfirmarDNI()"  required>
+                <div class="alert alert-info" role="alert" style="padding:.10rem;">
+                        <span style="color: red;font-size:0.85em;" id="mensajeB"> El DNI debe contener 8 dígitos</span><br><br>
+                </div>
 
                 <label for="Domicilio">Domicilio de la Madre:</label>
                 <input type="text" id="Domicilio" name="Domicilio" autocomplete="off"><br>
@@ -107,7 +114,11 @@
                 <input type="text" id="Localidad" name="Localidad" autocomplete="off"><br>
 
                 <label for="Telefono">Teléfono de la Madre:</label>
-                <input type="tel" id="Telefono" name="Telefono" autocomplete="off"><br>
+                <input type="tel" onkeyup="ConfirmarMinimo(7)" id="Telefono" name="Telefono" autocomplete="off"><br>
+                <div class="alert alert-info" role="alert" style="padding:.10rem;">
+                        <span style="color: red;font-size:0.85em;" id="mensajeC"> El Teléfono debe contener al menos 7 dígitos</span><br><br>
+                </div>
+
 
                 <label for="LugarControlEmbarazo">Lugar de Control del Embarazo:</label>
                 <input type="text" id="LugarControlEmbarazo" name="LugarControlEmbarazo" autocomplete="off"><br>
@@ -208,9 +219,10 @@
                 <label for="RolResponsable">Rol del Responsable:</label>
                 <input type="text" id="RolResponsable" name="RolResponsable" autocomplete="off"><br>
 
-                <label for="MyFile">Firma o Sello:</label>
-                <input name = "MyFile" id="MyFile" type="file" placeholder="Subir Foto de la Mascota" required><br><br>
-            </div>
+                <label for="MyFile" >Firma o Sello:</label>
+                <input name="MyFile" id="MyFile" type="file" placeholder="Subir Foto de la Mascota" required><br><br>
+
+                </div>
 
             <div class="form-section">
                 <legend>Fechas de Envío y Llegada</legend>

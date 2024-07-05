@@ -18,6 +18,7 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+
     public IActionResult Index()
     {
         return View();
@@ -168,11 +169,17 @@ public IActionResult Contactos(int idUsuario)
 
 
 // LISTA SIN PROCESAR
-    public IActionResult C_ListaSinProcesar(int idUsuario)
+    public IActionResult C_ListaSinProcesarFiltrado(int idUsuario)
+        {   
+            ViewBag.idUsuario = idUsuario;
+            return View("ListaSinProcesarFiltrado");
+        }
+
+    public IActionResult C_BuscarFiltrado(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
     {   
+        ViewBag.Muestras = BD.SeleccionarMuestrasPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
         ViewBag.idUsuario = idUsuario;
         return View("ListaSinProcesar");
     }
-
 
 }

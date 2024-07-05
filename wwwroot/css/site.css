@@ -195,3 +195,9 @@ nav {
 .form-section input[type="submit"]:hover {
   background-color: #03348a;
 }
+
+/*OPCIONAL*/
+.opcional{
+  color: #6e6e6e;
+  font-size: 0.8em;
+}

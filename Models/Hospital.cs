@@ -3,12 +3,12 @@ public class Hospital {
     public string NombreHospital { get; set; }
     public string[] Referentes { get; set; } = new string[5]; // Array de 5 referentes
     public string[] EmailsRef { get; set; } = new string[5]; // Array de 5 emails
-    public int[] TelefonosRef { get; set; } = new int[5]; // Array de arrays de teléfonos
+    public long[] TelefonosRef { get; set; } = new long[5]; // Array de arrays de teléfonos
 
     public string Direccion { get; set; }
     public string Localidad { get; set; }
     public string Provincia { get; set; }
-    public int Telefono { get; set; }
+    public long Telefono { get; set; }
     public string Responsable { get; set; }
     public string Servicio { get; set; }
 
