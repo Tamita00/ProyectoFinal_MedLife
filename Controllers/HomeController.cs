@@ -177,7 +177,20 @@ public IActionResult Contactos(int idUsuario)
 
     public IActionResult C_MostrarFiltrado(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
     {   
-        ViewBag.Muestras = BD.SeleccionarMuestrasResultadoPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
+        List<MuestraResultado> MuestrasResultado = BD.SeleccionarMuestrasResultadoPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
+        ViewBag.MuestrasResultado = MuestrasResultado;
+
+        List<Muestra> Muestras = new List<Muestra>(); // Lista para almacenar las muestras
+
+        foreach (MuestraResultado muestraResultado in MuestrasResultado)
+        {
+            Muestra muestra = BD.SeleccionarMuestraPorId(muestraResultado.IdMuestra); // Obtener la muestra correspondiente
+            if (muestra != null)
+            {
+                Muestras.Add(muestra); // Agregar la muestra a la lista
+            }
+        }
+        ViewBag.Muestras = Muestras;
         ViewBag.idUsuario = idUsuario;
         return View("ListaSinProcesar");
     }
@@ -187,17 +200,17 @@ public IActionResult Contactos(int idUsuario)
        List<MuestraResultado> MuestrasResultado = BD.SeleccionarMuestrasResultadoPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
         ViewBag.MuestrasResultado = MuestrasResultado;
 
-        List<Muestra> listaMuestras = new List<Muestra>(); // Lista para almacenar las muestras
+        List<Muestra> Muestras = new List<Muestra>(); // Lista para almacenar las muestras
 
         foreach (MuestraResultado muestraResultado in MuestrasResultado)
         {
             Muestra muestra = BD.SeleccionarMuestraPorId(muestraResultado.IdMuestra); // Obtener la muestra correspondiente
             if (muestra != null)
             {
-                listaMuestras.Add(muestra); // Agregar la muestra a la lista
+                Muestras.Add(muestra); // Agregar la muestra a la lista
             }
         }
-        ViewBag.Muestras = listaMuestras;
+        ViewBag.Muestras = Muestras;
         return View("ListaSinProcesar");
     }
 
