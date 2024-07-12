@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DmAaVx0y2hAWG16ddPc7n/Q55aSgF2ZnUeXcDV7lVIkkTil3EEav+renVimoZp+bolkbaXbVXB6Jcv5psP5A1Q==",
+  "dgSpecHash": "pNfx9PYhntElyoc/PbBYmVTM9YXi0VL67iu8FGFb2PvvR+fuGJoM+hZg0KvR5olCBtsT+rAHGEoxurye6CsWRQ==",
   "success": true,
-  "projectFilePath": "Z:\\PROG\\2024\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
+  "projectFilePath": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\47807159\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\47807159\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

@@ -175,11 +175,51 @@ public IActionResult Contactos(int idUsuario)
             return View("ListaSinProcesarFiltrado");
         }
 
-    public IActionResult C_BuscarFiltrado(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
+    public IActionResult C_MostrarFiltrado(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
     {   
         ViewBag.Muestras = BD.SeleccionarMuestrasPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
         ViewBag.idUsuario = idUsuario;
         return View("ListaSinProcesar");
     }
 
+    public IActionResult C_GuardarMuestras(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
+    {   
+        ViewBag.Muestras = BD.SeleccionarMuestrasPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
+        ViewBag.idUsuario = idUsuario;
+        return View("ListaSinProcesar");
+    }
+
+    //ESTO ESTA MAL PERO ESTA SERIA LA IDEA -->
+    /*public IActionResult GuardarIndividual(int muestraId, string resultado)
+    {
+        try
+        {
+            BD.ActualizarMuestra(muestraId, resultado);
+
+            return Json(new { success = true });
+        }
+        catch (Exception ex)
+        {
+            return Json(new { success = false, message = ex.Message });
+        }
+    }
+
+    // Método para guardar todos los cambios (ejemplo)
+    public IActionResult GuardarTodos(List<MuestraViewModel> muestras)
+    {
+        try
+        {
+            foreach (var muestra in muestras)
+            {
+                BD.ActualizarMuestra(muestra.Id, muestra.Resultado);
+            }
+
+            return Json(new { success = true });
+        }
+        catch (Exception ex)
+        {
+            return Json(new { success = false, message = ex.Message });
+        }
+    }
+*/
 }

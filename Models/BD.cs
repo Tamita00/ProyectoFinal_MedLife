@@ -11,13 +11,13 @@ public static class BD{
     //Seleccionar
 
     //Seleccionar Muestras por filtro
-    public static List<Muestra> SeleccionarMuestrasPorFiltro(string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
+    public static List<MuestraResultado> SeleccionarMuestrasPorFiltro(string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
                 string sql = "SeleccionarMuestraPorFiltro"; // Nombre del procedimiento almacenado
                 var parameters = new { Provincia = provincia, Hospital = hospital, ApellidoBebe= apellidoBebe, ApellidoMama = apellidoMama, Fechadesde = fechaDesde, Fechahasta = fechaHasta, OrdenadoPor = ordenadoPor };
-                return db.Query<Muestra>(sql, parameters, commandType: CommandType.StoredProcedure).AsList();
+                return db.Query<MuestraResultado>(sql, parameters, commandType: CommandType.StoredProcedure).AsList();
             }
         }
 

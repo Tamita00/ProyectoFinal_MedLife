@@ -58,3 +58,66 @@ function validarSemanasGestacion() {
         mensajeA.textContent = "La cantidad de semanas supera el máximo permitido";
     }
 }
+
+
+//-----------Lista sin procesar Guardados
+
+//ESTO ESTA MAL PERO ESTA ES LA IDEA -->
+
+function guardarIndividualmente(muestraId) {
+    var criterio = $('#criterio-' + muestraId).val();
+    var metodologias = [
+        $('#metodologia-' + muestraId + '-1').val(),
+        $('#metodologia-' + muestraId + '-2').val(),
+        $('#metodologia-' + muestraId + '-3').val(),
+        $('#metodologia-' + muestraId + '-4').val(),
+        $('#metodologia-' + muestraId + '-5').val(),
+        $('#metodologia-' + muestraId + '-6').val()
+    ];
+
+    $.ajax({
+        url: '/GuardarIndividual',
+        method: 'POST',
+        data: {
+            muestraId: muestraId,
+            criterio: criterio,
+            metodologias: metodologias
+        },
+        success: function(response) {
+            if (response.success) {
+                alert('Guardado exitosamente');
+            } else {
+                alert('Error al guardar: ' + response.message);
+            }
+        },
+        error: function(xhr, status, error) {
+            alert('Error al guardar');
+        }
+    });
+}
+
+function guardarTodos() {
+    var muestras = [];
+    $('.muestra-form').each(function(index, element) {
+        var muestraId = $(this).attr('id').replace('form-', '');
+        var resultado = $('#resultado-' + muestraId).val();
+        muestras.push({ Id: muestraId, Resultado: resultado });
+    });
+
+    $.ajax({
+        url: '/GuardarTodos',
+        method: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(muestras),
+        success: function(response) {
+            if (response.success) {
+                alert('Todos los cambios guardados exitosamente');
+            } else {
+                alert('Error al guardar todos los cambios: ' + response.message);
+            }
+        },
+        error: function(xhr, status, error) {
+            alert('Error al guardar todos los cambios');
+        }
+    });
+}
