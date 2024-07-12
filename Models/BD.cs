@@ -10,16 +10,17 @@ public static class BD{
 
     //Seleccionar
 
-    //Seleccionar Muestras por filtro
-    public static List<MuestraResultado> SeleccionarMuestrasPorFiltro(string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
+    //Seleccionar MuestrasResultado por filtro
+    public static List<MuestraResultado> SeleccionarMuestrasResultadoPorFiltro(string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
-                string sql = "SeleccionarMuestraPorFiltro"; // Nombre del procedimiento almacenado
+                string sql = "SeleccionarMuestraResultadoPorFiltro"; // Nombre del procedimiento almacenado
                 var parameters = new { Provincia = provincia, Hospital = hospital, ApellidoBebe= apellidoBebe, ApellidoMama = apellidoMama, Fechadesde = fechaDesde, Fechahasta = fechaHasta, OrdenadoPor = ordenadoPor };
                 return db.Query<MuestraResultado>(sql, parameters, commandType: CommandType.StoredProcedure).AsList();
             }
         }
+
 
     // Método para seleccionar todos los hospitales de la base de datos
         public static List<Hospital> SeleccionarHospitales()

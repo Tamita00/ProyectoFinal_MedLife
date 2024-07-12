@@ -177,15 +177,27 @@ public IActionResult Contactos(int idUsuario)
 
     public IActionResult C_MostrarFiltrado(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
     {   
-        ViewBag.Muestras = BD.SeleccionarMuestrasPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
+        ViewBag.Muestras = BD.SeleccionarMuestrasResultadoPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
         ViewBag.idUsuario = idUsuario;
         return View("ListaSinProcesar");
     }
 
     public IActionResult C_GuardarMuestras(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
     {   
-        ViewBag.Muestras = BD.SeleccionarMuestrasPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
-        ViewBag.idUsuario = idUsuario;
+       List<MuestraResultado> MuestrasResultado = BD.SeleccionarMuestrasResultadoPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
+        ViewBag.MuestrasResultado = MuestrasResultado;
+
+        List<Muestra> listaMuestras = new List<Muestra>(); // Lista para almacenar las muestras
+
+        foreach (MuestraResultado muestraResultado in MuestrasResultado)
+        {
+            Muestra muestra = BD.SeleccionarMuestraPorId(muestraResultado.IdMuestra); // Obtener la muestra correspondiente
+            if (muestra != null)
+            {
+                listaMuestras.Add(muestra); // Agregar la muestra a la lista
+            }
+        }
+        ViewBag.Muestras = listaMuestras;
         return View("ListaSinProcesar");
     }
 
