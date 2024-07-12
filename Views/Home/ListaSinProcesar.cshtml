@@ -9,19 +9,19 @@
     @foreach (Muestra muestra in ViewBag.Muestras)
     {
         <div class="muestra-form-container">
-    <h3>@muestra.ApellidoBebe</h3>
-    <form method="post" action='@Url.Action("C_MostrarFiltrado")' class="muestra-form">
-        <table class="table">
+            <h3>@muestra.ApellidoBebe</h3>
+            <form method="post" action='@Url.Action("C_MostrarFiltrado")' class="muestra-form">
+            <table class="table">
             <tr>
                 <td>
                     <div class="form-group">
-                        <label for="estudio-@muestra.IdMuestra">Estudio:</label><br />
-                        <label><input type="checkbox" name="TshNeonatal" value="TshNeonatal"> TshNeonatal</label><br />
-                        <label><input type="checkbox" name="Fenilanina" value="Fenilanina"> Fenilanina</label><br />
-                        <label><input type="checkbox" name="IrtNeonatal" value="IrtNeonatal"> IrtNeonatal</label><br />
-                        <label><input type="checkbox" name="Galactosa" value="Galactosa"> Galactosa</label><br />
-                        <label><input type="checkbox" name="Hidroxiprogesterona" value="Hidroxiprogesterona"> Hidroxiprogesterona</label><br />
-                        <label><input type="checkbox" name="Biotinidasa" value="Biotinidasa"> Biotinidasa</label>
+                        <p for="estudio-@muestra.IdMuestra">Estudio:</p>
+                        <p for="estudio-@muestra.IdMuestra">TshNeonatal</p>
+                        <p for="estudio-@muestra.IdMuestra">Fenilanina</p>
+                        <p for="estudio-@muestra.IdMuestra">IrtNeonatal</p>
+                        <p for="estudio-@muestra.IdMuestra">Galactosa</p>
+                        <p for="estudio-@muestra.IdMuestra">Hidroxiprogesterona</p>
+                        <p for="estudio-@muestra.IdMuestra">Biotinidasa</p>
                     </div>
                 </td>
                 <td>
@@ -48,10 +48,10 @@
                 </td>
             </tr>
         </table>
-        <input type="text" id="Observaciones" name="Observaciones" class="form-control" placeholder="Observaciones" /><br />
-        <button type="button" onclick="guardarIndividualmente(@muestra.IdMuestra)" class="btn btn-primary">Guardar</button>
-    </form>
-</div>
+                <input type="text" id="Observaciones" name="Observaciones" class="form-control" placeholder="Observaciones" /><br />
+                <button type="button" onclick="guardarIndividualmente(@muestra.IdMuestra)" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
     }
     
     <button type="button" onclick="guardarTodos()">Guardar Todos</button>
