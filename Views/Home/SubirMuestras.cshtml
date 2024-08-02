@@ -3,7 +3,7 @@
     <div class="container">
         <form method="post" action='@Url.Action("GuardarSubirMuestra")' enctype="multipart/form-data">
             <input type="hidden" id="idUsuario" name="idUsuario" value="@ViewBag.idUsuario">
-
+<!-- primera parte -->
             <div class="form-section">
                 <legend>Datos de la Muestra</legend>
                 <label for="InstitucionNacimiento">Institución de Nacimiento:</label>
@@ -92,7 +92,7 @@
                     <option value="true">Sí</option>
                 </select><br>
             </div>
-
+<!--segunda parte de la carga-->
             <div class="form-section">
                 <legend>Datos de la Madre</legend>
                 <label for="ApellidoMama">Apellido de la Madre:</label>
@@ -178,6 +178,7 @@
                 <input type="text" id="Otras" name="Otras" autocomplete="off"><br>
             </div>
 
+<!-- 3era parte -->
             <div class="form-section">
                 <legend>Detalles adicionales y observaciones</legend>
                 <label for="RepiteMuestra">Repite Muestra:</label>
@@ -211,6 +212,7 @@
                 </select><br>
             </div>
 
+<!-- cuarta parte -->
             <div class="form-section">
                 <legend>Responsable y Firma/Sello</legend>
                 <label for="Responsable">Responsable:</label>
@@ -224,6 +226,7 @@
 
                 </div>
 
+<!-- quinta parte -->
             <div class="form-section">
                 <legend>Fechas de Envío y Llegada</legend>
                 <label for="FechaEnvio">Fecha de Envío:</label>
@@ -239,14 +242,14 @@
             </div>
 
             <!-- Botón de envío con estilos en línea -->
-        <input type="submit" role="button" value="Siguiente" id="submit" name="submit"
+           <input type="submit" role="button" value="Siguiente" id="submit" name="submit"
                style="background-color: #003a9f;
                       color: white;
                       padding: 12px 20px;
                       border: none;
                       border-radius: 4px;
                       cursor: pointer;
-                      font-size: 16px;
+                      font-size: 14px;
                       transition: background-color 0.3s ease;">
         <br><br>
         </form>

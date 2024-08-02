@@ -13,11 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProyectoFinal_MedLife")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48db869a6254b08961dac14e562a99e7f2390018")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ccb4fdf89329465b9a36be4bbd8e4b0049c585f")]
->>>>>>> a7785f037c69860285d286e926286b6b344e12e9
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f74e22decbcacd6c3ca2842aa083adbecca3941b")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProyectoFinal_MedLife")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProyectoFinal_MedLife")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
