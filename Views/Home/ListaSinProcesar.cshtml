@@ -1,0 +1,62 @@
+@{
+    ViewData["Title"] = "Home";
+}
+<!-- ESTO ESTA MAL PERO ESTA ES LA IDEA -->
+
+<body>
+<br><br><br>
+<div id="muestras-container">
+    @foreach (Muestra muestra in ViewBag.Muestras)
+    {
+        <div class="muestra-form-container">
+            <h3>@muestra.ApellidoBebe</h3>
+            <form method="post" action='@Url.Action("C_MostrarFiltrado")' class="muestra-form">
+            <table class="table">
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <p for="estudio-@muestra.IdMuestra">Estudio:</p>
+                        <p for="estudio-@muestra.IdMuestra">TshNeonatal</p>
+                        <p for="estudio-@muestra.IdMuestra">Fenilanina</p>
+                        <p for="estudio-@muestra.IdMuestra">IrtNeonatal</p>
+                        <p for="estudio-@muestra.IdMuestra">Galactosa</p>
+                        <p for="estudio-@muestra.IdMuestra">Hidroxiprogesterona</p>
+                        <p for="estudio-@muestra.IdMuestra">Biotinidasa</p>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="criterio-@muestra.IdMuestra">Criterio de Normalidad:</label><br />
+                        <input type="text" id="criterio-@muestra.IdMuestra-1" name="TshNeonatal" class="form-control" placeholder="TshNeonatal" /><br />
+                        <input type="text" id="criterio-@muestra.IdMuestra-2" name="Fenilanina" class="form-control" placeholder="Fenilanina" /><br />
+                        <input type="text" id="criterio-@muestra.IdMuestra-3" name="IrtNeonatal" class="form-control" placeholder="IrtNeonatal" /><br />
+                        <input type="text" id="criterio-@muestra.IdMuestra-4" name="Galactosa" class="form-control" placeholder="Galactosa" /><br />
+                        <input type="text" id="criterio-@muestra.IdMuestra-5" name="Hidroxiprogesterona" class="form-control" placeholder="Hidroxiprogesterona" /><br />
+                        <input type="text" id="criterio-@muestra.IdMuestra-6" name="Biotinidasa" class="form-control" placeholder="Biotinidasa" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label>Metodología:</label><br />
+                        <input type="text" id="metodologia-@muestra.IdMuestra-1" name="MetodologiaTsh" class="form-control" placeholder="MetodologiaTsh" /><br />
+                        <input type="text" id="metodologia-@muestra.IdMuestra-2" name="MetodologiaFenilanina" class="form-control" placeholder="MetodologiaFenilanina" /><br />
+                        <input type="text" id="metodologia-@muestra.IdMuestra-3" name="MetodologiaIrt" class="form-control" placeholder="MetodologiaIrt" /><br />
+                        <input type="text" id="metodologia-@muestra.IdMuestra-4" name="MetodologiaGalactosa" class="form-control" placeholder="MetodologiaGalactosa" /><br />
+                        <input type="text" id="metodologia-@muestra.IdMuestra-5" name="MetodologiaHidro" class="form-control" placeholder="MetodologiaHidro" /><br />
+                        <input type="text" id="metodologia-@muestra.IdMuestra-6" name="MetodologiaBiotinidasa" class="form-control" placeholder="MetodologiaBiotinidasa" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+                <input type="text" id="Observaciones" name="Observaciones" class="form-control" placeholder="Observaciones" /><br />
+                <button type="button" onclick="guardarIndividualmente(@muestra.IdMuestra)" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+    }
+    
+    <button type="button" onclick="guardarTodos()">Guardar Todos</button>
+</div>
+
+
+</body>
+</html>

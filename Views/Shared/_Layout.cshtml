@@ -8,17 +8,21 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <header>
-    
+    <nav>
+        <a href='@Url.Action("C_Home", new {idUsuario = 1})'><img class="logo" src="/img/logo2.png" alt="Logo"></a>
+        <ul class="nav-links">
+            <li><a class = "linkHeader" href='@Url.Action("C_Home", new {idUsuario = 1})'>Inicio</a></li>
+            <li><a class="linkHeader" href="#">Ayuda</a></li>
+            <li><a class="linkHeader" href="#">Contacto</a></li>
+            <li><a class = "linkHeader" href='@Url.Action("Index")'>Salir</a></li>
+        </ul>
+    </nav>
 </header>
 <body>
 
     <main role="main">
         @RenderBody()
     </main>
-
-    <footer>
-        &copy; @DateTime.Now.Year - MedLife
-    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

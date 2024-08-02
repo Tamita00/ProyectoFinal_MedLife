@@ -3,10 +3,24 @@ using System.Data;
 using Dapper;
 namespace ProyectoFinal_MedLife;
 
+//dotnet add package Dapper; Dotnet add package System.Data.SqlClient;
+
 public static class BD{
     private static string ConnectionString = @"Server=localhost;DataBase=MedLife;Trusted_Connection=True;";
 
     //Seleccionar
+
+    //Seleccionar MuestrasResultado por filtro
+    public static List<MuestraResultado> SeleccionarMuestrasResultadoPorFiltro(string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
+        {
+            using (SqlConnection db = new SqlConnection(ConnectionString))
+            {
+                string sql = "SeleccionarMuestraResultadoPorFiltro"; // Nombre del procedimiento almacenado
+                var parameters = new { Provincia = provincia, Hospital = hospital, ApellidoBebe= apellidoBebe, ApellidoMama = apellidoMama, Fechadesde = fechaDesde, Fechahasta = fechaHasta, OrdenadoPor = ordenadoPor };
+                return db.Query<MuestraResultado>(sql, parameters, commandType: CommandType.StoredProcedure).AsList();
+            }
+        }
+
 
     // Método para seleccionar todos los hospitales de la base de datos
         public static List<Hospital> SeleccionarHospitales()
@@ -32,14 +46,14 @@ public static class BD{
         }
     
         // Método para seleccionar un hospital por su nombre
-        public static List<Hospital> SeleccionarHospitalPorNombre(string nombreHospital)
+        public static Hospital SeleccionarHospitalPorNombre(string nombreHospital)
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
                 string sql = "SeleccionarHospitalPorNombre"; // Nombre del procedimiento almacenado
                 var parameters = new { NombreHospital = nombreHospital };
 
-                return db.Query<Hospital>(sql, parameters, commandType: CommandType.StoredProcedure).AsList();
+                return db.QueryFirstOrDefault<Hospital>(sql, parameters, commandType: CommandType.StoredProcedure);
             }
         }
 
@@ -87,7 +101,7 @@ public static class BD{
             }
         }
 
-        // Método para seleccionar perfiles
+        // Método para seleccionar perfiles 
         public static Perfil SeleccionarPerfiles()
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
@@ -215,23 +229,22 @@ public static class BD{
         }
 
     // Método para insertar una nueva muestra en la base de datos
-        public static void InsertarMuestra(int idResultado, string institucionNacimiento, int idHospitalMuestra,
+        public static void InsertarMuestra( string institucionNacimiento, int idHospitalMuestra,
             string apellidoBebe, string nombreBebe, DateTime fechaHoraNacimiento, DateTime fechaHoraExtraccion,
             string sexo, string alimentacion, DateTime fechaIngestaLeche, int semanasGestacion, int peso,
-            string condicionRN, string patologiaBase, string parto, bool embarazoMultiple, bool embarazoGemelar,
+            string condicionRN, string patologiaBase, string patologia, string parto, bool embarazoMultiple, bool embarazoGemelar,
             string apellidoMama, string nombreMama, int documento, string domicilio, string localidad,
             int telefono, string lugarControlEmbarazo, bool antibioticos, bool desinfectantesYodados,
             bool transfusion, DateTime fechaTransfusion, bool dopamina, bool dobutamina, bool corticoidesMadre,
             bool corticoidesBebe, bool tiroidepatias, string otras, bool repiteMuestra, bool prematuro,
             bool malaMuestra, bool resultadoAlterado, int analitico, string responsable, string rolResponsable,
-            string firmaSello, DateTime fechaEnvio, DateTime fechaLlegada, string observaciones)
+            string MyFile, DateTime fechaEnvio, DateTime fechaLlegada, string observaciones)
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
                 string sql = "InsertarMuestra"; // Nombre del procedimiento almacenado
                 var parameters = new
                 {
-                    IdResultado = idResultado,
                     InstitucionNacimiento = institucionNacimiento,
                     IdHospitalMuestra = idHospitalMuestra,
                     ApellidoBebe = apellidoBebe,
@@ -245,6 +258,7 @@ public static class BD{
                     Peso = peso,
                     CondicionRN = condicionRN,
                     PatologiaBase = patologiaBase,
+                    Patologia = patologia,
                     Parto = parto,
                     EmbarazoMultiple = embarazoMultiple,
                     EmbarazoGemelar = embarazoGemelar,
@@ -272,10 +286,10 @@ public static class BD{
                     Analitico = analitico,
                     Responsable = responsable,
                     RolResponsable = rolResponsable,
-                    FirmaSello = firmaSello,
+                    FirmaSello = MyFile,
                     FechaEnvio = fechaEnvio,
                     FechaLlegada = fechaLlegada,
-                    Observaciones = observaciones
+                    ObservacionesMuestra = observaciones
                 };
 
                 db.Execute(sql, parameters, commandType: CommandType.StoredProcedure);

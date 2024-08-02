@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<body>
+<br><br><br>
+    @foreach (Hospital hospital in ViewBag.Hospitales)
+    {
+        <p>@hospital.NombreHospital</p>
+    }
+</body>
+</html>

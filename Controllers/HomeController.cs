@@ -1,17 +1,23 @@
 using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using ProyectoFinal_MedLife.Models;
-
+using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 namespace ProyectoFinal_MedLife.Controllers;
+using Microsoft.AspNetCore.Hosting;
+
 
 public class HomeController : Controller
 {
+    private readonly IWebHostEnvironment _environment;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(IWebHostEnvironment environment, ILogger<HomeController> logger)
     {
+        _environment = environment;
         _logger = logger;
     }
+
 
     public IActionResult Index()
     {
@@ -20,23 +26,21 @@ public class HomeController : Controller
 
 //PÁGINA PRINCIPAL
 
-    [HttpPost]
-    public IActionResult Home(int idUsuario)
+    public IActionResult C_Home(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
-        string[] titulos = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
-        ViewBag.titulos = titulos;
-        
-        return View();
+        string[] titulosHome = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
+        ViewBag.titulos = titulosHome;
+        return View("Home");
     }
 
 //HOSPITALES
 
-public IActionResult Hospitales(int idUsuario)
+public IActionResult C_Hospitales(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
-        return View();
+        return View("Hospitales");
     }
 
 //CONTACTOS
@@ -45,20 +49,21 @@ public IActionResult Contactos(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         ViewBag.Contactos = BD.SeleccionarPerfiles();
-        return View();
+        return View("Home");
     }
 //SUBIR MUESTRA
 
-    public IActionResult SubirMuestra(int idUsuario)
+    public IActionResult C_SubirMuestra(int idUsuario)
     {   
-        return View();
+        ViewBag.idUsuario = idUsuario;
+        ViewBag.Hospitales = BD.SeleccionarHospitales();
+        return View("SubirMuestras");
     }
 
     public IActionResult GuardarSubirMuestra(
         int idUsuario,
-        int IdResultado,
         string InstitucionNacimiento, 
-        int IdHospitalMuestra, 
+        string HospitalMuestra, 
         string ApellidoBebe, 
         string NombreBebe, 
         DateTime FechaHoraNacimiento, 
@@ -70,6 +75,7 @@ public IActionResult Contactos(int idUsuario)
         int Peso, 
         string CondicionRN, 
         string PatologiaBase, 
+        string Patologia,
         string Parto, 
         bool EmbarazoMultiple, 
         bool EmbarazoGemelar, 
@@ -97,13 +103,20 @@ public IActionResult Contactos(int idUsuario)
         int Analitico, 
         string Responsable, 
         string RolResponsable, 
-        string FirmaSello, 
         DateTime FechaEnvio, 
         DateTime FechaLlegada, 
-        string Observaciones)
+        string observaciones,
+        IFormFile MyFile)
     {   
+        if(MyFile.Length > 0){
+            string wwwRootLocal = this._environment.ContentRootPath + @"\wwwroot\img\Firmas\" + MyFile.FileName;
+            using(var stream = System.IO.File.Create(wwwRootLocal)){
+                MyFile.CopyToAsync(stream);
+            }
+        }
+
+        int IdHospitalMuestra = BD.SeleccionarHospitalPorNombre(HospitalMuestra).IdHospital;
         BD.InsertarMuestra(
-            IdResultado,
             InstitucionNacimiento, 
             IdHospitalMuestra, 
             ApellidoBebe, 
@@ -117,6 +130,7 @@ public IActionResult Contactos(int idUsuario)
             Peso, 
             CondicionRN, 
             PatologiaBase, 
+            Patologia, 
             Parto, 
             EmbarazoMultiple, 
             EmbarazoGemelar, 
@@ -144,12 +158,93 @@ public IActionResult Contactos(int idUsuario)
             Analitico, 
             Responsable, 
             RolResponsable, 
-            FirmaSello, 
+            MyFile.FileName, 
             FechaEnvio, 
             FechaLlegada, 
-            Observaciones);
-        return View();
+            observaciones);
+        ViewBag.idUsuario = idUsuario;
+        ViewBag.Hospitales = BD.SeleccionarHospitales();
+        return View("SubirMuestras");
     }
 
 
+// LISTA SIN PROCESAR
+    public IActionResult C_ListaSinProcesarFiltrado(int idUsuario)
+        {   
+            ViewBag.idUsuario = idUsuario;
+            return View("ListaSinProcesarFiltrado");
+        }
+
+    public IActionResult C_MostrarFiltrado(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
+    {   
+        List<MuestraResultado> MuestrasResultado = BD.SeleccionarMuestrasResultadoPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
+        ViewBag.MuestrasResultado = MuestrasResultado;
+
+        List<Muestra> Muestras = new List<Muestra>(); // Lista para almacenar las muestras
+
+        foreach (MuestraResultado muestraResultado in MuestrasResultado)
+        {
+            Muestra muestra = BD.SeleccionarMuestraPorId(muestraResultado.IdMuestra); // Obtener la muestra correspondiente
+            if (muestra != null)
+            {
+                Muestras.Add(muestra); // Agregar la muestra a la lista
+            }
+        }
+        ViewBag.Muestras = Muestras;
+        ViewBag.idUsuario = idUsuario;
+        return View("ListaSinProcesar");
+    }
+
+    public IActionResult C_GuardarMuestras(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
+    {   
+       List<MuestraResultado> MuestrasResultado = BD.SeleccionarMuestrasResultadoPorFiltro(provincia, hospital, apellidoBebe, apellidoMama, fechaDesde, fechaHasta, ordenadoPor);
+        ViewBag.MuestrasResultado = MuestrasResultado;
+
+        List<Muestra> Muestras = new List<Muestra>(); // Lista para almacenar las muestras
+
+        foreach (MuestraResultado muestraResultado in MuestrasResultado)
+        {
+            Muestra muestra = BD.SeleccionarMuestraPorId(muestraResultado.IdMuestra); // Obtener la muestra correspondiente
+            if (muestra != null)
+            {
+                Muestras.Add(muestra); // Agregar la muestra a la lista
+            }
+        }
+        ViewBag.Muestras = Muestras;
+        return View("ListaSinProcesar");
+    }
+
+    //ESTO ESTA MAL PERO ESTA SERIA LA IDEA -->
+    /*public IActionResult GuardarIndividual(int muestraId, string resultado)
+    {
+        try
+        {
+            BD.ActualizarMuestra(muestraId, resultado);
+
+            return Json(new { success = true });
+        }
+        catch (Exception ex)
+        {
+            return Json(new { success = false, message = ex.Message });
+        }
+    }
+
+    // Método para guardar todos los cambios (ejemplo)
+    public IActionResult GuardarTodos(List<MuestraViewModel> muestras)
+    {
+        try
+        {
+            foreach (var muestra in muestras)
+            {
+                BD.ActualizarMuestra(muestra.Id, muestra.Resultado);
+            }
+
+            return Json(new { success = true });
+        }
+        catch (Exception ex)
+        {
+            return Json(new { success = false, message = ex.Message });
+        }
+    }
+*/
 }
