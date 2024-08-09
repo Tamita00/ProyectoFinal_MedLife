@@ -1,12 +1,13 @@
 using System.Diagnostics;
-using ProyectoFinal_MedLife.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.IO;
+using ProyectoFinal_MedLife.Models;
 using Microsoft.AspNetCore.Hosting;
-namespace ProyectoFinal_MedLife.Controllers;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
-//[Authorize]
+namespace ProyectoFinal_MedLife.Controllers;
+[Authorize]
 public class HomeController : Controller
 {
     private readonly IWebHostEnvironment _environment;
@@ -18,7 +19,12 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-
+     public async Task<IActionResult> Salir()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction("Login", "Cuenta");
+    }
+    
     public IActionResult Index()
     {
         return View();
