@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 namespace ProyectoFinal_MedLife.Controllers;
 using Microsoft.AspNetCore.Hosting;
 
-
+//[Authorize]
 public class HomeController : Controller
 {
     private readonly IWebHostEnvironment _environment;

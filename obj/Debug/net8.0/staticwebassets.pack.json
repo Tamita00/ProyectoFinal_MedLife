@@ -1,415 +1,415 @@
 {
   "Files": [
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoFinal_MedLife.bundle.scp.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\ProyectoFinal_MedLife.bundle.scp.css",
       "PackagePath": "staticwebassets\\ProyectoFinal_MedLife.bundle.scp.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\NOTICE.txt",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\NOTICE.txt",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\NOTICE.txt"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Black.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Black.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Black.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BlackItalic.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BlackItalic.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-BlackItalic.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Bold.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Bold.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Bold.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BoldCondensed.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BoldCondensed.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-BoldCondensed.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BoldCondensedItalic.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BoldCondensedItalic.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-BoldCondensedItalic.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BoldItalic.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-BoldItalic.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-BoldItalic.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Condensed.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Condensed.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Condensed.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-CondensedItalic.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-CondensedItalic.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-CondensedItalic.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Italic.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Italic.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Italic.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Light.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Light.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Light.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-LightItalic.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-LightItalic.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-LightItalic.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Medium.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Medium.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Medium.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-MediumItalic.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-MediumItalic.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-MediumItalic.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Regular.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Regular.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Regular.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Thin.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-Thin.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-Thin.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-ThinItalic.ttf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto-ThinItalic.ttf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto-ThinItalic.ttf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto_Specimen_Book.pdf",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\Fuentes\\roboto\\Roboto_Specimen_Book.pdf",
       "PackagePath": "staticwebassets\\Fuentes\\roboto\\Roboto_Specimen_Book.pdf"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\Hospitales\\SQLQuery2.sql",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\bd\\Hospitales\\SQLQuery2.sql",
       "PackagePath": "staticwebassets\\bd\\Hospitales\\SQLQuery2.sql"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\MedLife.sql",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\bd\\MedLife.sql",
       "PackagePath": "staticwebassets\\bd\\MedLife.sql"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\ActualizarResultado.sql",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\ActualizarResultado.sql",
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\ActualizarResultado.sql"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\Insertar paciente.sql",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\Insertar paciente.sql",
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\Insertar paciente.sql"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\InsertarMuestraActualizado.sql",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\InsertarMuestraActualizado.sql",
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\InsertarMuestraActualizado.sql"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\Query Guardar Muestra.sql",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\Query Guardar Muestra.sql",
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\Query Guardar Muestra.sql"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\SQLQuery1.sql",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\SQLQuery1.sql",
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\SQLQuery1.sql"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\insertarMuestra.sql",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\insertarMuestra.sql",
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\insertarMuestra.sql"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\seleccionarMuestrasPorFiltro.sql",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\seleccionarMuestrasPorFiltro.sql",
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\seleccionarMuestrasPorFiltro.sql"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\css\\site.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\favicon.ico",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\Firmas\\firma1.jfif",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\Firmas\\firma1.jfif",
       "PackagePath": "staticwebassets\\img\\Firmas\\firma1.jfif"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\Firmas\\manual-signature-for-documents-on-white-background-hand-drawn-calligraphy-lettering-vector-illustration.jpg",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\Firmas\\manual-signature-for-documents-on-white-background-hand-drawn-calligraphy-lettering-vector-illustration.jpg",
       "PackagePath": "staticwebassets\\img\\Firmas\\manual-signature-for-documents-on-white-background-hand-drawn-calligraphy-lettering-vector-illustration.jpg"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\Hosppp-Photoroom.png",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\Hosppp-Photoroom.png",
       "PackagePath": "staticwebassets\\img\\Hosppp-Photoroom.png"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\ListaNoProcesados.png",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\ListaNoProcesados.png",
       "PackagePath": "staticwebassets\\img\\ListaNoProcesados.png"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\Thumbs.db",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\Thumbs.db",
       "PackagePath": "staticwebassets\\img\\Thumbs.db"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\contacto-Photoroom.png",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\contacto-Photoroom.png",
       "PackagePath": "staticwebassets\\img\\contacto-Photoroom.png"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\crearPerfil.png",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\crearPerfil.png",
       "PackagePath": "staticwebassets\\img\\crearPerfil.png"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\estadisticas.png",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\estadisticas.png",
       "PackagePath": "staticwebassets\\img\\estadisticas.png"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\favicon.ico",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\favicon.ico",
       "PackagePath": "staticwebassets\\img\\favicon.ico"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\listasProcesadas.png",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\listasProcesadas.png",
       "PackagePath": "staticwebassets\\img\\listasProcesadas.png"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\logo2.png",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\logo2.png",
       "PackagePath": "staticwebassets\\img\\logo2.png"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\logoGarrahan.png",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\logoGarrahan.png",
       "PackagePath": "staticwebassets\\img\\logoGarrahan.png"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\muestrasEnviadas.png",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\muestrasEnviadas.png",
       "PackagePath": "staticwebassets\\img\\muestrasEnviadas.png"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\img\\subirMuestra.png",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\img\\subirMuestra.png",
       "PackagePath": "staticwebassets\\img\\subirMuestra.png"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\js\\site.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "Z:\\2024\\ProyectoFinal_MedLife\\wwwroot\\web.php",
+      "Id": "Z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\wwwroot\\web.php",
       "PackagePath": "staticwebassets\\web.php"
     },
     {
