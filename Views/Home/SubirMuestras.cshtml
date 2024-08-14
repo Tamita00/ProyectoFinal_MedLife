@@ -271,7 +271,6 @@
                         <option value="@hospital.NombreHospital"></option>
                     }
                 </datalist>
-
         <button type="button" onclick="saveParte1()">Siguiente</button>
     </form>
 </div>
@@ -296,6 +295,7 @@
         <select id="Sexo" name="Sexo">
             <option value="M">Masculino</option>
             <option value="F">Femenino</option>
+            <option value="I">Indeterminado</option>
         </select><br />
 
         <label for="Alimentacion">Alimentación:</label>
@@ -325,8 +325,8 @@
         <label for="EmbarazoGemelar">Embarazo Gemelar:</label>
         <input type="checkbox" id="EmbarazoGemelar" name="EmbarazoGemelar" /><br />
 
-        <button type="button" onclick="saveParte2()">Siguiente</button>
         <button type="button" onclick="goBack(1)">Anterior</button>
+        <button type="button" onclick="saveParte2()">Siguiente</button>
     </form>
 </div>
 
@@ -355,8 +355,8 @@
         <label for="LugarControlEmbarazo">Lugar de Control del Embarazo:</label>
         <input type="text" id="LugarControlEmbarazo" name="LugarControlEmbarazo" placeholder="Lugar de Control del Embarazo" /><br />
 
-        <button type="button" onclick="saveParte3()">Siguiente</button>
         <button type="button" onclick="goBack(2)">Anterior</button>
+        <button type="button" onclick="saveParte3()">Siguiente</button>
     </form>
 </div>
 
@@ -418,8 +418,8 @@
         <label for="FirmaSello">Firma o Sello:</label>
         <input type="text" id="FirmaSello" name="FirmaSello" placeholder="Firma o Sello" /><br />
 
-        <button type="button" onclick="saveParte4()">Siguiente</button>
         <button type="button" onclick="goBack(3)">Anterior</button>
+        <button type="button" onclick="saveParte4()">Siguiente</button>
     </form>
 </div>
 
@@ -436,7 +436,7 @@
         <label for="Observaciones">Observaciones:</label>
         <textarea id="Observaciones" name="Observaciones"></textarea><br />
 
-        <button type="button" onclick="submitForm()">Enviar</button>
         <button type="button" onclick="goBack(4)">Anterior</button>
+        <button type="button" onclick="submitForm()">Enviar</button>
     </form>
 </div>
