@@ -56,7 +56,7 @@ public IActionResult Contactos(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         ViewBag.Contactos = BD.SeleccionarPerfiles();
-        return View("Home");
+        return View("Contactos");
     }
 //SUBIR MUESTRA
 
@@ -356,4 +356,12 @@ public IActionResult Contactos(int idUsuario)
         }
     }
 */
+
+
+
+
+
+//CONTACTOS
+
+
 }

@@ -50,7 +50,6 @@ input[type="datetime-local"],
 select,
 textarea {
   width: 50%;
-  margin-left: 2em;
   padding: 1em;
   margin-bottom: 1em;
   border: 1px solid #ddd;
@@ -63,7 +62,6 @@ button {
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 2em;
 }
 button:hover {
   background-color: #0056b3;
@@ -294,4 +292,440 @@ nav {
 
 .btn-primary:hover {
   background-color: #0056b3;
+}
+
+
+/*INICIO SESION*/
+
+/* Estilos generales del formulario */
+form {
+  max-width: 500px;
+  margin: 2em auto; /* Centro horizontal y espaciado superior e inferior */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos hijos horizontalmente */
+}
+
+/* Estilo para el título del formulario */
+form h1 {
+  color: #03348a;
+  margin-bottom: 1.5em;
+  font-size: 1.8em; /* Tamaño del texto del título */
+  text-align: center;
+}
+
+/* Estilo para los contenedores de los campos de entrada */
+.form-floating {
+  width: 100%; /* Asegura que los campos ocupen el ancho completo del formulario */
+  margin-bottom: 1.5em;
+  position: relative;
+}
+
+/* Estilo para los campos de entrada */
+.form-floating .form-control {
+  width: 100%; /* Asegura que el campo ocupe todo el ancho disponible */
+  padding: 0.75em 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Estilo para las etiquetas de los campos de entrada */
+.form-floating label {
+  position: absolute;
+  top: 0.75em;
+  left: 1em;
+  padding: 0 0.25em;
+  background-color: #fff; /* Fondo blanco para la etiqueta */
+  color: #333;
+  transition: 0.2s ease;
+  pointer-events: none; /* Hace que la etiqueta no interfiera con el clic */
+}
+
+.form-floating .form-control:focus + label,
+.form-floating .form-control:not(:placeholder-shown) + label {
+  top: -0.5em;
+  left: 1em;
+  font-size: 0.75em;
+  color: #03348a; /* Color de la etiqueta cuando el campo está en foco */
+}
+
+/* Estilo para el checkbox */
+.checkbox {
+  width: 100%;
+  margin-bottom: 1.5em;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox label {
+  font-size: 0.9em;
+}
+
+/* Estilo para el botón de envío */
+button.btn-primary {
+  background-color: #03348a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+  width: 100%;
+  text-align: center;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para las alertas de error */
+.alert-danger {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 1em;
+  font-size: 0.9em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*HOSPITALES*/
+
+.infoHospi
+{
+    background-color: #cadbff;
+    border-radius: 0.9em;
+    width: 82em; 
+    height:11em;
+    border: none;
+    border-radius: 0.6em;
+    box-shadow: 2px 2px 8px rgba(97, 93, 93, 0.5);
+}
+
+.cont
+{
+    margin-top: 5em;
+    padding: 0em;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:left;
+}
+
+
+
+/*MODAL*/
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 2em;
+  
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 3em;
+    border: 1px solid #888;
+    width: 60em;
+    border-radius: 2.5em;
+}
+.stroke
+{
+    border-bottom: 0.1em solid #003A9F;
+    width: 60em;
+    margin-bottom:1.5em;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 2em;
+    font-weight: bold;
+    margin-right: 0.7em;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*BOTON AGREGAR*/
+
+.button  {
+    width: 17em;
+    height: 3em;
+    background-color: #ffffff;
+    margin-right: 3em;
+    border: none;
+    border-radius: 0.6em;
+    box-shadow: 2px 2px 8px rgba(97, 93, 93, 0.5);
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+/*EMAILS*/
+
+.email-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1em;
+    gap: 0.3em; 
+}
+
+.email-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+    padding: 0.2em;
+}
+
+.email-item span {
+    margin-right: 0.3em;
+}
+
+.email-item button {
+    margin-left: 1em;
+    background-color:#00276A;
+    color: rgb(255, 255, 255);
+    border: none;
+    height: 1.5em;
+    width: 5em;
+    border-radius: 0.7em;
+    cursor: pointer;
+    padding: 0.2em 0.5em;
+    box-shadow: none; /* Elimina cualquier sombra que pueda estar aplicada */
+}
+
+
+.email {
+    width: 12em;
+    height: 1.41em;
+    margin-right: 3em;
+    bottom: 3em;
+    color: #00276A;
+    background-color: #e5ebf1;
+    border-radius: 1em;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+
+.infoHospi {
+    position: relative;
+    background-color: #e4f3ff;
+    border-radius: 0.9em;
+    width: 72em; 
+    height:10em;
+    border: none;
+    border-radius: 0.6em;
+    padding: 1em;
+    text-align: left; 
+    font-size: 1em;
+    margin-top: 1em; 
+}
+
+.mas-info-btn {
+    background-color: #022f7c; 
+    color: #fff;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    width: 10em;
+    height:2.5em;
+    position: absolute;
+    bottom: 4em; 
+    right: 1em; 
+    padding: 0.5em 1em; 
+
+}
+
+.mas-info-boton {
+    position: left; 
+    margin-left: 67em;
+    background-color: #022f7c;
+    color: #fff;
+    margin-top:3em;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    width:11em;
+    font-size: 1.2em;
+}
+/*BUSCADOR DE HOSPITAL*/
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 0.063em solid #ccc; 
+    border-radius: 0.25em; 
+    padding: 0.313em; 
+    width: 15.625em; 
+}
+
+.search-container input[type="text"] {
+    border-color: #00276A;
+    outline: none;
+    flex-grow: 1;
+    padding: 0.313em; /* 5px convertido a em */
+}
+
+
+.icono-buscar {
+    font-size: 1em;
+    color: #888;
+    padding: 1em;
+    width: 1em;
+    height:1em;
+}
+
+/*INPUT DE NOMBRES , EMAILS Y REFERENTES*/
+
+.nombre-ingresado {
+    width: 12em;
+    height: 1.41em;
+    margin-right: 3em;
+    bottom: 3em;
+    color: #00276A;
+    background-color: #e5ebf1;
+    border-radius: 1em;
+    font-size: 1.2em;
+    text-align: center;
+    transition: background-color 0.3s;
+    display: inline-block;
+    vertical-align: middle;
+}
+/* CREAR PERFIL */
+
+.infoPerfil {
+    position: relative;
+    background-color: #e4f3ff;
+    border-radius: 0.9em;
+    width: 72em; 
+    height:25em;
+    border: none;
+    border-radius: 0.6em;
+    padding: 1em;
+    text-align: left; 
+    font-size: 1em;
+    margin-top: 1em; 
+}
+
+.cuadrado
+{
+    margin-top: 1em;
+    padding: 2em;
+}
+
+.fila{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:left;
+}
+.botonPerfil{
+    display: block;
+    margin: 2em auto;
+    background-color: #ffffff; 
+    color: #fff;
+    border-radius: 1em;
+    width: 10em;
+    padding: 0.5em;
+    text-align: center;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+
+select {
+    padding: 0.5em;
+    font-size: 1em;
+    background-color: #e4f3ff;
+    border-radius: 0.5em;
+    border: 1px solid #000000;
+    margin-left: 1em;
+}
+p {
+    margin-bottom: 1em;
+}
+
+/* ON-OFF */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 3.125em; 
+    height: 1.5em;  
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 1.5em; 
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.25em; 
+    width: 1.25em;  
+    left: 0.125em;  
+    bottom: 0.125em; 
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #022f7c;
+}
+
+input:checked + .slider:before {
+    transform: translateX(1.625em); 
 }

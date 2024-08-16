@@ -1,0 +1,21 @@
+<body>
+    @foreach (Perfil contacto in ViewBag.Cotactos)
+    {
+
+        <div class="cont">
+        <div class="row">
+        <div class="infoHospi">
+        <h3><b>Nombre: @contacto.Nombre</b></h3>
+        <p>Hospital: @contacto.IdHospital</p>
+        <p>@contacto.Email</p>
+        <p>Tel: @contacto.Telefono</p>
+        </div>
+    </div>
+    </div>
+
+    }
+
+    
+
+</body>
+

@@ -19349,6 +19349,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\Views\\Home\\Contactos.cshtml",
+      "TargetPath": "Views\\Home\\Contactos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -19371,6 +19376,11 @@
     {
       "FilePath": "z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\Views\\Cuenta\\Login.cshtml",
       "TargetPath": "Views\\Cuenta\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "z:\\PROG\\2024\\OK\\ProyectoFinal_MedLife\\Views\\Home\\CrearPerfil.cshtml",
+      "TargetPath": "Views\\Home\\CrearPerfil.cshtml",
       "FileKind": "mvc"
     },
     {

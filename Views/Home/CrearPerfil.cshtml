@@ -1,0 +1,56 @@
+<body>
+    <br><br>
+    <h2>Crear Perfil</h2>
+//HACER FORMULARIO
+    <div class="cuadrado">
+        <div class="fila">
+        <div class="infoPerfil">
+        <label for="Nombre">Nombre</label>
+        <input type="text" id="Nombre" name="Nombre" autocomplete="off" required><br>
+
+        <label for="Apellido">Apellido</label>
+        <input type="text" id="Apellido" name="Apellido" autocomplete="off" required><br>
+
+        <label for="Telefono">Teléfono</label>
+        <input type="text" id="Telefono" name="Telefono" autocomplete="off" required><br>
+
+        <label for="Hospital">Hospital Muestra:</label>
+            <input type="text" id="Hospital" list="Hospital" name="HospitalMuestra" autocomplete="off" placeholder="Hospital de la Muestra" required><br>
+            <datalist id="Hospital">
+                @foreach (Hospital hospital in ViewBag.Hospitales)
+                {
+                    <option value="@hospital.NombreHospital"></option>
+                }
+            </datalist>
+
+
+        <h3>Permisos:</h3>
+        <p>Lectura: 
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </p>
+        <p>Edición: 
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </p>
+        <p>Impresión: 
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </p>
+    </div>
+
+        
+    </div>
+
+    <button class="botonPerfil"><a href =index.html>Crear</a></button>
+
+
+</body>
+
+
