@@ -1,0 +1,434 @@
+HTML
+
+<h2>Formulario de Muestra</h2>
+
+<!-- Parte 1: Datos de la Muestra -->
+<div id="parte1">
+    <h3>Datos de la Muestra</h3>
+    <form id="formParte1">
+        <label for="InstitucionNacimiento">Institución de Nacimiento:</label>
+        <input type="text" id="InstitucionNacimiento" name="InstitucionNacimiento" placeholder="Institución de Nacimiento" /><br />
+
+        <label for="IdHospitalMuestra">ID del Hospital:</label>
+        <input type="number" id="IdHospitalMuestra" name="IdHospitalMuestra" placeholder="ID del Hospital" /><br />
+
+        <button type="button" onclick="saveParte1()">Siguiente</button>
+    </form>
+</div>
+
+<!-- Parte 2: Datos del Bebé -->
+<div id="parte2" style="display: none;">
+    <h3>Datos del Bebé</h3>
+    <form id="formParte2">
+        <label for="ApellidoBebe">Apellido del Bebé:</label>
+        <input type="text" id="ApellidoBebe" name="ApellidoBebe" placeholder="Apellido del Bebé" /><br />
+
+        <label for="NombreBebe">Nombre del Bebé:</label>
+        <input type="text" id="NombreBebe" name="NombreBebe" placeholder="Nombre del Bebé" /><br />
+
+        <label for="FechaHoraNacimiento">Fecha y Hora de Nacimiento:</label>
+        <input type="datetime-local" id="FechaHoraNacimiento" name="FechaHoraNacimiento" /><br />
+
+        <label for="FechaHoraExtraccion">Fecha y Hora de Extracción:</label>
+        <input type="datetime-local" id="FechaHoraExtraccion" name="FechaHoraExtraccion" /><br />
+
+        <label for="Sexo">Sexo:</label>
+        <select id="Sexo" name="Sexo">
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+        </select><br />
+
+        <label for="Alimentacion">Alimentación:</label>
+        <input type="text" id="Alimentacion" name="Alimentacion" placeholder="Alimentación" /><br />
+
+        <label for="FechaIngestaLeche">Fecha de Ingesta de Leche:</label>
+        <input type="datetime-local" id="FechaIngestaLeche" name="FechaIngestaLeche" /><br />
+
+        <label for="SemanasGestacion">Semanas de Gestación:</label>
+        <input type="number" id="SemanasGestacion" name="SemanasGestacion" placeholder="Semanas de Gestación" /><br />
+
+        <label for="Peso">Peso:</label>
+        <input type="number" id="Peso" name="Peso" placeholder="Peso en gramos" /><br />
+
+        <label for="CondicionRN">Condición al Nacer:</label>
+        <input type="text" id="CondicionRN" name="CondicionRN" placeholder="Condición al Nacer" /><br />
+
+        <label for="PatologiaBase">Patología Base:</label>
+        <input type="text" id="PatologiaBase" name="PatologiaBase" placeholder="Patología Base" /><br />
+
+        <label for="Parto">Parto:</label>
+        <input type="text" id="Parto" name="Parto" placeholder="Parto" /><br />
+
+        <label for="EmbarazoMultiple">Embarazo Múltiple:</label>
+        <input type="checkbox" id="EmbarazoMultiple" name="EmbarazoMultiple" /><br />
+
+        <label for="EmbarazoGemelar">Embarazo Gemelar:</label>
+        <input type="checkbox" id="EmbarazoGemelar" name="EmbarazoGemelar" /><br />
+
+        <button type="button" onclick="saveParte2()">Siguiente</button>
+        <button type="button" onclick="goBack(1)">Anterior</button>
+    </form>
+</div>
+
+<!-- Parte 3: Datos de la Madre -->
+<div id="parte3" style="display: none;">
+    <h3>Datos de la Madre</h3>
+    <form id="formParte3">
+        <label for="ApellidoMama">Apellido de la Madre:</label>
+        <input type="text" id="ApellidoMama" name="ApellidoMama" placeholder="Apellido de la Madre" /><br />
+
+        <label for="NombreMama">Nombre de la Madre:</label>
+        <input type="text" id="NombreMama" name="NombreMama" placeholder="Nombre de la Madre" /><br />
+
+        <label for="Documento">Documento:</label>
+        <input type="number" id="Documento" name="Documento" placeholder="Documento" /><br />
+
+        <label for="Domicilio">Domicilio:</label>
+        <input type="text" id="Domicilio" name="Domicilio" placeholder="Domicilio" /><br />
+
+        <label for="Localidad">Localidad:</label>
+        <input type="text" id="Localidad" name="Localidad" placeholder="Localidad" /><br />
+
+        <label for="Telefono">Teléfono:</label>
+        <input type="number" id="Telefono" name="Telefono" placeholder="Teléfono" /><br />
+
+        <label for="LugarControlEmbarazo">Lugar de Control del Embarazo:</label>
+        <input type="text" id="LugarControlEmbarazo" name="LugarControlEmbarazo" placeholder="Lugar de Control del Embarazo" /><br />
+
+        <button type="button" onclick="saveParte3()">Siguiente</button>
+        <button type="button" onclick="goBack(2)">Anterior</button>
+    </form>
+</div>
+
+<!-- Parte 4: Datos Clínicos -->
+<div id="parte4" style="display: none;">
+    <h3>Datos Clínicos</h3>
+    <form id="formParte4">
+        <label for="Antibioticos">Antibióticos:</label>
+        <input type="checkbox" id="Antibioticos" name="Antibioticos" /><br />
+
+        <label for="DesinfectantesYodados">Desinfectantes Yodados:</label>
+        <input type="checkbox" id="DesinfectantesYodados" name="DesinfectantesYodados" /><br />
+
+        <label for="Transfusion">Transfusión:</label>
+        <input type="checkbox" id="Transfusion" name="Transfusion" /><br />
+
+        <label for="FechaTransfusion">Fecha de Transfusión:</label>
+        <input type="datetime-local" id="FechaTransfusion" name="FechaTransfusion" /><br />
+
+        <label for="Dopamina">Dopamina:</label>
+        <input type="checkbox" id="Dopamina" name="Dopamina" /><br />
+
+        <label for="Dobutamina">Dobutamina:</label>
+        <input type="checkbox" id="Dobutamina" name="Dobutamina" /><br />
+
+        <label for="CorticoidesMadre">Corticoides Madre:</label>
+        <input type="checkbox" id="CorticoidesMadre" name="CorticoidesMadre" /><br />
+
+        <label for="CorticoidesBebe">Corticoides Bebé:</label>
+        <input type="checkbox" id="CorticoidesBebe" name="CorticoidesBebe" /><br />
+
+        <label for="Tiroidepatias">Tiroidepatías:</label>
+        <input type="checkbox" id="Tiroidepatias" name="Tiroidepatias" /><br />
+
+        <label for="Otras">Otras:</label>
+        <input type="text" id="Otras" name="Otras" placeholder="Otras" /><br />
+
+        <label for="RepiteMuestra">Repite Muestra:</label>
+        <input type="checkbox" id="RepiteMuestra" name="RepiteMuestra" /><br />
+
+        <label for="Prematuro">Prematuro:</label>
+        <input type="checkbox" id="Prematuro" name="Prematuro" /><br />
+
+        <label for="MalaMuestra">Mala Muestra:</label>
+        <input type="checkbox" id="MalaMuestra" name="MalaMuestra" /><br />
+
+        <label for="ResultadoAlterado">Resultado Alterado:</label>
+        <input type="checkbox" id="ResultadoAlterado" name="ResultadoAlterado" /><br />
+
+        <label for="Analitico">Analítico:</label>
+        <input type="number" id="Analitico" name="Analitico" placeholder="Número Analítico" /><br />
+
+        <label for="Responsable">Responsable:</label>
+        <input type="text" id="Responsable" name="Responsable" placeholder="Responsable" /><br />
+
+        <label for="RolResponsable">Rol del Responsable:</label>
+        <input type="text" id="RolResponsable" name="RolResponsable" placeholder="Rol del Responsable" /><br />
+
+        <label for="FirmaSello">Firma o Sello:</label>
+        <input type="text" id="FirmaSello" name="FirmaSello" placeholder="Firma o Sello" /><br />
+
+        <button type="button" onclick="saveParte4()">Siguiente</button>
+        <button type="button" onclick="goBack(3)">Anterior</button>
+    </form>
+</div>
+
+<!-- Parte 5: Datos de Envío -->
+<div id="parte5" style="display: none;">
+    <h3>Datos de Envío</h3>
+    <form id="formParte5">
+        <label for="FechaEnvio">Fecha de Envío:</label>
+        <input type="datetime-local" id="FechaEnvio" name="FechaEnvio" /><br />
+
+        <label for="FechaLlegada">Fecha de Llegada:</label>
+        <input type="datetime-local" id="FechaLlegada" name="FechaLlegada" /><br />
+
+        <label for="Observaciones">Observaciones:</label>
+        <textarea id="Observaciones" name="Observaciones"></textarea><br />
+
+        <button type="button" onclick="submitForm()">Enviar</button>
+        <button type="button" onclick="goBack(4)">Anterior</button>
+    </form>
+</div>
+
+
+JAVASCRIPT 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function saveParte1() {
+        var data = $("#formParte1").serialize();
+        localStorage.setItem('formParte1', data);
+        $("#parte1").hide();
+        $("#parte2").show();
+        populateFormPart2();
+    }
+
+    function saveParte2() {
+        var data = $("#formParte2").serialize();
+        localStorage.setItem('formParte2', data);
+        $("#parte2").hide();
+        $("#parte3").show();
+        populateFormPart3();
+    }
+
+    function saveParte3() {
+        var data = $("#formParte3").serialize();
+        localStorage.setItem('formParte3', data);
+        $("#parte3").hide();
+        $("#parte4").show();
+        populateFormPart4();
+    }
+
+    function saveParte4() {
+        var data = $("#formParte4").serialize();
+        localStorage.setItem('formParte4', data);
+        $("#parte4").hide();
+        $("#parte5").show();
+        populateFormPart5();
+    }
+
+    function goBack(part) {
+        if (part === 1) {
+            $("#parte1").show();
+            $("#parte2").hide();
+        } else if (part === 2) {
+            $("#parte2").show();
+            $("#parte3").hide();
+            populateFormPart2();
+        } else if (part === 3) {
+            $("#parte3").show();
+            $("#parte4").hide();
+            populateFormPart3();
+        } else if (part === 4) {
+            $("#parte4").show();
+            $("#parte5").hide();
+            populateFormPart4();
+        }
+    }
+
+    function populateFormPart2() {
+        var data = localStorage.getItem('formParte2');
+        if (data) {
+            var formData = $.deparam(data);
+            $.each(formData, function(key, value) {
+                $("#formParte2 [name='" + key + "']").val(value);
+            });
+        }
+    }
+
+    function populateFormPart3() {
+        var data = localStorage.getItem('formParte3');
+        if (data) {
+            var formData = $.deparam(data);
+            $.each(formData, function(key, value) {
+                $("#formParte3 [name='" + key + "']").val(value);
+            });
+        }
+    }
+
+    function populateFormPart4() {
+        var data = localStorage.getItem('formParte4');
+        if (data) {
+            var formData = $.deparam(data);
+            $.each(formData, function(key, value) {
+                $("#formParte4 [name='" + key + "']").val(value);
+            });
+        }
+    }
+
+    function populateFormPart5() {
+        var data = localStorage.getItem('formParte5');
+        if (data) {
+            var formData = $.deparam(data);
+            $.each(formData, function(key, value) {
+                $("#formParte5 [name='" + key + "']").val(value);
+            });
+        }
+    }
+
+    function submitForm() {
+        var parte1Data = localStorage.getItem('formParte1');
+        var parte2Data = localStorage.getItem('formParte2');
+        var parte3Data = localStorage.getItem('formParte3');
+        var parte4Data = localStorage.getItem('formParte4');
+        var parte5Data = $("#formParte5").serialize();
+
+        var finalData = [parte1Data, parte2Data, parte3Data, parte4Data, parte5Data].join('&');
+
+        $.post('@Url.Action("SaveMuestra", "Form")', finalData, function(response) {
+            if (response.success) {
+                alert('Formulario guardado exitosamente');
+                localStorage.removeItem('formParte1');
+                localStorage.removeItem('formParte2');
+                localStorage.removeItem('formParte3');
+                localStorage.removeItem('formParte4');
+                localStorage.removeItem('formParte5');
+            } else {
+                alert('Error al guardar el formulario');
+            }
+        });
+    }
+
+    // Inicializar la página con los datos guardados
+    $(document).ready(function() {
+        if (localStorage.getItem('formParte5')) {
+            $("#parte5").show();
+            $("#parte4").hide();
+            populateFormPart5();
+        } else if (localStorage.getItem('formParte4')) {
+            $("#parte4").show();
+            $("#parte3").hide();
+            populateFormPart4();
+        } else if (localStorage.getItem('formParte3')) {
+            $("#parte3").show();
+            $("#parte2").hide();
+            populateFormPart3();
+        } else if (localStorage.getItem('formParte2')) {
+            $("#parte2").show();
+            $("#parte1").hide();
+            populateFormPart2();
+        }
+    });
+</script>
+
+CONTROLLERS
+
+[HttpPost]
+        public ActionResult SaveParte1(FormCollection form)
+        {
+            TempData["Parte1"] = form;
+            return Json(new { success = true });
+        }
+
+        // Guardar datos de la Parte 2
+        [HttpPost]
+        public ActionResult SaveParte2(FormCollection form)
+        {
+            TempData["Parte2"] = form;
+            return Json(new { success = true });
+        }
+
+        // Guardar datos de la Parte 3
+        [HttpPost]
+        public ActionResult SaveParte3(FormCollection form)
+        {
+            TempData["Parte3"] = form;
+            return Json(new { success = true });
+        }
+
+        // Guardar datos de la Parte 4
+        [HttpPost]
+        public ActionResult SaveParte4(FormCollection form)
+        {
+            TempData["Parte4"] = form;
+            return Json(new { success = true });
+        }
+
+        // Guardar todos los datos y finalizar
+        [HttpPost]
+        public ActionResult SaveMuestra(FormCollection form)
+        {
+            var parte1 = TempData["Parte1"] as FormCollection;
+            var parte2 = TempData["Parte2"] as FormCollection;
+            var parte3 = TempData["Parte3"] as FormCollection;
+            var parte4 = TempData["Parte4"] as FormCollection;
+
+            var finalData = new Muestra
+            {
+                // Datos de la Parte 1
+                InstitucionNacimiento = parte1["InstitucionNacimiento"],
+                IdHospitalMuestra = int.Parse(parte1["IdHospitalMuestra"]),
+
+                // Datos de la Parte 2
+                ApellidoBebe = parte2["ApellidoBebe"],
+                NombreBebe = parte2["NombreBebe"],
+                FechaHoraNacimiento = DateTime.Parse(parte2["FechaHoraNacimiento"]),
+                FechaHoraExtraccion = DateTime.Parse(parte2["FechaHoraExtraccion"]),
+                Sexo = parte2["Sexo"],
+                Alimentacion = parte2["Alimentacion"],
+                FechaIngestaLeche = DateTime.Parse(parte2["FechaIngestaLeche"]),
+                SemanasGestacion = int.Parse(parte2["SemanasGestacion"]),
+                Peso = int.Parse(parte2["Peso"]),
+                CondicionRN = parte2["CondicionRN"],
+                PatologiaBase = parte2["PatologiaBase"],
+                Parto = parte2["Parto"],
+                EmbarazoMultiple = bool.Parse(parte2["EmbarazoMultiple"]),
+                EmbarazoGemelar = bool.Parse(parte2["EmbarazoGemelar"]),
+
+                // Datos de la Parte 3
+                ApellidoMama = parte3["ApellidoMama"],
+                NombreMama = parte3["NombreMama"],
+                Documento = int.Parse(parte3["Documento"]),
+                Domicilio = parte3["Domicilio"],
+                Localidad = parte3["Localidad"],
+                Telefono = int.Parse(parte3["Telefono"]),
+                LugarControlEmbarazo = parte3["LugarControlEmbarazo"],
+
+                // Datos de la Parte 4
+                Antibioticos = bool.Parse(parte4["Antibioticos"]),
+                DesinfectantesYodados = bool.Parse(parte4["DesinfectantesYodados"]),
+                Transfusion = bool.Parse(parte4["Transfusion"]),
+                FechaTransfusion = DateTime.Parse(parte4["FechaTransfusion"]),
+                Dopamina = bool.Parse(parte4["Dopamina"]),
+                Dobutamina = bool.Parse(parte4["Dobutamina"]),
+                CorticoidesMadre = bool.Parse(parte4["CorticoidesMadre"]),
+                CorticoidesBebe = bool.Parse(parte4["CorticoidesBebe"]),
+                Tiroidepatias = bool.Parse(parte4["Tiroidepatias"]),
+                Otras = parte4["Otras"],
+                RepiteMuestra = bool.Parse(parte4["RepiteMuestra"]),
+                Prematuro = bool.Parse(parte4["Prematuro"]),
+                MalaMuestra = bool.Parse(parte4["MalaMuestra"]),
+                ResultadoAlterado = bool.Parse(parte4["ResultadoAlterado"]),
+                Analitico = int.Parse(parte4["Analitico"]),
+                Responsable = parte4["Responsable"],
+                RolResponsable = parte4["RolResponsable"],
+                FirmaSello = parte4["FirmaSello"],
+
+                // Datos de la Parte 5
+                FechaEnvio = DateTime.Parse(form["FechaEnvio"]),
+                FechaLlegada = DateTime.Parse(form["FechaLlegada"]),
+                Observaciones = form["Observaciones"]
+            };
+
+            // Aquí guardamos la muestra en la base de datos o hacemos el procesamiento necesario
+
+            // Limpiar los datos temporales
+            TempData.Remove("Parte1");
+            TempData.Remove("Parte2");
+            TempData.Remove("Parte3");
+            TempData.Remove("Parte4");
+
+            return Json(new { success = true });
+        }
+

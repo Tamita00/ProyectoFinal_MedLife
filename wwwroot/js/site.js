@@ -59,12 +59,147 @@ function validarSemanasGestacion() {
     }
 }
 
+//subir muestra por partes
+function saveParte1() {
+    var data = $("#formParte1").serialize();
+    localStorage.setItem('formParte1', data);
+    $("#parte1").hide();
+    $("#parte2").show();
+    populateFormPart2();
+}
+
+function saveParte2() {
+    var data = $("#formParte2").serialize();
+    localStorage.setItem('formParte2', data);
+    $("#parte2").hide();
+    $("#parte3").show();
+    populateFormPart3();
+}
+
+function saveParte3() {
+    var data = $("#formParte3").serialize();
+    localStorage.setItem('formParte3', data);
+    $("#parte3").hide();
+    $("#parte4").show();
+    populateFormPart4();
+}
+
+function saveParte4() {
+    var data = $("#formParte4").serialize();
+    localStorage.setItem('formParte4', data);
+    $("#parte4").hide();
+    $("#parte5").show();
+    populateFormPart5();
+}
+
+function goBack(part) {
+    if (part === 1) {
+        $("#parte1").show();
+        $("#parte2").hide();
+    } else if (part === 2) {
+        $("#parte2").show();
+        $("#parte3").hide();
+        populateFormPart2();
+    } else if (part === 3) {
+        $("#parte3").show();
+        $("#parte4").hide();
+        populateFormPart3();
+    } else if (part === 4) {
+        $("#parte4").show();
+        $("#parte5").hide();
+        populateFormPart4();
+    }
+}
+
+function populateFormPart2() {
+    var data = localStorage.getItem('formParte2');
+    if (data) {
+        var formData = $.deparam(data);
+        $.each(formData, function(key, value) {
+            $("#formParte2 [name='" + key + "']").val(value);
+        });
+    }
+}
+
+function populateFormPart3() {
+    var data = localStorage.getItem('formParte3');
+    if (data) {
+        var formData = $.deparam(data);
+        $.each(formData, function(key, value) {
+            $("#formParte3 [name='" + key + "']").val(value);
+        });
+    }
+}
+
+function populateFormPart4() {
+    var data = localStorage.getItem('formParte4');
+    if (data) {
+        var formData = $.deparam(data);
+        $.each(formData, function(key, value) {
+            $("#formParte4 [name='" + key + "']").val(value);
+        });
+    }
+}
+
+function populateFormPart5() {
+    var data = localStorage.getItem('formParte5');
+    if (data) {
+        var formData = $.deparam(data);
+        $.each(formData, function(key, value) {
+            $("#formParte5 [name='" + key + "']").val(value);
+        });
+    }
+}
+
+function submitForm() {
+    var parte1Data = localStorage.getItem('formParte1');
+    var parte2Data = localStorage.getItem('formParte2');
+    var parte3Data = localStorage.getItem('formParte3');
+    var parte4Data = localStorage.getItem('formParte4');
+    var parte5Data = $("#formParte5").serialize();
+
+    var finalData = [parte1Data, parte2Data, parte3Data, parte4Data, parte5Data].join('&');
+
+    $.post('@Url.Action("SaveMuestra", "Form")', finalData, function(response) {
+        if (response.success) {
+            alert('Formulario guardado exitosamente');
+            localStorage.removeItem('formParte1');
+            localStorage.removeItem('formParte2');
+            localStorage.removeItem('formParte3');
+            localStorage.removeItem('formParte4');
+            localStorage.removeItem('formParte5');
+        } else {
+            alert('Error al guardar el formulario');
+        }
+    });
+}
+
+// Inicializar la página con los datos guardados
+$(document).ready(function() {
+    if (localStorage.getItem('formParte5')) {
+        $("#parte5").show();
+        $("#parte4").hide();
+        populateFormPart5();
+    } else if (localStorage.getItem('formParte4')) {
+        $("#parte4").show();
+        $("#parte3").hide();
+        populateFormPart4();
+    } else if (localStorage.getItem('formParte3')) {
+        $("#parte3").show();
+        $("#parte2").hide();
+        populateFormPart3();
+    } else if (localStorage.getItem('formParte2')) {
+        $("#parte2").show();
+        $("#parte1").hide();
+        populateFormPart2();
+    }
+});
 
 //-----------Lista sin procesar Guardados
 
 //ESTO ESTA MAL PERO ESTA ES LA IDEA -->
 
-function guardarIndividualmente(muestraId) {
+/* function guardarIndividualmente(muestraId) {
     var criterio = $('#criterio-' + muestraId).val();
     var metodologias = [
         $('#metodologia-' + muestraId + '-1').val(),
@@ -122,3 +257,4 @@ function guardarTodos() {
     });
 }
 
+*/

@@ -7,29 +7,30 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 
 namespace ProyectoFinal_MedLife.Controllers;
+
 [Authorize]
 public class HomeController : Controller
 {
-    private readonly IWebHostEnvironment _environment;
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(IWebHostEnvironment environment, ILogger<HomeController> logger)
-    {
-        _environment = environment;
-        _logger = logger;
-    }
-
-     public async Task<IActionResult> Salir()
-    {
-        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        return RedirectToAction("Login", "Cuenta");
-    }
-    
     public IActionResult Index()
     {
         return View();
     }
 
+    public async Task<IActionResult> Salir()
+    {
+        await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        return RedirectToAction("Login", "Cuenta");
+    }
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+    
+
+
+    
 //PÁGINA PRINCIPAL
 
     public IActionResult C_Home(int idUsuario)
@@ -59,6 +60,7 @@ public IActionResult Contactos(int idUsuario)
     }
 //SUBIR MUESTRA
 
+
     public IActionResult C_SubirMuestra(int idUsuario)
     {   
         ViewBag.idUsuario = idUsuario;
@@ -66,7 +68,7 @@ public IActionResult Contactos(int idUsuario)
         return View("SubirMuestras");
     }
 
-    public IActionResult GuardarSubirMuestra(
+    /*public IActionResult GuardarSubirMuestra(
         int idUsuario,
         string InstitucionNacimiento, 
         string HospitalMuestra, 
@@ -171,7 +173,108 @@ public IActionResult Contactos(int idUsuario)
         ViewBag.idUsuario = idUsuario;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
         return View("SubirMuestras");
-    }
+    }*/
+
+        [HttpPost]
+        public ActionResult SaveParte1(FormCollection form)
+        {
+            TempData["Parte1"] = form;
+            return Json(new { success = true });
+        }
+
+        [HttpPost]
+        public ActionResult SaveParte2(FormCollection form)
+        {
+            TempData["Parte2"] = form;
+            return Json(new { success = true });
+        }
+
+        [HttpPost]
+        public ActionResult SaveParte3(FormCollection form)
+        {
+            TempData["Parte3"] = form;
+            return Json(new { success = true });
+        }
+
+        [HttpPost]
+        public ActionResult SaveParte4(FormCollection form)
+        {
+            TempData["Parte4"] = form;
+            return Json(new { success = true });
+        }
+
+        [HttpPost]
+        public ActionResult SaveMuestra(FormCollection form)
+        {
+            var parte1 = TempData["Parte1"] as FormCollection;
+            var parte2 = TempData["Parte2"] as FormCollection;
+            var parte3 = TempData["Parte3"] as FormCollection;
+            var parte4 = TempData["Parte4"] as FormCollection;
+
+            var finalData = new Muestra
+            {
+                // Datos de la Parte 1
+                InstitucionNacimiento = parte1["InstitucionNacimiento"],
+                IdHospitalMuestra = int.Parse(parte1["IdHospitalMuestra"]),
+
+                // Datos de la Parte 2
+                ApellidoBebe = parte2["ApellidoBebe"],
+                NombreBebe = parte2["NombreBebe"],
+                FechaHoraNacimiento = DateTime.Parse(parte2["FechaHoraNacimiento"]),
+                FechaHoraExtraccion = DateTime.Parse(parte2["FechaHoraExtraccion"]),
+                Sexo = parte2["Sexo"],
+                Alimentacion = parte2["Alimentacion"],
+                FechaIngestaLeche = DateTime.Parse(parte2["FechaIngestaLeche"]),
+                SemanasGestacion = int.Parse(parte2["SemanasGestacion"]),
+                Peso = int.Parse(parte2["Peso"]),
+                CondicionRN = parte2["CondicionRN"],
+                PatologiaBase = parte2["PatologiaBase"],
+                Parto = parte2["Parto"],
+                EmbarazoMultiple = bool.Parse(parte2["EmbarazoMultiple"]),
+                EmbarazoGemelar = bool.Parse(parte2["EmbarazoGemelar"]),
+
+                // Datos de la Parte 3
+                ApellidoMama = parte3["ApellidoMama"],
+                NombreMama = parte3["NombreMama"],
+                Documento = int.Parse(parte3["Documento"]),
+                Domicilio = parte3["Domicilio"],
+                Localidad = parte3["Localidad"],
+                Telefono = int.Parse(parte3["Telefono"]),
+                LugarControlEmbarazo = parte3["LugarControlEmbarazo"],
+
+                // Datos de la Parte 4
+                Antibioticos = bool.Parse(parte4["Antibioticos"]),
+                DesinfectantesYodados = bool.Parse(parte4["DesinfectantesYodados"]),
+                Transfusion = bool.Parse(parte4["Transfusion"]),
+                FechaTransfusion = DateTime.Parse(parte4["FechaTransfusion"]),
+                Dopamina = bool.Parse(parte4["Dopamina"]),
+                Dobutamina = bool.Parse(parte4["Dobutamina"]),
+                CorticoidesMadre = bool.Parse(parte4["CorticoidesMadre"]),
+                CorticoidesBebe = bool.Parse(parte4["CorticoidesBebe"]),
+                Tiroidepatias = bool.Parse(parte4["Tiroidepatias"]),
+                Otras = parte4["Otras"],
+                RepiteMuestra = bool.Parse(parte4["RepiteMuestra"]),
+                Prematuro = bool.Parse(parte4["Prematuro"]),
+                MalaMuestra = bool.Parse(parte4["MalaMuestra"]),
+                ResultadoAlterado = bool.Parse(parte4["ResultadoAlterado"]),
+                Analitico = int.Parse(parte4["Analitico"]),
+                Responsable = parte4["Responsable"],
+                RolResponsable = parte4["RolResponsable"],
+                FirmaSello = parte4["FirmaSello"],
+
+                // Datos de la Parte 5
+                FechaEnvio = DateTime.Parse(form["FechaEnvio"]),
+                FechaLlegada = DateTime.Parse(form["FechaLlegada"]),
+                Observaciones = form["Observaciones"]
+            };
+            
+            TempData.Remove("Parte1");
+            TempData.Remove("Parte2");
+            TempData.Remove("Parte3");
+            TempData.Remove("Parte4");
+
+            return Json(new { success = true });
+        }
 
 
 // LISTA SIN PROCESAR

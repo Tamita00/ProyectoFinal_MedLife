@@ -1,6 +1,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using Dapper;
+using ProyectoFinal_MedLife.Models;
 namespace ProyectoFinal_MedLife;
 
 //dotnet add package Dapper; Dotnet add package System.Data.SqlClient;

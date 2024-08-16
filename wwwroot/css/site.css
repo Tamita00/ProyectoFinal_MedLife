@@ -9,7 +9,7 @@ body {
 header {
   background-color: #F9F9F9;
   padding: 10px 0;
-  border-bottom: 2px solid #003A9F; 
+  border-bottom: 2px solid #03348a; 
 }
 
 a {
@@ -20,6 +20,57 @@ a {
   font-weight: lighter; /* Corregido el valor de font-weight */
 }
 
+/*subir muestra estilo*/
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+.form-container {
+  max-width: 80%;
+  margin-left: 1em;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+h3 {
+  margin-left: 1.5em;
+  color: #333;
+}
+label {
+  display: block;
+  margin-left: 2em;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+select,
+textarea {
+  width: 50%;
+  margin-left: 2em;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+button {
+  background-color: #03348a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 2em;
+}
+button:hover {
+  background-color: #0056b3;
+}
+.hidden {
+  display: none;
+}
 
 nav {
   display: flex;

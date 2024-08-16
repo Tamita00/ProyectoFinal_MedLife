@@ -1,27 +1,20 @@
-﻿@model Perfil
+@model ProyectoFinal_MedLife.Models.Perfil
 
 <form method="post" asp-action="Login" asp-controller="Cuenta">
     <h1 class="h3 mb-3">Inicio de sesion</h1>
     <div class="form-floating">
         <input type="text" class="form-control" required asp-for="Email" />
-        <label for="floatingInput">Email</label>
+        <label for="floatingInput">UserName</label>
     </div>
     <div class="form-floating">
         <input type="password" class="form-control" required asp-for="Contrasena" />
-        <label for="floatingPassword">Contraseña</label>
+        <label for="floatingPassword">Password</label>
     </div>
-    <!-- 
     <div class=" checkbox mb-3">
         <label>
-            <input type="checkbox" asp-for="MantenerActivo" /> Recordar sesion
+            <input type="checkbox" asp-for="MantenterActivo" /> Recordar sesion
         </label>
-    </div> 
-    -->
+    </div>
     <button type="submit" class="btn-lg btn-primary">Ingresar</button>
 </form>
 <label class="alert-danger">@ViewBag.Error</label>
-<div>
-    <a href='@Url.Action("C_Home", new {idUsuario = 1})'>Home</a>
-</div>
-
-<!-- link útil para inicio de sesión https://render2web.com/identity-autenticacion-autorizacion/ -->

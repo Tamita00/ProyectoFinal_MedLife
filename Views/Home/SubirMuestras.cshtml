@@ -1,9 +1,9 @@
-<body>
+<!-- <body>
 <br><br><br>
     <div class="container">
         <form method="post" action='@Url.Action("GuardarSubirMuestra")' enctype="multipart/form-data">
             <input type="hidden" id="idUsuario" name="idUsuario" value="@ViewBag.idUsuario">
-<!-- primera parte -->
+
             <div class="form-section">
                 <legend>Datos de la Muestra</legend>
                 <label for="InstitucionNacimiento">Institución de Nacimiento:</label>
@@ -92,7 +92,7 @@
                     <option value="true">Sí</option>
                 </select><br>
             </div>
-<!--segunda parte de la carga-->
+
             <div class="form-section">
                 <legend>Datos de la Madre</legend>
                 <label for="ApellidoMama">Apellido de la Madre:</label>
@@ -178,7 +178,6 @@
                 <input type="text" id="Otras" name="Otras" autocomplete="off"><br>
             </div>
 
-<!-- 3era parte -->
             <div class="form-section">
                 <legend>Detalles adicionales y observaciones</legend>
                 <label for="RepiteMuestra">Repite Muestra:</label>
@@ -212,7 +211,6 @@
                 </select><br>
             </div>
 
-<!-- cuarta parte -->
             <div class="form-section">
                 <legend>Responsable y Firma/Sello</legend>
                 <label for="Responsable">Responsable:</label>
@@ -226,7 +224,6 @@
 
                 </div>
 
-<!-- quinta parte -->
             <div class="form-section">
                 <legend>Fechas de Envío y Llegada</legend>
                 <label for="FechaEnvio">Fecha de Envío:</label>
@@ -241,8 +238,8 @@
                 <textarea id="Observaciones" name="Observaciones" rows="4" cols="50"></textarea><br>
             </div>
 
-            <!-- Botón de envío con estilos en línea -->
-           <input type="submit" role="button" value="Siguiente" id="submit" name="submit"
+            <--Botón de envío con estilos en línea-->
+           <!--<input type="submit" role="button" value="Siguiente" id="submit" name="submit"
                style="background-color: #003a9f;
                       color: white;
                       padding: 12px 20px;
@@ -255,4 +252,191 @@
         </form>
     </div>
 </body>
-</html>
+</html> -->
+
+<h2>Formulario de Muestra</h2>
+
+<!-- Parte 1: Datos de la Muestra -->
+<div id="parte1">
+    <h3>Datos de la Muestra</h3>
+    <form id="formParte1">
+        <label for="InstitucionNacimiento">Institución de Nacimiento:</label>
+        <input type="text" id="InstitucionNacimiento" name="InstitucionNacimiento" placeholder="Institución de Nacimiento" /><br />
+
+        <label for="HospitalMuestraInput">Hospital Muestra:</label>
+                <input type="text" id="HospitalMuestraInput" list="datalistHospitalesMuestra" name="HospitalMuestra" autocomplete="off" placeholder="Hospital de la Muestra" required><br>
+                <datalist id="datalistHospitalesMuestra">
+                    @foreach (Hospital hospital in ViewBag.Hospitales)
+                    {
+                        <option value="@hospital.NombreHospital"></option>
+                    }
+                </datalist>
+        <button type="button" onclick="saveParte1()">Siguiente</button>
+    </form>
+</div>
+
+<!-- Parte 2: Datos del Bebé -->
+<div id="parte2" style="display: none;">
+    <h3>Datos del Bebé</h3>
+    <form id="formParte2">
+        <label for="ApellidoBebe">Apellido del Bebé:</label>
+        <input type="text" id="ApellidoBebe" name="ApellidoBebe" placeholder="Apellido del Bebé" /><br />
+
+        <label for="NombreBebe">Nombre del Bebé:</label>
+        <input type="text" id="NombreBebe" name="NombreBebe" placeholder="Nombre del Bebé" /><br />
+
+        <label for="FechaHoraNacimiento">Fecha y Hora de Nacimiento:</label>
+        <input type="datetime-local" id="FechaHoraNacimiento" name="FechaHoraNacimiento" /><br />
+
+        <label for="FechaHoraExtraccion">Fecha y Hora de Extracción:</label>
+        <input type="datetime-local" id="FechaHoraExtraccion" name="FechaHoraExtraccion" /><br />
+
+        <label for="Sexo">Sexo:</label>
+        <select id="Sexo" name="Sexo">
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+            <option value="I">Indeterminado</option>
+        </select><br />
+
+        <label for="Alimentacion">Alimentación:</label>
+        <input type="text" id="Alimentacion" name="Alimentacion" placeholder="Alimentación" /><br />
+
+        <label for="FechaIngestaLeche">Fecha de Ingesta de Leche:</label>
+        <input type="datetime-local" id="FechaIngestaLeche" name="FechaIngestaLeche" /><br />
+
+        <label for="SemanasGestacion">Semanas de Gestación:</label>
+        <input type="number" id="SemanasGestacion" name="SemanasGestacion" placeholder="Semanas de Gestación" onkeyup="validarSemanasGestacion()" autocomplete="off" /><br />
+
+        <label for="Peso">Peso:</label>
+        <input type="number" id="Peso" name="Peso" placeholder="Peso en gramos" /><br />
+
+        <label for="CondicionRN">Condición al Nacer:</label>
+        <input type="text" id="CondicionRN" name="CondicionRN" placeholder="Condición al Nacer" /><br />
+
+        <label for="PatologiaBase">Patología Base:</label>
+        <input type="text" id="PatologiaBase" name="PatologiaBase" placeholder="Patología Base" /><br />
+
+        <label for="Parto">Parto:</label>
+        <input type="text" id="Parto" name="Parto" placeholder="Parto" /><br />
+
+        <label for="EmbarazoMultiple">Embarazo Múltiple:</label>
+        <input type="checkbox" id="EmbarazoMultiple" name="EmbarazoMultiple" /><br />
+
+        <label for="EmbarazoGemelar">Embarazo Gemelar:</label>
+        <input type="checkbox" id="EmbarazoGemelar" name="EmbarazoGemelar" /><br />
+
+        <button type="button" onclick="goBack(1)">Anterior</button>
+        <button type="button" onclick="saveParte2()">Siguiente</button>
+    </form>
+</div>
+
+<!-- Parte 3: Datos de la Madre -->
+<div id="parte3" style="display: none;">
+    <h3>Datos de la Madre</h3>
+    <form id="formParte3">
+        <label for="ApellidoMama">Apellido de la Madre:</label>
+        <input type="text" id="ApellidoMama" name="ApellidoMama" placeholder="Apellido de la Madre" /><br />
+
+        <label for="NombreMama">Nombre de la Madre:</label>
+        <input type="text" id="NombreMama" name="NombreMama" placeholder="Nombre de la Madre" /><br />
+
+        <label for="Documento">Documento:</label>
+        <input type="number" id="Documento" name="Documento" placeholder="Documento" /><br />
+
+        <label for="Domicilio">Domicilio:</label>
+        <input type="text" id="Domicilio" name="Domicilio" placeholder="Domicilio" /><br />
+
+        <label for="Localidad">Localidad:</label>
+        <input type="text" id="Localidad" name="Localidad" placeholder="Localidad" /><br />
+
+        <label for="Telefono">Teléfono:</label>
+        <input type="number" id="Telefono" name="Telefono" placeholder="Teléfono" /><br />
+
+        <label for="LugarControlEmbarazo">Lugar de Control del Embarazo:</label>
+        <input type="text" id="LugarControlEmbarazo" name="LugarControlEmbarazo" placeholder="Lugar de Control del Embarazo" /><br />
+
+        <button type="button" onclick="goBack(2)">Anterior</button>
+        <button type="button" onclick="saveParte3()">Siguiente</button>
+    </form>
+</div>
+
+<!-- Parte 4: Datos Clínicos -->
+<div id="parte4" style="display: none;">
+    <h3>Datos Clínicos</h3>
+    <form id="formParte4">
+        <label for="Antibioticos">Antibióticos:</label>
+        <input type="checkbox" id="Antibioticos" name="Antibioticos" /><br />
+
+        <label for="DesinfectantesYodados">Desinfectantes Yodados:</label>
+        <input type="checkbox" id="DesinfectantesYodados" name="DesinfectantesYodados" /><br />
+
+        <label for="Transfusion">Transfusión:</label>
+        <input type="checkbox" id="Transfusion" name="Transfusion" /><br />
+
+        <label for="FechaTransfusion">Fecha de Transfusión:</label>
+        <input type="datetime-local" id="FechaTransfusion" name="FechaTransfusion" /><br />
+
+        <label for="Dopamina">Dopamina:</label>
+        <input type="checkbox" id="Dopamina" name="Dopamina" /><br />
+
+        <label for="Dobutamina">Dobutamina:</label>
+        <input type="checkbox" id="Dobutamina" name="Dobutamina" /><br />
+
+        <label for="CorticoidesMadre">Corticoides Madre:</label>
+        <input type="checkbox" id="CorticoidesMadre" name="CorticoidesMadre" /><br />
+
+        <label for="CorticoidesBebe">Corticoides Bebé:</label>
+        <input type="checkbox" id="CorticoidesBebe" name="CorticoidesBebe" /><br />
+
+        <label for="Tiroidepatias">Tiroidepatías:</label>
+        <input type="checkbox" id="Tiroidepatias" name="Tiroidepatias" /><br />
+
+        <label for="Otras">Otras:</label>
+        <input type="text" id="Otras" name="Otras" placeholder="Otras" /><br />
+
+        <label for="RepiteMuestra">Repite Muestra:</label>
+        <input type="checkbox" id="RepiteMuestra" name="RepiteMuestra" /><br />
+
+        <label for="Prematuro">Prematuro:</label>
+        <input type="checkbox" id="Prematuro" name="Prematuro" /><br />
+
+        <label for="MalaMuestra">Mala Muestra:</label>
+        <input type="checkbox" id="MalaMuestra" name="MalaMuestra" /><br />
+
+        <label for="ResultadoAlterado">Resultado Alterado:</label>
+        <input type="checkbox" id="ResultadoAlterado" name="ResultadoAlterado" /><br />
+
+        <label for="Analitico">Analítico:</label>
+        <input type="number" id="Analitico" name="Analitico" placeholder="Número Analítico" /><br />
+
+        <label for="Responsable">Responsable:</label>
+        <input type="text" id="Responsable" name="Responsable" placeholder="Responsable" /><br />
+
+        <label for="RolResponsable">Rol del Responsable:</label>
+        <input type="text" id="RolResponsable" name="RolResponsable" placeholder="Rol del Responsable" /><br />
+
+        <label for="FirmaSello">Firma o Sello:</label>
+        <input type="text" id="FirmaSello" name="FirmaSello" placeholder="Firma o Sello" /><br />
+
+        <button type="button" onclick="goBack(3)">Anterior</button>
+        <button type="button" onclick="saveParte4()">Siguiente</button>
+    </form>
+</div>
+
+<!-- Parte 5: Datos de Envío -->
+<div id="parte5" style="display: none;">
+    <h3>Datos de Envío</h3>
+    <form id="formParte5">
+        <label for="FechaEnvio">Fecha de Envío:</label>
+        <input type="datetime-local" id="FechaEnvio" name="FechaEnvio" /><br />
+
+        <label for="FechaLlegada">Fecha de Llegada:</label>
+        <input type="datetime-local" id="FechaLlegada" name="FechaLlegada" /><br />
+
+        <label for="Observaciones">Observaciones:</label>
+        <textarea id="Observaciones" name="Observaciones"></textarea><br />
+
+        <button type="button" onclick="goBack(4)">Anterior</button>
+        <button type="button" onclick="submitForm()">Enviar</button>
+    </form>
+</div>
