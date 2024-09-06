@@ -5,10 +5,21 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using System.IO;
+
+
+
 
 namespace ProyectoFinal_MedLife.Controllers;
 
 [Authorize]
+private readonly IWebHostEnvironment _environment;
+
+public YourController(IWebHostEnvironment environment)
+{
+    _environment = environment;
+}
+
 public class HomeController : Controller
 {
     public IActionResult Index()
@@ -211,11 +222,23 @@ public IActionResult Contactos(int idUsuario)
             var parte3 = TempData["Parte3"] as FormCollection;
             var parte4 = TempData["Parte4"] as FormCollection;
 
+            var nombreHospital = int.Parse(parte1["HospitalMuestraInput"]);
+
+            var MyFile = parte4["MyFile"];
+
+    
+            if(MyFile.Length > 0){
+                string wwwRootLocal = this._environment.ContentRootPath + @"\wwwroot\img\Firmas\" + MyFile.FileName;
+                using(var stream = System.IO.File.Create(wwwRootLocal)){
+                    MyFile.CopyToAsync(stream);
+                }
+            }
+
             var finalData = new Muestra
             {
                 // Datos de la Parte 1
                 InstitucionNacimiento = parte1["InstitucionNacimiento"],
-                IdHospitalMuestra = int.Parse(parte1["IdHospitalMuestra"]),
+                IdHospitalMuestra = BD.SeleccionarHospitalPorNombre(nombreHospital).IdHospital, // Asumiendo que parte1["HospitalMuestraInput"] devuelve el ID
 
                 // Datos de la Parte 2
                 ApellidoBebe = parte2["ApellidoBebe"],
@@ -257,10 +280,10 @@ public IActionResult Contactos(int idUsuario)
                 Prematuro = bool.Parse(parte4["Prematuro"]),
                 MalaMuestra = bool.Parse(parte4["MalaMuestra"]),
                 ResultadoAlterado = bool.Parse(parte4["ResultadoAlterado"]),
-                Analitico = int.Parse(parte4["Analitico"]),
+                Analitico = bool.Parse(parte4["Analitico"]), // Ajustado a string para el formulario si no se convierte a int
                 Responsable = parte4["Responsable"],
                 RolResponsable = parte4["RolResponsable"],
-                FirmaSello = parte4["FirmaSello"],
+                FirmaSello = MyFile,
 
                 // Datos de la Parte 5
                 FechaEnvio = DateTime.Parse(form["FechaEnvio"]),

@@ -38,7 +38,7 @@ public class Muestra {
     public bool Prematuro { get; set; }
     public bool MalaMuestra { get; set; }
     public bool ResultadoAlterado { get; set; }
-    public int Analitico { get; set; }
+    public bool Analitico { get; set; }
     public string Responsable { get; set; }
     public string RolResponsable { get; set; }
     public string FirmaSello { get; set; }
