@@ -14,6 +14,7 @@ public class Muestra {
     public int Peso { get; set; }
     public string CondicionRN { get; set; }
     public string PatologiaBase { get; set; }
+    public string Patologia { get; set; }
     public string Parto { get; set; }
     public bool EmbarazoMultiple { get; set; }
     public bool EmbarazoGemelar { get; set; }
@@ -50,7 +51,13 @@ public class Muestra {
     public Muestra() {}
 
     // Constructor con parámetros
-    public Muestra(int idMuestra, int idResultado, string institucionNacimiento, int idHospitalMuestra, string apellidoBebe, string nombreBebe, DateTime fechaHoraNacimiento, DateTime fechaHoraExtraccion, string sexo, string alimentacion, DateTime fechaIngestaLeche, int semanasGestacion, int peso, string condicionRN, string patologiaBase, string parto, bool embarazoMultiple, bool embarazoGemelar, string apellidoMama, string nombreMama, int documento, string domicilio, string localidad, int telefono, string lugarControlEmbarazo, bool antibioticos, bool desinfectantesYodados, bool transfusion, DateTime fechaTransfusion, bool dopamina, bool dobutamina, bool corticoidesMadre, bool corticoidesBebe, bool tiroidepatias, string otras, bool repiteMuestra, bool prematuro, bool malaMuestra, bool resultadoAlterado, int analitico, string responsable, string rolResponsable, string firmaSello, DateTime fechaEnvio, DateTime fechaLlegada, string observaciones) {
+    public Muestra(int idMuestra, int idResultado, string institucionNacimiento, int idHospitalMuestra, string apellidoBebe, string nombreBebe, DateTime fechaHoraNacimiento, 
+                    DateTime fechaHoraExtraccion, string sexo, string alimentacion, DateTime fechaIngestaLeche, int semanasGestacion, int peso, string condicionRN, 
+                    string patologiaBase, string patologia, string parto, bool embarazoMultiple, bool embarazoGemelar, string apellidoMama, string nombreMama, int documento, string domicilio, 
+                    string localidad, int telefono, string lugarControlEmbarazo, bool antibioticos, bool desinfectantesYodados, bool transfusion, DateTime fechaTransfusion, 
+                    bool dopamina, bool dobutamina, bool corticoidesMadre, bool corticoidesBebe, bool tiroidepatias, string otras, bool repiteMuestra, bool prematuro, 
+                    bool malaMuestra, bool resultadoAlterado, bool analitico, string responsable, string rolResponsable, string firmaSello, DateTime fechaEnvio, 
+                    DateTime fechaLlegada, string observaciones) {
         IdMuestra = idMuestra;
         IdResultado = idResultado;
         InstitucionNacimiento = institucionNacimiento;
@@ -66,6 +73,7 @@ public class Muestra {
         Peso = peso;
         CondicionRN = condicionRN;
         PatologiaBase = patologiaBase;
+        Patologia = patologia;
         Parto = parto;
         EmbarazoMultiple = embarazoMultiple;
         EmbarazoGemelar = embarazoGemelar;

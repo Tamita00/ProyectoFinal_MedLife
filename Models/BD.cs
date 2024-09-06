@@ -238,7 +238,7 @@ public static class BD{
             int telefono, string lugarControlEmbarazo, bool antibioticos, bool desinfectantesYodados,
             bool transfusion, DateTime fechaTransfusion, bool dopamina, bool dobutamina, bool corticoidesMadre,
             bool corticoidesBebe, bool tiroidepatias, string otras, bool repiteMuestra, bool prematuro,
-            bool malaMuestra, bool resultadoAlterado, int analitico, string responsable, string rolResponsable,
+            bool malaMuestra, bool resultadoAlterado, bool analitico, string responsable, string rolResponsable,
             string MyFile, DateTime fechaEnvio, DateTime fechaLlegada, string observaciones)
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))

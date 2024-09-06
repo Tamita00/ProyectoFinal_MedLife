@@ -9,71 +9,71 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProyectoFinal_MedLife
 build_property.RootNamespace = ProyectoFinal_MedLife
-build_property.ProjectDir = Z:\PROG\2024\OK\ProyectoFinal_MedLife\
+build_property.ProjectDir = z:\PROG\2024\OK\ProyectoFinal_MedLife\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = Z:\PROG\2024\OK\ProyectoFinal_MedLife
+build_property.MSBuildProjectDirectory = z:\PROG\2024\OK\ProyectoFinal_MedLife
 build_property._RazorSourceGeneratorDebug = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Cuenta/Login.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Cuenta/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/Contactos.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/Contactos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0b3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/CrearPerfil.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/CrearPerfil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhclBlcmZpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/Home.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/Hospitales.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/Hospitales.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb3NwaXRhbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/Index.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/ListaSinProcesar.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/ListaSinProcesar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0YVNpblByb2Nlc2FyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/ListaSinProcesarFiltrado.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/ListaSinProcesarFiltrado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0YVNpblByb2Nlc2FyRmlsdHJhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/Privacy.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/SubirMuestras.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Home/SubirMuestras.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWJpck11ZXN0cmFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Shared/Error.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Shared/_ValidationScriptsPartial.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/_ViewImports.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/_ViewStart.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Shared/_Layout.cshtml]
+[z:/PROG/2024/OK/ProyectoFinal_MedLife/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2lrq25730r
