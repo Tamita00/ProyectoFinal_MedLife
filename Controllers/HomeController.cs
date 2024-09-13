@@ -82,113 +82,6 @@ public IActionResult Contactos(int idUsuario)
         return View("SubirMuestras");
     }
 
-    /*public IActionResult GuardarSubirMuestra(
-        int idUsuario,
-        string InstitucionNacimiento, 
-        string HospitalMuestra, 
-        string ApellidoBebe, 
-        string NombreBebe, 
-        DateTime FechaHoraNacimiento, 
-        DateTime FechaHoraExtraccion, 
-        string Sexo, 
-        string Alimentacion, 
-        DateTime FechaIngestaLeche, 
-        int SemanasGestacion, 
-        int Peso, 
-        string CondicionRN, 
-        string PatologiaBase, 
-        string Patologia,
-        string Parto, 
-        bool EmbarazoMultiple, 
-        bool EmbarazoGemelar, 
-        string ApellidoMama, 
-        string NombreMama, 
-        int Documento, 
-        string Domicilio, 
-        string Localidad, 
-        int Telefono, 
-        string LugarControlEmbarazo, 
-        bool Antibioticos, 
-        bool DesinfectantesYodados, 
-        bool Transfusion, 
-        DateTime FechaTransfusion, 
-        bool Dopamina, 
-        bool Dobutamina, 
-        bool CorticoidesMadre, 
-        bool CorticoidesBebe, 
-        bool Tiroidepatias, 
-        string Otras, 
-        bool RepiteMuestra, 
-        bool Prematuro, 
-        bool MalaMuestra, 
-        bool ResultadoAlterado, 
-        int Analitico, 
-        string Responsable, 
-        string RolResponsable, 
-        DateTime FechaEnvio, 
-        DateTime FechaLlegada, 
-        string observaciones,
-        IFormFile MyFile)
-    {   
-        if(MyFile.Length > 0){
-            string wwwRootLocal = this._environment.ContentRootPath + @"\wwwroot\img\Firmas\" + MyFile.FileName;
-            using(var stream = System.IO.File.Create(wwwRootLocal)){
-                MyFile.CopyToAsync(stream);
-            }
-        }
-
-        int IdHospitalMuestra = BD.SeleccionarHospitalPorNombre(HospitalMuestra).IdHospital;
-        BD.InsertarMuestra(
-            InstitucionNacimiento, 
-            IdHospitalMuestra, 
-            ApellidoBebe, 
-            NombreBebe, 
-            FechaHoraNacimiento, 
-            FechaHoraExtraccion, 
-            Sexo, 
-            Alimentacion, 
-            FechaIngestaLeche, 
-            SemanasGestacion, 
-            Peso, 
-            CondicionRN, 
-            PatologiaBase, 
-            Patologia, 
-            Parto, 
-            EmbarazoMultiple, 
-            EmbarazoGemelar, 
-            ApellidoMama, 
-            NombreMama, 
-            Documento, 
-            Domicilio, 
-            Localidad, 
-            Telefono, 
-            LugarControlEmbarazo, 
-            Antibioticos, 
-            DesinfectantesYodados, 
-            Transfusion, 
-            FechaTransfusion, 
-            Dopamina, 
-            Dobutamina, 
-            CorticoidesMadre, 
-            CorticoidesBebe, 
-            Tiroidepatias, 
-            Otras, 
-            RepiteMuestra, 
-            Prematuro, 
-            MalaMuestra, 
-            ResultadoAlterado, 
-            Analitico, 
-            Responsable, 
-            RolResponsable, 
-            MyFile.FileName, 
-            FechaEnvio, 
-            FechaLlegada, 
-            observaciones);
-        ViewBag.idUsuario = idUsuario;
-        ViewBag.Hospitales = BD.SeleccionarHospitales();
-        return View("SubirMuestras");
-    }*/
-
         [HttpPost]
         public ActionResult SaveParte1(FormCollection form)
         {
@@ -271,79 +164,79 @@ public IActionResult Contactos(int idUsuario)
                 string lugarControlEmbarazo = parte3.LugarControlEmbarazo;
 
                 // Datos de la Parte 4
-                bool antibioticos = parte4.Antibioticos;
-                bool desinfectantesYodados = parte4.DesinfectantesYodados;
-                bool transfusion = parte4.Transfusion;
-                DateTime fechaTransfusion = parte4.FechaTransfusion;
-                bool dopamina = parte4.Dopamina;
-                bool dobutamina = parte4.Dobutamina;
-                bool corticoidesMadre = parte4.CorticoidesMadre;
-                bool corticoidesBebe = parte4.CorticoidesBebe;
-                bool tiroidepatias = parte4.Tiroidepatias;
-                string otras = parte4.Otras;
+                bool antibioticos = parte3.Antibioticos;
+                bool desinfectantesYodados = parte3.DesinfectantesYodados;
+                bool transfusion = parte3.Transfusion;
+                DateTime fechaTransfusion = parte3.FechaTransfusion;
+                bool dopamina = parte3.Dopamina;
+                bool dobutamina = parte3.Dobutamina;
+                bool corticoidesMadre = parte3.CorticoidesMadre;
+                bool corticoidesBebe = parte3.CorticoidesBebe;
+                bool tiroidepatias = parte3.Tiroidepatias;
+                string otras = parte3.Otras;
                 bool repiteMuestra = parte4.RepiteMuestra;
                 bool prematuro = parte4.Prematuro;
                 bool malaMuestra = parte4.MalaMuestra;
                 bool resultadoAlterado = parte4.ResultadoAlterado;
                 bool analitico = parte4.Analitico;
-                string responsable = parte4.Responsable;
-                string rolResponsable = parte4.RolResponsable;
+                string responsable = parte5.Responsable;
+                string rolResponsable = parte5.RolResponsable;
          //string FirmaSello = (string)MyFile["FirmaSello"];
 
                 // Datos de la Parte 5
                 
-                DateTime FechaEnvio = DateTime.Parse(parte5.FechaEnvio);
-                DateTime FechaLlegada = DateTime.Parse(parte5.FechaEnvio);
-                string FirmaSello = parte5.FirmaSello;
-                string Observaciones = parte5.Observaciones;
+                DateTime fechaEnvio = DateTime.Parse(parte5.FechaEnvio);
+                DateTime fechaLlegada = DateTime.Parse(parte5.FechaEnvio);
+                string firmaSello = parte5.FirmaSello;
+                string observaciones = parte5.Observaciones;
            
             
             BD.InsertarMuestra(
             InstitucionNacimiento, 
             IdHospitalMuestra, 
-            ApellidoBebe, 
-            NombreBebe, 
-            FechaHoraNacimiento, 
-            FechaHoraExtraccion, 
-            Sexo, 
-            Alimentacion, 
-            FechaIngestaLeche, 
-            SemanasGestacion, 
-            Peso, 
-            CondicionRN, 
-            PatologiaBase, 
-            Patologia,
-            Parto, 
-            EmbarazoMultiple, 
-            EmbarazoGemelar, 
-            ApellidoMama, 
-            NombreMama, 
-            Documento, 
-            Domicilio, 
-            Localidad, 
-            Telefono, 
-            LugarControlEmbarazo, 
-            Antibioticos, 
-            DesinfectantesYodados, 
-            Transfusion, 
-            FechaTransfusion, 
-            Dopamina, 
-            Dobutamina, 
-            CorticoidesMadre, 
-            CorticoidesBebe, 
-            Tiroidepatias, 
-            Otras, 
-            RepiteMuestra, 
-            Prematuro, 
-            MalaMuestra, 
-            ResultadoAlterado, 
-            Analitico, 
-            Responsable, 
-            RolResponsable, 
-            FirmaSello, 
-            FechaEnvio, 
-            FechaLlegada, 
-            Observaciones);
+            apellidoBebe, 
+            nombreBebe, 
+            fechaHoraNacimiento, 
+            fechaHoraExtraccion, 
+            sexo, 
+            alimentacion, 
+            fechaIngestaLeche, 
+            semanasGestacion, 
+            peso, 
+            condicionRN, 
+            patologiaBase, 
+            patologia,
+            parto, 
+            embarazoMultiple, 
+            embarazoGemelar, 
+            apellidoMama, 
+            nombreMama, 
+            documento, 
+            domicilio, 
+            localidad, 
+            telefono, 
+            lugarControlEmbarazo, 
+            antibioticos, 
+            desinfectantesYodados, 
+            transfusion, 
+            fechaTransfusion, 
+            dopamina, 
+            dobutamina, 
+            corticoidesMadre, 
+            corticoidesBebe, 
+            tiroidepatias, 
+            otras, 
+            repiteMuestra, 
+            prematuro, 
+            malaMuestra, 
+            resultadoAlterado, 
+            analitico, 
+            responsable, 
+            rolResponsable, 
+            firmaSello, 
+            fechaEnvio, 
+            fechaLlegada, 
+            observaciones);
 
             return view("Home");
         }
