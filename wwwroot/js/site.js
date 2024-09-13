@@ -117,6 +117,7 @@ function populateFormPart1() {
         var formData = $.deparam(data);
         $.each(formData, function(key, value) {
             $("#formParte1 [name='" + key + "']").val(value);
+
         });
     }
 }
@@ -151,32 +152,31 @@ function populateFormPart4() {
     }
 }
 
-function populateFormPart5() {
-    var data = localStorage.getItem('formParte5');
-    if (data) {
-        var formData = $.deparam(data);
-        $.each(formData, function(key, value) {
-            $("#formParte5 [name='" + key + "']").val(value);
-        });
-    }
-}
-
 function submitForm() {
-    alert("si");
-    var parte1Data = localStorage.getItem('formParte1');
-    var parte2Data = localStorage.getItem('formParte2');
-    var parte3Data = localStorage.getItem('formParte3');
-    var parte4Data = localStorage.getItem('formParte4');
+    var parte1Data = $("#formParte1").serializeArray();
+    var parte2Data = $("#formParte2").serializeArray();
+    var parte3Data = $("#formParte3").serializeArray();
+    var parte4Data = $("#formParte4").serializeArray();
     var parte5Data = $("#formParte5").serializeArray();
-    
-    var finalData = {
-        parte1: parte1Data,
-        parte2: parte2Data,
-        parte3: parte3Data,
-        parte4: parte4Data,
-        parte5: parte5Data
+
+    // Combina todos los datos en un solo objeto
+    var convertToObj = function(dataArray) {
+        var dataObject = {};
+        dataArray.forEach(function(field) {
+            dataObject[field.name] = field.value;
+        });
+        return dataObject;
     };
 
+    var finalData = {
+        parte1: convertToObj(parte1Data),
+        parte2: convertToObj(parte2Data),
+        parte3: convertToObj(parte3Data),
+        parte4: convertToObj(parte4Data),
+        parte5: convertToObj(parte5Data)
+    };
+
+console.log(finalData);
     $.ajax({
         type: 'POST',
         url: '/Home/SaveMuestra',

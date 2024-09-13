@@ -202,3 +202,4 @@ C:\Users\devandroid\Desktop\ProyectoFinal_MedLife\obj\Debug\net8.0\refint\Proyec
 C:\Users\devandroid\Desktop\ProyectoFinal_MedLife\obj\Debug\net8.0\ProyectoFinal_MedLife.pdb
 C:\Users\devandroid\Desktop\ProyectoFinal_MedLife\obj\Debug\net8.0\ProyectoFinal_MedLife.genruntimeconfig.cache
 C:\Users\devandroid\Desktop\ProyectoFinal_MedLife\obj\Debug\net8.0\ref\ProyectoFinal_MedLife.dll
+C:\Users\devandroid\Desktop\ProyectoFinal_MedLife\bin\Debug\net8.0\Newtonsoft.Json.dll

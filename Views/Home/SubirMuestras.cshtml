@@ -1,258 +1,3 @@
-<!-- <body>
-<br><br><br>
-    <div class="container">
-        <form method="post" action='@Url.Action("GuardarSubirMuestra")' enctype="multipart/form-data">
-            <input type="hidden" id="idUsuario" name="idUsuario" value="@ViewBag.idUsuario">
-
-            <div class="form-section">
-                <legend>Datos de la Muestra</legend>
-                <label for="InstitucionNacimiento">Institución de Nacimiento:</label>
-                <input type="text" id="InstitucionNacimiento" name="InstitucionNacimiento" autocomplete="off" required><br>
-
-               <label for="HospitalMuestraInput">Hospital Muestra:</label>
-                <input type="text" id="HospitalMuestraInput" list="datalistHospitalesMuestra" name="HospitalMuestra" autocomplete="off" placeholder="Hospital de la Muestra" required><br>
-                <datalist id="datalistHospitalesMuestra">
-                    @foreach (Hospital hospital in ViewBag.Hospitales)
-                    {
-                        <option value="@hospital.NombreHospital"></option>
-                    }
-                </datalist>
-
-                <label for="ApellidoBebe">Apellido del Bebé:</label>
-                <input type="text" id="ApellidoBebe" name="ApellidoBebe" autocomplete="off" required><br>
-
-                <label for="NombreBebe">Nombre del Bebé:</label>
-                <input type="text" id="NombreBebe" name="NombreBebe" autocomplete="off" required><br>
-
-                <label for="FechaHoraNacimiento">Fecha y Hora de Nacimiento:</label>
-                <input type="datetime-local" id="FechaHoraNacimiento" name="FechaHoraNacimiento" autocomplete="off" required><br>
-
-                <label for="FechaHoraExtraccion">Fecha y Hora de Extracción:</label>
-                <input type="datetime-local" id="FechaHoraExtraccion" name="FechaHoraExtraccion" autocomplete="off" required><br>
-
-                <label for="Sexo">Sexo del Bebé:</label>
-                <select id="Sexo" name="Sexo" required>
-                    <option value="M">Masculino</option>
-                    <option value="F">Femenino</option>
-                    <option value="I">Indeterminado</option>
-                </select><br>
-
-                <label for="Alimentacion">Alimentación:</label>
-                <select id="Alimentacion" name="Alimentacion" required>
-                    <option value="Biberon">Biberón</option>
-                    <option value="Pecho">Pecho</option>
-                    <option value="AyunoEnteral">Ayuno enteral</option>
-                    <option value="Parental">Parental</option>
-                </select><br>
-
-                <label for="FechaIngestaLeche">Fecha de Ingesta de Leche:</label>
-                <input type="date" id="FechaIngestaLeche" name="FechaIngestaLeche" autocomplete="off" required><br>
-
-                <label for="SemanasGestacion">Semanas de Gestación:</label>
-                <input type="number" id="SemanasGestacion" name="SemanasGestacion" onkeyup="validarSemanasGestacion()" autocomplete="off"><br>
-                <div class="alert alert-info" role="alert" style="padding:.10rem;">
-                    <span style="color: red; font-size: 0.85em;" id="mensajeA">El máximo es de 50 semanas de gestación</span><br><br>
-                </div>
-
-
-                <label for="Peso">Peso del Bebé (en gramos):</label>
-                <input type="number" id="Peso" name="Peso" autocomplete="off"><br>
-
-                <label for="CondicionRN">Condición del Recién Nacido:</label>
-                <select id="CondicionRN" name="CondicionRN" required>
-                    <option value="Sano">Sano</option>
-                    <option value="Enfermo">Enfermo</option>
-                    <option value="CuidadosIntensivos">Cuidados Intensivos</option>
-                </select><br>
-
-                <label for="PatologiaBase">Patología Base:</label>
-                <select id="PatologiaBaseSelect" name="PatologiaBase">
-                    <option value="no">No</option>
-                    <option value="si">Sí</option>
-                </select><br>
-
-                <label for="Patologia">Patología <span class="opcional">*Opcional</span></label>
-                <input type="text" id="Patologia" name="Patologia" autocomplete="off"><br>
-
-                <label for="Parto">Tipo de Parto:</label>
-                <select id="Parto" name="Parto">
-                    <option value="Termino">A término</option>
-                    <option value="Prematuro">Prematuro</option>
-                </select><br>
-
-                <label for="EmbarazoMultiple">Embarazo Múltiple:</label>
-                <select id="EmbarazoMultiple" name="EmbarazoMultiple">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="EmbarazoGemelar">Embarazo Gemelar:</label>
-                <select id="EmbarazoGemelar" name="EmbarazoGemelar">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-            </div>
-
-            <div class="form-section">
-                <legend>Datos de la Madre</legend>
-                <label for="ApellidoMama">Apellido de la Madre:</label>
-                <input type="text" id="ApellidoMama" name="ApellidoMama" autocomplete="off" required><br>
-
-                <label for="NombreMama">Nombre de la Madre:</label>
-                <input type="text" id="NombreMama" name="NombreMama" autocomplete="off" required><br>
-
-                <label for="Documento">Documento de la Madre:</label>
-                <input type="number" id="Documento" name="Documento" autocomplete="off" onkeyup="ConfirmarDNI()"  required>
-                <div class="alert alert-info" role="alert" style="padding:.10rem;">
-                        <span style="color: red;font-size:0.85em;" id="mensajeB"> El DNI debe contener 8 dígitos</span><br><br>
-                </div>
-
-                <label for="Domicilio">Domicilio de la Madre:</label>
-                <input type="text" id="Domicilio" name="Domicilio" autocomplete="off"><br>
-
-                <label for="Localidad">Localidad de la Madre:</label>
-                <input type="text" id="Localidad" name="Localidad" autocomplete="off"><br>
-
-                <label for="Telefono">Teléfono de la Madre:</label>
-                <input type="tel" onkeyup="ConfirmarMinimo(7)" id="Telefono" name="Telefono" autocomplete="off"><br>
-                <div class="alert alert-info" role="alert" style="padding:.10rem;">
-                        <span style="color: red;font-size:0.85em;" id="mensajeC"> El Teléfono debe contener al menos 7 dígitos</span><br><br>
-                </div>
-
-
-                <label for="LugarControlEmbarazo">Lugar de Control del Embarazo:</label>
-                <input type="text" id="LugarControlEmbarazo" name="LugarControlEmbarazo" autocomplete="off"><br>
-
-                <label for="Antibioticos">Antibióticos durante el Embarazo:</label>
-                <select id="Antibioticos" name="Antibioticos">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="DesinfectantesYodados">Desinfectantes Yodados:</label>
-                <select id="DesinfectantesYodados" name="DesinfectantesYodados">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="Transfusion">Transfusión:</label>
-                <select id="Transfusion" name="Transfusion">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="FechaTransfusion">Fecha de Transfusión:</label>
-                <input type="datetime-local" id="FechaTransfusion" name="FechaTransfusion" autocomplete="off"><br>
-
-                <label for="Dopamina">Dopamina:</label>
-                <select id="Dopamina" name="Dopamina">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="Dobutamina">Dobutamina:</label>
-                <select id="Dobutamina" name="Dobutamina">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="CorticoidesMadre">Corticoides (Madre):</label>
-                <select id="CorticoidesMadre" name="CorticoidesMadre">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="CorticoidesBebe">Corticoides (Bebé):</label>
-                <select id="CorticoidesBebe" name="CorticoidesBebe">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="Tiroidepatias">Tiroides (Patologías):</label>
-                <select id="Tiroidepatias" name="Tiroidepatias">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="Otras">Otras Consideraciones:</label>
-                <input type="text" id="Otras" name="Otras" autocomplete="off"><br>
-            </div>
-
-            <div class="form-section">
-                <legend>Detalles adicionales y observaciones</legend>
-                <label for="RepiteMuestra">Repite Muestra:</label>
-                <select id="RepiteMuestra" name="RepiteMuestra">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="Prematuro">Prematuro:</label>
-                <select id="Prematuro" name="Prematuro">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="MalaMuestra">Mala Muestra:</label>
-                <select id="MalaMuestra" name="MalaMuestra">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="ResultadoAlterado">Resultado Alterado:</label>
-                <select id="ResultadoAlterado" name="ResultadoAlterado">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-
-                <label for="Analitico">Es Analítico:</label>
-                <select id="Analitico" name="Analitico">
-                    <option value="false">No</option>
-                    <option value="true">Sí</option>
-                </select><br>
-            </div>
-
-            <div class="form-section">
-                <legend>Responsable y Firma/Sello</legend>
-                <label for="Responsable">Responsable:</label>
-                <input type="text" id="Responsable" name="Responsable" autocomplete="off"><br>
-
-                <label for="RolResponsable">Rol del Responsable:</label>
-                <input type="text" id="RolResponsable" name="RolResponsable" autocomplete="off"><br>
-
-                <label for="MyFile" >Firma o Sello:</label>
-                <input name="MyFile" id="MyFile" type="file" placeholder="Subir Foto de la Mascota" required><br><br>
-
-                </div>
-
-            <div class="form-section">
-                <legend>Fechas de Envío y Llegada</legend>
-                <label for="FechaEnvio">Fecha de Envío:</label>
-                <input type="datetime-local" id="FechaEnvio" name="FechaEnvio" autocomplete="off" required><br>
-
-                <label for="FechaLlegada">Fecha de Llegada:</label>
-                <input type="datetime-local" id="FechaLlegada" name="FechaLlegada" autocomplete="off" required><br>
-            </div>
-
-            <div class="form-section">
-                <legend>Observaciones</legend>
-                <textarea id="Observaciones" name="Observaciones" rows="4" cols="50"></textarea><br>
-            </div>
-
-            <--Botón de envío con estilos en línea-->
-           <!--<input type="submit" role="button" value="Siguiente" id="submit" name="submit"
-               style="background-color: #003a9f;
-                      color: white;
-                      padding: 12px 20px;
-                      border: none;
-                      border-radius: 4px;
-                      cursor: pointer;
-                      font-size: 14px;
-                      transition: background-color 0.3s ease;">
-        <br><br>
-        </form>
-    </div>
-</body>
-</html> -->
 <h2>Formulario de Muestra</h2>
 
 <!-- Parte 1: Datos de la Muestra -->
@@ -260,10 +5,10 @@
     <h3>Datos de la Muestra</h3>
     <form id="formParte1">
         <label for="InstitucionNacimiento">Institución de Nacimiento:</label>
-        <input type="text" id="InstitucionNacimiento" name="InstitucionNacimiento" placeholder="Institución de Nacimiento" /><br />
+        <input type="text" id="InstitucionNacimiento" name="InstitucionNacimiento" placeholder="Institución de Nacimiento" value="italiano" /><br />
 
         <label for="HospitalMuestraInput">Hospital Muestra:</label>
-        <input type="text" id="HospitalMuestraInput" list="datalistHospitalesMuestra" name="HospitalMuestra" autocomplete="off" placeholder="Hospital de la Muestra" required><br>
+        <input type="text" id="HospitalMuestraInput" list="datalistHospitalesMuestra" name="HospitalMuestra" autocomplete="off" placeholder="Hospital de la Muestra" value="Italiano" required><br>
         <datalist id="datalistHospitalesMuestra">
             @foreach (Hospital hospital in ViewBag.Hospitales)
             {
@@ -279,13 +24,13 @@
     <h3>Datos del Bebé</h3>
     <form id="formParte2">
         <label for="ApellidoBebe">Apellido del Bebé:</label>
-        <input type="text" id="ApellidoBebe" name="ApellidoBebe" placeholder="Apellido del Bebé" /><br />
+        <input type="text" id="ApellidoBebe" name="ApellidoBebe" placeholder="Apellido del Bebé" value="Ape Bebe"/><br />
 
         <label for="NombreBebe">Nombre del Bebé:</label>
-        <input type="text" id="NombreBebe" name="NombreBebe" placeholder="Nombre del Bebé" /><br />
+        <input type="text" id="NombreBebe" name="NombreBebe" placeholder="Nombre del Bebé" value="Nom Bebe"/><br />
 
         <label for="FechaHoraNacimiento">Fecha y Hora de Nacimiento:</label>
-        <input type="datetime-local" id="FechaHoraNacimiento" name="FechaHoraNacimiento" /><br />
+        <input type="datetime-local" id="FechaHoraNacimiento" name="FechaHoraNacimiento" value="01-01-2024" /><br />
 
         <label for="FechaHoraExtraccion">Fecha y Hora de Extracción:</label>
         <input type="datetime-local" id="FechaHoraExtraccion" name="FechaHoraExtraccion" /><br />
@@ -309,10 +54,10 @@
         <input type="datetime-local" id="FechaIngestaLeche" name="FechaIngestaLeche" /><br />
 
         <label for="SemanasGestacion">Semanas de Gestación:</label>
-        <input type="number" id="SemanasGestacion" name="SemanasGestacion" placeholder="Semanas de Gestación" onkeyup="validarSemanasGestacion()" autocomplete="off" /><br />
+        <input type="number" id="SemanasGestacion" name="SemanasGestacion" placeholder="Semanas de Gestación" onkeyup="validarSemanasGestacion()" autocomplete="off" value="10" /><br />
 
         <label for="Peso">Peso:</label>
-        <input type="number" id="Peso" name="Peso" placeholder="Peso en gramos" /><br />
+        <input type="number" id="Peso" name="Peso" placeholder="Peso en gramos" value="10" /><br />
 
         <label for="CondicionRN">Condición al Nacer:</label>
         <select id="CondicionRN" name="CondicionRN" required>
@@ -322,7 +67,7 @@
         </select><br />
 
         <label for="PatologiaBase">Patología Base:</label>
-        <input type="text" id="PatologiaBase" name="PatologiaBase" placeholder="Patología Base" /><br />
+        <input type="text" id="PatologiaBase" name="PatologiaBase" placeholder="Patología Base" value="pat Bebe" /><br />
 
         <label for="Parto">Tipo de Parto:</label>
         <select id="Parto" name="Parto">
@@ -353,13 +98,13 @@
     <form id="formParte3">
         <legend>Datos de la Madre</legend>
         <label for="ApellidoMama">Apellido de la Madre:</label>
-        <input type="text" id="ApellidoMama" name="ApellidoMama" autocomplete="off" required><br>
+        <input type="text" id="ApellidoMama" name="ApellidoMama" autocomplete="off" required value="ape mam"><br>
 
         <label for="NombreMama">Nombre de la Madre:</label>
-        <input type="text" id="NombreMama" name="NombreMama" autocomplete="off" required><br>
+        <input type="text" id="NombreMama" name="NombreMama" autocomplete="off" required value="Nom mam"><br>
 
         <label for="Documento">Documento de la Madre:</label>
-        <input type="number" id="Documento" name="Documento" autocomplete="off" onkeyup="ConfirmarDNI()" required>
+        <input type="number" id="Documento" name="Documento" autocomplete="off" onkeyup="ConfirmarDNI()" value=12345678 required>
         <div class="alert alert-info" role="alert" style="padding:.10rem;">
             <span style="color: red;font-size:0.85em;" id="mensajeB"> El DNI debe contener 8 dígitos</span><br><br>
         </div>
@@ -371,13 +116,13 @@
         <input type="text" id="Localidad" name="Localidad" autocomplete="off"><br>
 
         <label for="Telefono">Teléfono de la Madre:</label>
-        <input type="tel" onkeyup="ConfirmarMinimo(7)" id="Telefono" name="Telefono" autocomplete="off"><br>
+        <input type="tel" onkeyup="ConfirmarMinimo(7)" id="Telefono" name="Telefono" autocomplete="off" value=1234567><br>
         <div class="alert alert-info" role="alert" style="padding:.10rem;">
             <span style="color: red;font-size:0.85em;" id="mensajeC"> El Teléfono debe contener al menos 7 dígitos</span><br><br>
         </div>
 
         <label for="LugarControlEmbarazo">Lugar de Control del Embarazo:</label>
-        <input type="text" id="LugarControlEmbarazo" name="LugarControlEmbarazo" autocomplete="off"><br>
+        <input type="text" id="LugarControlEmbarazo" name="LugarControlEmbarazo" autocomplete="off" value="lug emb"><br>
 
         <label for="Antibioticos">Antibióticos durante el Embarazo:</label>
         <select id="Antibioticos" name="Antibioticos">
@@ -483,10 +228,10 @@
     <form id="formParte5">
         <legend>Responsable y Firma/Sello</legend>
         <label for="Responsable">Responsable:</label>
-        <input type="text" id="Responsable" name="Responsable" autocomplete="off"><br>
+        <input type="text" id="Responsable" name="Responsable" autocomplete="off" value="resp"><br>
 
         <label for="RolResponsable">Rol del Responsable:</label>
-        <input type="text" id="RolResponsable" name="RolResponsable" autocomplete="off"><br>
+        <input type="text" id="RolResponsable" name="RolResponsable" autocomplete="off" value="rol"><br>
 
         <label for="MyFile">Firma o Sello:</label>
         <input name="MyFile" id="MyFile" type="file" placeholder="Subir Foto de la Mascota" required><br><br>

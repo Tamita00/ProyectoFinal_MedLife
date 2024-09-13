@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using System.IO;
 using Microsoft.AspNetCore.Http;
-
+using System.Text.Json;
+using Newtonsoft.Json;
 
 
 
@@ -216,17 +217,17 @@ public IActionResult Contactos(int idUsuario)
             return Json(new { success = true });
         }
 
-        public bool SaveMuestra(IFormCollection form)
+        public bool SaveMuestra([FromBody] Dictionary<string, object> data)
         {
-            /*var parte1 = TempData["Parte1"] as FormCollection;
-            var parte2 = TempData["Parte2"] as FormCollection;
-            var parte3 = TempData["Parte3"] as FormCollection;
-            var parte4 = TempData["Parte4"] as FormCollection;
-            var parte5 = TempData["Parte5"] as FormCollection;*/
 
-            string nombreHospital = (string)form["HospitalMuestraInput"];
+             Parte1 parte1 = JsonConvert.DeserializeObject<Parte1>(data["parte1"].ToString());
+             Parte2 parte2 = JsonConvert.DeserializeObject<Parte2>(data["parte2"].ToString());
+             Parte3 parte3 = JsonConvert.DeserializeObject<Parte3>(data["parte3"].ToString());
+             Parte4 parte4 = JsonConvert.DeserializeObject<Parte4>(data["parte4"].ToString());
+             Parte5 parte5 = JsonConvert.DeserializeObject<Parte5>(data["parte5"].ToString());
 
-            IFormFile MyFile = Request.Form.Files["MyFile"];
+
+            IFormFile MyFile = parte5.FirmaSello;
 
     
             if(MyFile.Length > 0){
@@ -236,119 +237,66 @@ public IActionResult Contactos(int idUsuario)
                 }
             }
 
-            // Datos de la Parte 1
-     nombreHospital = (string)form["HospitalMuestraInput"];
-    string InstitucionNacimiento = (string)form["InstitucionNacimiento"];
-    int IdHospitalMuestra = BD.SeleccionarHospitalPorNombre(nombreHospital).IdHospital; // Asumiendo que form["HospitalMuestraInput"] devuelve el ID
+            
+                // Datos de la Parte 1
+                string InstitucionNacimiento = parte1.InstitucionNacimiento;
+                string nombreHospital = parte1.HospitalMuestra;
 
-    // Datos de la Parte 2
-    string ApellidoBebe = (string)form["ApellidoBebe"];
-    string NombreBebe = (string)form["NombreBebe"];
-    DateTime FechaHoraNacimiento = DateTime.Parse(form["FechaHoraNacimiento"]);
-    DateTime FechaHoraExtraccion = DateTime.Parse(form["FechaHoraExtraccion"]);
-    string Sexo = (string)form["Sexo"];
-    string Alimentacion = (string)form["Alimentacion"];
-    DateTime FechaIngestaLeche = DateTime.Parse(form["FechaIngestaLeche"]);
-    int SemanasGestacion = int.Parse(form["SemanasGestacion"]);
-    int Peso = int.Parse(form["Peso"]);
-    string CondicionRN = (string)form["CondicionRN"];
-    string PatologiaBase = (string)form["PatologiaBase"];
-    string Patologia = (string)form["Patologia"];
-
-    string Parto = (string)form["Parto"];
-    bool EmbarazoMultiple = bool.Parse(form["EmbarazoMultiple"]);
-    bool EmbarazoGemelar = bool.Parse(form["EmbarazoGemelar"]);
-
-    // Datos de la Parte 3
-    string ApellidoMama = (string)form["ApellidoMama"];
-    string NombreMama = (string)form["NombreMama"];
-    int Documento = int.Parse(form["Documento"]);
-    string Domicilio = (string)form["Domicilio"];
-    string Localidad = (string)form["Localidad"];
-    int Telefono = int.Parse(form["Telefono"]);
-    string LugarControlEmbarazo = (string)form["LugarControlEmbarazo"];
-
-    // Datos de la Parte 4
-    bool Antibioticos = bool.Parse(form["Antibioticos"]);
-    bool DesinfectantesYodados = bool.Parse(form["DesinfectantesYodados"]);
-    bool Transfusion = bool.Parse(form["Transfusion"]);
-    DateTime FechaTransfusion = DateTime.Parse(form["FechaTransfusion"]);
-    bool Dopamina = bool.Parse(form["Dopamina"]);
-    bool Dobutamina = bool.Parse(form["Dobutamina"]);
-    bool CorticoidesMadre = bool.Parse(form["CorticoidesMadre"]);
-    bool CorticoidesBebe = bool.Parse(form["CorticoidesBebe"]);
-    bool Tiroidepatias = bool.Parse(form["Tiroidepatias"]);
-    string Otras = (string)form["Otras"];
-    bool RepiteMuestra = bool.Parse(form["RepiteMuestra"]);
-    bool Prematuro = bool.Parse(form["Prematuro"]);
-    bool MalaMuestra = bool.Parse(form["MalaMuestra"]);
-    bool ResultadoAlterado = bool.Parse(form["ResultadoAlterado"]);
-    bool Analitico = bool.Parse(form["Analitico"]); // Ajustado a string para el formulario si no se convierte a int
-    string Responsable = (string)form["Responsable"];
-    string RolResponsable = (string)form["RolResponsable"];
-    //string FirmaSello = (string)MyFile["FirmaSello"];
-
-    // Datos de la Parte 5
-    DateTime FechaEnvio = DateTime.Parse(form["FechaEnvio"]);
-    DateTime FechaLlegada = DateTime.Parse(form["FechaLlegada"]);
-    string Observaciones = (string)form["Observaciones"];
-               /* // Datos de la Parte 1
-                string InstitucionNacimiento = (string)parte1["InstitucionNacimiento"];
                 int IdHospitalMuestra = BD.SeleccionarHospitalPorNombre(nombreHospital).IdHospital; // Asumiendo que parte1["HospitalMuestraInput"] devuelve el ID
 
-                // Datos de la Parte 2
-                string ApellidoBebe = (string)parte2["ApellidoBebe"];
-                string NombreBebe = (string)parte2["NombreBebe"];
-                DateTime FechaHoraNacimiento = DateTime.Parse(parte2["FechaHoraNacimiento"]);
-                DateTime FechaHoraExtraccion = DateTime.Parse(parte2["FechaHoraExtraccion"]);
-                string Sexo = (string)(parte2["Sexo"]);
-                string Alimentacion = (string)parte2["Alimentacion"];
-                DateTime FechaIngestaLeche = DateTime.Parse(parte2["FechaIngestaLeche"]);
-                int SemanasGestacion = int.Parse(parte2["SemanasGestacion"]);
-                int Peso = int.Parse(parte2["Peso"]);
-                string CondicionRN = (string)parte2["CondicionRN"];
-                string PatologiaBase = (string)parte2["PatologiaBase"];
-                string Patologia = (string)parte2["Patologia"];
-
-                string Parto = (string)parte2["Parto"];
-                bool EmbarazoMultiple = bool.Parse(parte2["EmbarazoMultiple"]);
-                bool EmbarazoGemelar = bool.Parse(parte2["EmbarazoGemelar"]);
+                 // Datos de la Parte 2
+                string apellidoBebe = parte2.ApellidoBebe;
+                string nombreBebe = parte2.NombreBebe;
+                DateTime fechaHoraNacimiento = parte2.FechaHoraNacimiento;
+                DateTime fechaHoraExtraccion = parte2.FechaHoraExtraccion;
+                string sexo = parte2.Sexo;
+                string alimentacion = parte2.Alimentacion;
+                DateTime fechaIngestaLeche = parte2.FechaIngestaLeche;
+                int semanasGestacion = parte2.SemanasGestacion;
+                int peso = parte2.Peso;
+                string condicionRN = parte2.CondicionRN;
+                string patologiaBase = parte2.PatologiaBase;
+                string patologia = parte2.Patologia;
+                string parto = parte2.Parto;
+                bool embarazoMultiple = parte2.EmbarazoMultiple;
+                bool embarazoGemelar = parte2.EmbarazoGemelar;
 
                 // Datos de la Parte 3
-                string ApellidoMama = (string)parte3["ApellidoMama"];
-                string NombreMama = (string)parte3["NombreMama"];
-                int Documento = int.Parse(parte3["Documento"]);
-                string Domicilio = (string)parte3["Domicilio"];
-                string Localidad = (string)parte3["Localidad"];
-                int Telefono = int.Parse(parte3["Telefono"]);
-                string LugarControlEmbarazo = (string)parte3["LugarControlEmbarazo"];
+                string apellidoMama = parte3.ApellidoMama;
+                string nombreMama = parte3.NombreMama;
+                int documento = parte3.Documento;
+                string domicilio = parte3.Domicilio;
+                string localidad = parte3.Localidad;
+                int telefono = parte3.Telefono;
+                string lugarControlEmbarazo = parte3.LugarControlEmbarazo;
 
                 // Datos de la Parte 4
-                bool Antibioticos = bool.Parse(parte4["Antibioticos"]);
-                bool DesinfectantesYodados = bool.Parse(parte4["DesinfectantesYodados"]);
-                bool Transfusion = bool.Parse(parte4["Transfusion"]);
-                DateTime FechaTransfusion = DateTime.Parse(parte4["FechaTransfusion"]);
-                bool Dopamina = bool.Parse(parte4["Dopamina"]);
-                bool Dobutamina = bool.Parse(parte4["Dobutamina"]);
-                bool CorticoidesMadre = bool.Parse(parte4["CorticoidesMadre"]);
-                bool CorticoidesBebe = bool.Parse(parte4["CorticoidesBebe"]);
-                bool Tiroidepatias = bool.Parse(parte4["Tiroidepatias"]);
-                string Otras = (string)parte4["Otras"];
-                bool RepiteMuestra = bool.Parse(parte4["RepiteMuestra"]);
-                bool Prematuro = bool.Parse(parte4["Prematuro"]);
-                bool MalaMuestra = bool.Parse(parte4["MalaMuestra"]);
-                bool ResultadoAlterado = bool.Parse(parte4["ResultadoAlterado"]);
-                bool Analitico = bool.Parse(parte4["Analitico"]); // Ajustado a string para el formulario si no se convierte a int
-                string Responsable = (string)parte4["Responsable"];
-                string RolResponsable = (string)parte4["RolResponsable"];
-                //string FirmaSello = (string)MyFile["FirmaSello"];
+                bool antibioticos = parte4.Antibioticos;
+                bool desinfectantesYodados = parte4.DesinfectantesYodados;
+                bool transfusion = parte4.Transfusion;
+                DateTime fechaTransfusion = parte4.FechaTransfusion;
+                bool dopamina = parte4.Dopamina;
+                bool dobutamina = parte4.Dobutamina;
+                bool corticoidesMadre = parte4.CorticoidesMadre;
+                bool corticoidesBebe = parte4.CorticoidesBebe;
+                bool tiroidepatias = parte4.Tiroidepatias;
+                string otras = parte4.Otras;
+                bool repiteMuestra = parte4.RepiteMuestra;
+                bool prematuro = parte4.Prematuro;
+                bool malaMuestra = parte4.MalaMuestra;
+                bool resultadoAlterado = parte4.ResultadoAlterado;
+                bool analitico = parte4.Analitico;
+                string responsable = parte4.Responsable;
+                string rolResponsable = parte4.RolResponsable;
+         //string FirmaSello = (string)MyFile["FirmaSello"];
 
                 // Datos de la Parte 5
                 
-                DateTime FechaEnvio = DateTime.Parse(form["FechaEnvio"]);
-                DateTime FechaLlegada = DateTime.Parse(form["FechaLlegada"]);
-                string Observaciones = (string)form["Observaciones"];
-           */
+                DateTime FechaEnvio = DateTime.Parse(parte5.FechaEnvio);
+                DateTime FechaLlegada = DateTime.Parse(parte5.FechaEnvio);
+                string FirmaSello = parte5.FirmaSello;
+                string Observaciones = parte5.Observaciones;
+           
             
             BD.InsertarMuestra(
             InstitucionNacimiento, 
@@ -392,16 +340,12 @@ public IActionResult Contactos(int idUsuario)
             Analitico, 
             Responsable, 
             RolResponsable, 
-            MyFile.FileName, 
+            FirmaSello, 
             FechaEnvio, 
             FechaLlegada, 
             Observaciones);
-            TempData.Remove("Parte1");
-            TempData.Remove("Parte2");
-            TempData.Remove("Parte3");
-            TempData.Remove("Parte4");
 
-            return true;
+            return view("Home");
         }
 
 
