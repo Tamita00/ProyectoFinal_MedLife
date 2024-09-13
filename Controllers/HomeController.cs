@@ -216,16 +216,15 @@ public IActionResult Contactos(int idUsuario)
             return Json(new { success = true });
         }
 
-        [HttpPost]
-        public ActionResult SaveMuestra(FormCollection form)
+        public bool SaveMuestra(IFormCollection form)
         {
-            var parte1 = TempData["Parte1"] as FormCollection;
+            /*var parte1 = TempData["Parte1"] as FormCollection;
             var parte2 = TempData["Parte2"] as FormCollection;
             var parte3 = TempData["Parte3"] as FormCollection;
             var parte4 = TempData["Parte4"] as FormCollection;
-            var parte5 = TempData["Parte5"] as FormCollection;
+            var parte5 = TempData["Parte5"] as FormCollection;*/
 
-            string nombreHospital = (string)parte1["HospitalMuestraInput"];
+            string nombreHospital = (string)form["HospitalMuestraInput"];
 
             IFormFile MyFile = Request.Form.Files["MyFile"];
 
@@ -237,8 +236,63 @@ public IActionResult Contactos(int idUsuario)
                 }
             }
 
-            
-                // Datos de la Parte 1
+            // Datos de la Parte 1
+     nombreHospital = (string)form["HospitalMuestraInput"];
+    string InstitucionNacimiento = (string)form["InstitucionNacimiento"];
+    int IdHospitalMuestra = BD.SeleccionarHospitalPorNombre(nombreHospital).IdHospital; // Asumiendo que form["HospitalMuestraInput"] devuelve el ID
+
+    // Datos de la Parte 2
+    string ApellidoBebe = (string)form["ApellidoBebe"];
+    string NombreBebe = (string)form["NombreBebe"];
+    DateTime FechaHoraNacimiento = DateTime.Parse(form["FechaHoraNacimiento"]);
+    DateTime FechaHoraExtraccion = DateTime.Parse(form["FechaHoraExtraccion"]);
+    string Sexo = (string)form["Sexo"];
+    string Alimentacion = (string)form["Alimentacion"];
+    DateTime FechaIngestaLeche = DateTime.Parse(form["FechaIngestaLeche"]);
+    int SemanasGestacion = int.Parse(form["SemanasGestacion"]);
+    int Peso = int.Parse(form["Peso"]);
+    string CondicionRN = (string)form["CondicionRN"];
+    string PatologiaBase = (string)form["PatologiaBase"];
+    string Patologia = (string)form["Patologia"];
+
+    string Parto = (string)form["Parto"];
+    bool EmbarazoMultiple = bool.Parse(form["EmbarazoMultiple"]);
+    bool EmbarazoGemelar = bool.Parse(form["EmbarazoGemelar"]);
+
+    // Datos de la Parte 3
+    string ApellidoMama = (string)form["ApellidoMama"];
+    string NombreMama = (string)form["NombreMama"];
+    int Documento = int.Parse(form["Documento"]);
+    string Domicilio = (string)form["Domicilio"];
+    string Localidad = (string)form["Localidad"];
+    int Telefono = int.Parse(form["Telefono"]);
+    string LugarControlEmbarazo = (string)form["LugarControlEmbarazo"];
+
+    // Datos de la Parte 4
+    bool Antibioticos = bool.Parse(form["Antibioticos"]);
+    bool DesinfectantesYodados = bool.Parse(form["DesinfectantesYodados"]);
+    bool Transfusion = bool.Parse(form["Transfusion"]);
+    DateTime FechaTransfusion = DateTime.Parse(form["FechaTransfusion"]);
+    bool Dopamina = bool.Parse(form["Dopamina"]);
+    bool Dobutamina = bool.Parse(form["Dobutamina"]);
+    bool CorticoidesMadre = bool.Parse(form["CorticoidesMadre"]);
+    bool CorticoidesBebe = bool.Parse(form["CorticoidesBebe"]);
+    bool Tiroidepatias = bool.Parse(form["Tiroidepatias"]);
+    string Otras = (string)form["Otras"];
+    bool RepiteMuestra = bool.Parse(form["RepiteMuestra"]);
+    bool Prematuro = bool.Parse(form["Prematuro"]);
+    bool MalaMuestra = bool.Parse(form["MalaMuestra"]);
+    bool ResultadoAlterado = bool.Parse(form["ResultadoAlterado"]);
+    bool Analitico = bool.Parse(form["Analitico"]); // Ajustado a string para el formulario si no se convierte a int
+    string Responsable = (string)form["Responsable"];
+    string RolResponsable = (string)form["RolResponsable"];
+    //string FirmaSello = (string)MyFile["FirmaSello"];
+
+    // Datos de la Parte 5
+    DateTime FechaEnvio = DateTime.Parse(form["FechaEnvio"]);
+    DateTime FechaLlegada = DateTime.Parse(form["FechaLlegada"]);
+    string Observaciones = (string)form["Observaciones"];
+               /* // Datos de la Parte 1
                 string InstitucionNacimiento = (string)parte1["InstitucionNacimiento"];
                 int IdHospitalMuestra = BD.SeleccionarHospitalPorNombre(nombreHospital).IdHospital; // Asumiendo que parte1["HospitalMuestraInput"] devuelve el ID
 
@@ -294,7 +348,7 @@ public IActionResult Contactos(int idUsuario)
                 DateTime FechaEnvio = DateTime.Parse(form["FechaEnvio"]);
                 DateTime FechaLlegada = DateTime.Parse(form["FechaLlegada"]);
                 string Observaciones = (string)form["Observaciones"];
-           
+           */
             
             BD.InsertarMuestra(
             InstitucionNacimiento, 
@@ -347,7 +401,7 @@ public IActionResult Contactos(int idUsuario)
             TempData.Remove("Parte3");
             TempData.Remove("Parte4");
 
-            return Json(new { success = true });
+            return true;
         }
 
 

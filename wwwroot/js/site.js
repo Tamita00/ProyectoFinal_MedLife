@@ -111,6 +111,16 @@ function goBack(part) {
     }
 }
 
+function populateFormPart1() {
+    var data = localStorage.getItem('formParte1');
+    if (data) {
+        var formData = $.deparam(data);
+        $.each(formData, function(key, value) {
+            $("#formParte1 [name='" + key + "']").val(value);
+        });
+    }
+}
+
 function populateFormPart2() {
     var data = localStorage.getItem('formParte2');
     if (data) {
@@ -152,47 +162,68 @@ function populateFormPart5() {
 }
 
 function submitForm() {
+    alert("si");
     var parte1Data = localStorage.getItem('formParte1');
     var parte2Data = localStorage.getItem('formParte2');
     var parte3Data = localStorage.getItem('formParte3');
     var parte4Data = localStorage.getItem('formParte4');
-    var parte5Data = $("#formParte5").serialize();
+    var parte5Data = $("#formParte5").serializeArray();
+    
+    var finalData = {
+        parte1: parte1Data,
+        parte2: parte2Data,
+        parte3: parte3Data,
+        parte4: parte4Data,
+        parte5: parte5Data
+    };
 
-    var finalData = [parte1Data, parte2Data, parte3Data, parte4Data, parte5Data].join('&');
-
-    $.post('@Url.Action("SaveMuestra", "Form")', finalData, function(response) {
+    $.ajax({
+        type: 'POST',
+        url: '/Home/SaveMuestra',
+        contentType: 'application/json',
+        data: JSON.stringify(finalData),
+        dataType: 'json',
+        success: function(response) {
+            alert('Datos guardados exitosamente');
+        },
+        error: function(xhr, status, error) {
+            console.error('Error al guardar datos:', error);
+        }
+    });
+    /*
+    $.post('/Home/SaveMuestra', finalData, function(response) {
         if (response.success) {
             alert('Formulario guardado exitosamente');
-            localStorage.removeItem('formParte1');
-            localStorage.removeItem('formParte2');
-            localStorage.removeItem('formParte3');
-            localStorage.removeItem('formParte4');
-            localStorage.removeItem('formParte5');
+            localStorage.getItem('formParte1');
+            localStorage.getItem('formParte2');
+            localStorage.getItem('formParte3');
+            localStorage.getItem('formParte4');
+            localStorage.getItem('formParte5');
         } else {
             alert('Error al guardar el formulario');
         }
-    });
+    });*/
 }
 
 // Inicializar la página con los datos guardados
 $(document).ready(function() {
-    if (localStorage.getItem('formParte5')) {
+   /* if (localStorage.removeItem('formParte5')) {
         $("#parte5").show();
         $("#parte4").hide();
         populateFormPart5();
-    } else if (localStorage.getItem('formParte4')) {
+    } else if (localStorage.removeItem('formParte4')) {
         $("#parte4").show();
         $("#parte3").hide();
         populateFormPart4();
-    } else if (localStorage.getItem('formParte3')) {
+    } else if (localStorage.removeItem('formParte3')) {
         $("#parte3").show();
         $("#parte2").hide();
         populateFormPart3();
-    } else if (localStorage.getItem('formParte2')) {
+    } else if (localStorage.removeItem('formParte2')) {
         $("#parte2").show();
         $("#parte1").hide();
         populateFormPart2();
-    }
+    }*/
 });
 
 //-----------Lista sin procesar Guardados
