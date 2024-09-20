@@ -102,6 +102,18 @@ public static class BD{
             }
         }
 
+        // Método para crear un perfil
+        public static Perfil CrearPerfil(Perfil miPerfil)
+        {
+            using (SqlConnection db = new SqlConnection(ConnectionString))
+            {
+                string sql = "CrearPerfil"; // Nombre del procedimiento almacenado
+                var parameters = miPerfil;
+
+                return db.QueryFirstOrDefault<Perfil>(sql, parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
+
         // Método para seleccionar perfiles 
         public static Perfil SeleccionarPerfiles()
         {

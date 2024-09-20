@@ -1,54 +1,62 @@
 <body>
     <br><br>
     <h2>Crear Perfil</h2>
-//HACER FORMULARIO
-    <div class="cuadrado">
+
+<div class="cuadrado">
+    <form method="post" action='@Url.Action("C_GuardarPerfil")'>
         <div class="fila">
-        <div class="infoPerfil">
-        <label for="Nombre">Nombre</label>
-        <input type="text" id="Nombre" name="Nombre" autocomplete="off" required><br>
+            <div class="infoPerfil">
+            <input type="hidden" id="idUsuario" name="idUsuario" value="@ViewBag.idUsuario">
 
-        <label for="Apellido">Apellido</label>
-        <input type="text" id="Apellido" name="Apellido" autocomplete="off" required><br>
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="nombre" name="Nombre" autocomplete="off" required><br>
 
-        <label for="Telefono">Teléfono</label>
-        <input type="text" id="Telefono" name="Telefono" autocomplete="off" required><br>
+                <label for="Apellido">Apellido</label>
+                <input type="text" id="apellido" name="Apellido" autocomplete="off" required><br>
 
-        <label for="Hospital">Hospital Muestra:</label>
-            <input type="text" id="Hospital" list="Hospital" name="HospitalMuestra" autocomplete="off" placeholder="Hospital de la Muestra" required><br>
-            <datalist id="Hospital">
-                @foreach (Hospital hospital in ViewBag.Hospitales)
-                {
-                    <option value="@hospital.NombreHospital"></option>
-                }
-            </datalist>
+                <label for="Telefono">Teléfono</label>
+                <input type="number" id="Telefono" name="Telefono" autocomplete="off" required><br>
 
+                <label for="Email">Email</label>
+                <input type="email" id="Email" name="Email" autocomplete="off" required><br>
 
-        <h3>Permisos:</h3>
-        <p>Lectura: 
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </p>
-        <p>Edición: 
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </p>
-        <p>Impresión: 
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </p>
-    </div>
+                <label for="Hospital">Hospital Muestra:</label>
+                <input type="text" id="IdHospital" list="hospitales" name="IdHospital" autocomplete="off" placeholder="Hospital de la Muestra" required><br>
+                <datalist id="hospitales" name = "IdHospital">
+                    @foreach (var hospital in ViewBag.Hospitales)
+                    {
+                        <option value="@hospital.idHospial">@hospital.NombreHospital</option>
+                    }
+                </datalist>
 
-        
-    </div>
+                <h3>Permisos:</h3>
+                <p>Lectura: 
+                    <label class="switch">
+                        <input type="checkbox" id= "Lectura" name="Lectura">
+                        <span class="slider"></span>
+                    </label>
+                </p>
+                <p>Edición: 
+                    <label class="switch">
+                        <input type="checkbox" name="Edicion">
+                        <span class="slider"></span>
+                    </label>
+                </p>
+                <p>Impresión: 
+                    <label class="switch">
+                        <input type="checkbox" name="Impresion">
+                        <span class="slider"></span>
+                    </label>
+                </p>
 
-    <button class="botonPerfil"><a href =index.html>Crear</a></button>
+                <label for="Contrasena">Contraseña</label>
+                <input type="text" id="Contrasena" name="Contrasena" autocomplete="off" required><br>
+
+            </div>
+        </div>
+        <button type="submit" class="botonPerfil">Crear</button>
+    </form>
+</div>
 
 
 </body>
