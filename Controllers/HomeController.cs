@@ -63,6 +63,23 @@ public IActionResult C_Hospitales(int idUsuario)
         return View("Hospitales");
     }
 
+
+//CREAR PERFIL
+
+public IActionResult C_CrearPerfiles(int idUsuario)
+    {
+        ViewBag.idUsuario = idUsuario;
+        ViewBag.Hospitales = BD.SeleccionarHospitales();
+        return View("CrearPerfil");
+    }
+
+public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
+    {
+        BD.CrearPerfil(miPerfil);
+        ViewBag.idUsuario = idUsuario;
+        return View("Home");
+    }
+
 //CONTACTOS
 
 public IActionResult Contactos(int idUsuario)
