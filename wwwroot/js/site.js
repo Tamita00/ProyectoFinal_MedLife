@@ -100,6 +100,14 @@ function saveParte5() {
     populateFormPart('formParte6');
 }
 
+function saveParte6() {
+    var data = $("#formParte6").serialize();
+    localStorage.setItem('formParte6', data);
+    $("#parte6").hide();
+    $("#parte7").show();
+    populateFormPart('formParte7');
+}
+
 function goBack(part) {
     if (part === 1) {
         $("#parte1").show();
@@ -122,6 +130,13 @@ function goBack(part) {
         $("#parte5").hide();
         populateFormPart('formParte5');
     }
+    else if (part === 6) {
+        $("#parte5").show();
+        $("#parte6").hide();
+        populateFormPart('formParte6');
+    }
+    
+
 }
 
 function populateFormPart(formulario) {
@@ -136,14 +151,13 @@ function populateFormPart(formulario) {
 
     console.log(obj);
 }
-
+var ultimaMuestra = 0;
 function submitForm() {
     var parte1Data = $("#formParte1").serializeArray();
     var parte2Data = $("#formParte2").serializeArray();
     var parte3Data = $("#formParte3").serializeArray();
     var parte4Data = $("#formParte4").serializeArray();
     var parte5Data = $("#formParte5").serializeArray();
-    var parte6Data = $("#formParte6").serializeArray();
 
     // Combina todos los datos en un solo objeto
     var convertToObj = function(dataArray) {
@@ -159,14 +173,50 @@ function submitForm() {
         parte2: convertToObj(parte2Data),
         parte3: convertToObj(parte3Data),
         parte4: convertToObj(parte4Data),
-        parte5: convertToObj(parte5Data),
-        parte6: convertToObj(parte6Data)
+        parte5: convertToObj(parte5Data)
+    };
+
+    console.log(finalData);
+    
+    $.ajax({
+        type: 'POST',
+        url: '/Home/SaveMuestra',
+        contentType: 'application/json',
+        data: JSON.stringify(finalData),
+        dataType: 'json',
+        success: function(response) {
+            alert('Datos guardados exitosamente');
+            console.log(response);
+            ultimaMuestra = response
+        },
+        error: function(xhr, status, error) {
+            console.error('Error al guardar datos:', error);
+        }
+    });
+}
+
+
+function submitForm2() {
+    var parte6Data = $("#formParte6").serializeArray();
+
+    // Combina todos los datos en un solo objeto
+    var convertToObj = function(dataArray) {
+        var dataObject = {};
+        dataArray.forEach(function(field) {
+            dataObject[field.name] = field.value;
+        });
+        return dataObject;
+    };
+
+    var finalData = {
+        idMuestra : ultimaMuestra,
+        data: convertToObj(parte6Data)
     };
 
     console.log(finalData);
     $.ajax({
         type: 'POST',
-        url: '/Home/SaveMuestra',
+        url: '/Home/ActualizarMuestra',
         contentType: 'application/json',
         data: JSON.stringify(finalData),
         dataType: 'json',
@@ -178,68 +228,3 @@ function submitForm() {
         }
     });
 }
-
-
-//-----------Lista sin procesar Guardados
-
-//ESTO ESTA MAL PERO ESTA ES LA IDEA -->
-
-/* function guardarIndividualmente(muestraId) {
-    var criterio = $('#criterio-' + muestraId).val();
-    var metodologias = [
-        $('#metodologia-' + muestraId + '-1').val(),
-        $('#metodologia-' + muestraId + '-2').val(),
-        $('#metodologia-' + muestraId + '-3').val(),
-        $('#metodologia-' + muestraId + '-4').val(),
-        $('#metodologia-' + muestraId + '-5').val(),
-        $('#metodologia-' + muestraId + '-6').val()
-    ];
-
-    $.ajax({
-        url: '/GuardarIndividual',
-        method: 'POST',
-        data: {
-            muestraId: muestraId,
-            criterio: criterio,
-            metodologias: metodologias
-        },
-        success: function(response) {
-            if (response.success) {
-                alert('Guardado exitosamente');
-            } else {
-                alert('Error al guardar: ' + response.message);
-            }
-        },
-        error: function(xhr, status, error) {
-            alert('Error al guardar');
-        }
-    });
-}
-
-function guardarTodos() {
-    var muestras = [];
-    $('.muestra-form').each(function(index, element) {
-        var muestraId = $(this).attr('id').replace('form-', '');
-        var resultado = $('#resultado-' + muestraId).val();
-        muestras.push({ Id: muestraId, Resultado: resultado });
-    });
-
-    $.ajax({
-        url: '/GuardarTodos',
-        method: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify(muestras),
-        success: function(response) {
-            if (response.success) {
-                alert('Todos los cambios guardados exitosamente');
-            } else {
-                alert('Error al guardar todos los cambios: ' + response.message);
-            }
-        },
-        error: function(xhr, status, error) {
-            alert('Error al guardar todos los cambios');
-        }
-    });
-}
-
-*/

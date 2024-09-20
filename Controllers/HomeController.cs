@@ -133,7 +133,7 @@ public IActionResult Contactos(int idUsuario)
             TempData["Parte5"] = form;
             return Json(new { success = true });
         }
-        public bool SaveMuestra([FromBody] Dictionary<string, object> data)
+        public int SaveMuestra([FromBody] Dictionary<string, object> data)
         {
 
              Parte1 parte1 = JsonConvert.DeserializeObject<Parte1>(data["parte1"].ToString());
@@ -141,21 +141,11 @@ public IActionResult Contactos(int idUsuario)
              Parte3 parte3 = JsonConvert.DeserializeObject<Parte3>(data["parte3"].ToString());
              Parte4 parte4 = JsonConvert.DeserializeObject<Parte4>(data["parte4"].ToString());
              Parte5 parte5 = JsonConvert.DeserializeObject<Parte5>(data["parte5"].ToString());
-             Parte6 parte6 = JsonConvert.DeserializeObject<Parte6>(data["parte6"].ToString());
+             
 
 
-            IFormFile firmaSello1 = (IFormFile)parte6.FirmaSello;
 
-            if (firmaSello1 != null)
-            {
-                if(firmaSello1.Length > 0){
-                    string wwwRootLocal = this._environment.ContentRootPath + @"\wwwroot\img\Firmas\" + firmaSello1.FileName;
-                    using(var stream = System.IO.File.Create(wwwRootLocal)){
-                        firmaSello1.CopyToAsync(stream);
-                    }
-            }
-
-            }
+            
             
                 // Datos de la Parte 1
                 string InstitucionNacimiento = parte1.InstitucionNacimiento;
@@ -214,10 +204,9 @@ public IActionResult Contactos(int idUsuario)
                 DateTime fechaLlegada = parte5.FechaEnvio;
                 string observaciones = parte5.Observaciones;
 
-                // Dato de la Parte 6
-                string firmaSello = (parte6.FirmaSello != null ? parte6.FirmaSello.FileName : "");
+                
             
-                BD.InsertarMuestra(
+                int idMuestra = BD.InsertarMuestra(
                 InstitucionNacimiento, 
                 IdHospitalMuestra, 
                 apellidoBebe, 
@@ -258,14 +247,44 @@ public IActionResult Contactos(int idUsuario)
                 resultadoAlterado, 
                 analitico, 
                 responsable, 
-                rolResponsable, 
-                firmaSello, 
+                rolResponsable,  
                 fechaEnvio, 
                 fechaLlegada, 
                 observaciones);
 
+                return idMuestra;
+        }
+
+public bool ActualizarMuestra([FromBody] MuestraActualizada o)
+        {
+            int idMuestra = o.idMuestra;
+            Dictionary<string, object> data = o.data;
+
+             Parte6 parte6 = JsonConvert.DeserializeObject<Parte6>(data["parte6"].ToString()); // aca {0}
+
+
+            IFormFile firmaSello1 = (IFormFile)parte6.FirmaSello;
+
+            if (firmaSello1 != null)
+            {
+                if(firmaSello1.Length > 0){
+                    string wwwRootLocal = this._environment.ContentRootPath + @"\wwwroot\img\Firmas\" + firmaSello1.FileName;
+                    using(var stream = System.IO.File.Create(wwwRootLocal)){
+                        firmaSello1.CopyToAsync(stream);
+                    }
+            }
+
+            }
+            
+                
+                // Dato de la Parte 6
+                string firmaSello = (parte6.FirmaSello != null ? parte6.FirmaSello.FileName : "");
+            
+                BD.ActualizarMuestra(idMuestra, firmaSello);
+
                 return true;
         }
+        
 
 
 // LISTA SIN PROCESAR

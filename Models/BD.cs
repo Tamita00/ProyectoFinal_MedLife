@@ -129,18 +129,15 @@ public static class BD{
     //......Actualizar
 
         // Método para actualizar una muestra en la base de datos
-        public static void ActualizarMuestra(int idMuestra, int idResultado, DateTime fechaEnvio, DateTime fechaLlegada, string observaciones)
+        public static void ActualizarMuestra(int idMuestra, string firmaSello)
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
-                string sql = "ActualizarMuestra"; // Nombre del procedimiento almacenado
+                string sql = "ActualizarMuestraFirma"; // Nombre del procedimiento almacenado
                 var parameters = new
                 {
                     IdMuestra = idMuestra,
-                    IdResultado = idResultado,
-                    FechaEnvio = fechaEnvio,
-                    FechaLlegada = fechaLlegada,
-                    Observaciones = observaciones
+                    FirmaSello = firmaSello
                 };
 
                 db.Execute(sql, parameters, commandType: CommandType.StoredProcedure);
@@ -242,7 +239,7 @@ public static class BD{
         }
 
     // Método para insertar una nueva muestra en la base de datos
-        public static void InsertarMuestra( string institucionNacimiento, int idHospitalMuestra,
+        public static int InsertarMuestra( string institucionNacimiento, int idHospitalMuestra,
             string apellidoBebe, string nombreBebe, DateTime fechaHoraNacimiento, DateTime fechaHoraExtraccion,
             string sexo, string alimentacion, DateTime fechaIngestaLeche, int semanasGestacion, int peso,
             string condicionRN, string patologiaBase, string patologia, string parto, bool embarazoMultiple, bool embarazoGemelar,
@@ -250,8 +247,8 @@ public static class BD{
             int telefono, string lugarControlEmbarazo, bool antibioticos, bool desinfectantesYodados,
             bool transfusion, DateTime fechaTransfusion, bool dopamina, bool dobutamina, bool corticoidesMadre,
             bool corticoidesBebe, bool tiroidepatias, string otras, bool repiteMuestra, bool prematuro,
-            bool malaMuestra, bool resultadoAlterado, bool analitico, string responsable, string rolResponsable,
-            string MyFile, DateTime fechaEnvio, DateTime fechaLlegada, string observaciones)
+            bool malaMuestra, bool resultadoAlterado, bool analitico, string responsable, string rolResponsable, 
+            DateTime fechaEnvio, DateTime fechaLlegada, string observaciones)
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
@@ -299,13 +296,29 @@ public static class BD{
                     Analitico = analitico,
                     Responsable = responsable,
                     RolResponsable = rolResponsable,
-                    FirmaSello = MyFile,
                     FechaEnvio = fechaEnvio,
                     FechaLlegada = fechaLlegada,
                     ObservacionesMuestra = observaciones
                 };
 
                 db.Execute(sql, parameters, commandType: CommandType.StoredProcedure);
+
+                string query = "SELECT TOP(1) IdMuestra FROM Muestra ORDER BY IdMuestra DESC"; // Consulta que quieres usar
+                object result;
+                int  resultado = 0;
+                using (var connection = new SqlConnection(db.ConnectionString))
+                {
+                    connection.Open();
+
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        result = command.ExecuteScalar();
+                        resultado = ( result!= null) ? Convert.ToInt32(result) : 0; // Devuelve 0 si no hay resultado
+                    }
+                }
+
+                return resultado;
+
             }
         }
 
