@@ -2,11 +2,11 @@ public class Parte2
 {
     public string ApellidoBebe { get; set; }
     public string NombreBebe { get; set; }
-    public DateTime FechaHoraNacimiento { get; set; }
-    public DateTime FechaHoraExtraccion { get; set; }
+    public DateTime? FechaHoraNacimiento { get; set; }
+    public DateTime? FechaHoraExtraccion { get; set; }
     public string Sexo { get; set; }
     public string Alimentacion { get; set; }
-    public DateTime FechaIngestaLeche { get; set; }
+    public DateTime? FechaIngestaLeche { get; set; }
     public int SemanasGestacion { get; set; }
     public int Peso { get; set; }
     public string CondicionRN { get; set; }

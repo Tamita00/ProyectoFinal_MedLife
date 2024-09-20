@@ -243,7 +243,7 @@ public static class BD{
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
-                string sql = "InsertarMuestra"; // Nombre del procedimiento almacenado
+                string sql = "InsertarMuestra";
                 var parameters = new
                 {
                     InstitucionNacimiento = institucionNacimiento,

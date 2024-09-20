@@ -9,7 +9,7 @@ using System.IO;
 using Microsoft.AspNetCore.Http;
 using System.Text.Json;
 using Newtonsoft.Json;
-
+using System.Web;
 
 
 namespace ProyectoFinal_MedLife.Controllers;
@@ -110,6 +110,12 @@ public IActionResult Contactos(int idUsuario)
             return Json(new { success = true });
         }
 
+        [HttpPost]
+        public ActionResult SaveParte5(FormCollection form)
+        {
+            TempData["Parte5"] = form;
+            return Json(new { success = true });
+        }
         public bool SaveMuestra([FromBody] Dictionary<string, object> data)
         {
 
@@ -118,18 +124,21 @@ public IActionResult Contactos(int idUsuario)
              Parte3 parte3 = JsonConvert.DeserializeObject<Parte3>(data["parte3"].ToString());
              Parte4 parte4 = JsonConvert.DeserializeObject<Parte4>(data["parte4"].ToString());
              Parte5 parte5 = JsonConvert.DeserializeObject<Parte5>(data["parte5"].ToString());
+             Parte6 parte6 = JsonConvert.DeserializeObject<Parte6>(data["parte6"].ToString());
 
 
-            IFormFile MyFile = parte5.FirmaSello;
+            IFormFile firmaSello1 = (IFormFile)parte6.FirmaSello;
 
-    
-            if(MyFile.Length > 0){
-                string wwwRootLocal = this._environment.ContentRootPath + @"\wwwroot\img\Firmas\" + MyFile.FileName;
-                using(var stream = System.IO.File.Create(wwwRootLocal)){
-                    MyFile.CopyToAsync(stream);
-                }
+            if (firmaSello1 != null)
+            {
+                if(firmaSello1.Length > 0){
+                    string wwwRootLocal = this._environment.ContentRootPath + @"\wwwroot\img\Firmas\" + firmaSello1.FileName;
+                    using(var stream = System.IO.File.Create(wwwRootLocal)){
+                        firmaSello1.CopyToAsync(stream);
+                    }
             }
 
+            }
             
                 // Datos de la Parte 1
                 string InstitucionNacimiento = parte1.InstitucionNacimiento;
@@ -140,11 +149,11 @@ public IActionResult Contactos(int idUsuario)
                  // Datos de la Parte 2
                 string apellidoBebe = parte2.ApellidoBebe;
                 string nombreBebe = parte2.NombreBebe;
-                DateTime fechaHoraNacimiento = parte2.FechaHoraNacimiento;
-                DateTime fechaHoraExtraccion = parte2.FechaHoraExtraccion;
+                DateTime fechaHoraNacimiento = parte2.FechaHoraNacimiento ?? DateTime.Now;
+                DateTime fechaHoraExtraccion = parte2.FechaHoraExtraccion ?? DateTime.Now;
                 string sexo = parte2.Sexo;
                 string alimentacion = parte2.Alimentacion;
-                DateTime fechaIngestaLeche = parte2.FechaIngestaLeche;
+                DateTime fechaIngestaLeche = parte2.FechaIngestaLeche ?? DateTime.Now;
                 int semanasGestacion = parte2.SemanasGestacion;
                 int peso = parte2.Peso;
                 string condicionRN = parte2.CondicionRN;
@@ -179,66 +188,66 @@ public IActionResult Contactos(int idUsuario)
                 bool malaMuestra = parte4.MalaMuestra;
                 bool resultadoAlterado = parte4.ResultadoAlterado;
                 bool analitico = parte4.Analitico;
-                string responsable = parte5.Responsable;
-                string rolResponsable = parte5.RolResponsable;
-         //string FirmaSello = (string)MyFile["FirmaSello"];
 
                 // Datos de la Parte 5
                 
-                DateTime fechaEnvio = DateTime.Parse(parte5.FechaEnvio);
-                DateTime fechaLlegada = DateTime.Parse(parte5.FechaEnvio);
-                string firmaSello = parte5.FirmaSello;
+                string responsable = parte5.Responsable;
+                string rolResponsable = parte5.RolResponsable;
+                DateTime fechaEnvio = parte5.FechaEnvio;
+                DateTime fechaLlegada = parte5.FechaEnvio;
                 string observaciones = parte5.Observaciones;
-           
-            
-            BD.InsertarMuestra(
-            InstitucionNacimiento, 
-            IdHospitalMuestra, 
-            apellidoBebe, 
-            nombreBebe, 
-            fechaHoraNacimiento, 
-            fechaHoraExtraccion, 
-            sexo, 
-            alimentacion, 
-            fechaIngestaLeche, 
-            semanasGestacion, 
-            peso, 
-            condicionRN, 
-            patologiaBase, 
-            patologia,
-            parto, 
-            embarazoMultiple, 
-            embarazoGemelar, 
-            apellidoMama, 
-            nombreMama, 
-            documento, 
-            domicilio, 
-            localidad, 
-            telefono, 
-            lugarControlEmbarazo, 
-            antibioticos, 
-            desinfectantesYodados, 
-            transfusion, 
-            fechaTransfusion, 
-            dopamina, 
-            dobutamina, 
-            corticoidesMadre, 
-            corticoidesBebe, 
-            tiroidepatias, 
-            otras, 
-            repiteMuestra, 
-            prematuro, 
-            malaMuestra, 
-            resultadoAlterado, 
-            analitico, 
-            responsable, 
-            rolResponsable, 
-            firmaSello, 
-            fechaEnvio, 
-            fechaLlegada, 
-            observaciones);
 
-            return view("Home");
+                // Dato de la Parte 6
+                string firmaSello = (parte6.FirmaSello != null ? parte6.FirmaSello.FileName : "");
+            
+                BD.InsertarMuestra(
+                InstitucionNacimiento, 
+                IdHospitalMuestra, 
+                apellidoBebe, 
+                nombreBebe, 
+                fechaHoraNacimiento, 
+                fechaHoraExtraccion, 
+                sexo, 
+                alimentacion, 
+                fechaIngestaLeche, 
+                semanasGestacion, 
+                peso, 
+                condicionRN, 
+                patologiaBase, 
+                patologia,
+                parto, 
+                embarazoMultiple, 
+                embarazoGemelar, 
+                apellidoMama, 
+                nombreMama, 
+                documento, 
+                domicilio, 
+                localidad, 
+                telefono, 
+                lugarControlEmbarazo, 
+                antibioticos, 
+                desinfectantesYodados, 
+                transfusion, 
+                fechaTransfusion, 
+                dopamina, 
+                dobutamina, 
+                corticoidesMadre, 
+                corticoidesBebe, 
+                tiroidepatias, 
+                otras, 
+                repiteMuestra, 
+                prematuro, 
+                malaMuestra, 
+                resultadoAlterado, 
+                analitico, 
+                responsable, 
+                rolResponsable, 
+                firmaSello, 
+                fechaEnvio, 
+                fechaLlegada, 
+                observaciones);
+
+                return true;
         }
 
 

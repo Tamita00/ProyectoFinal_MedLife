@@ -30,13 +30,14 @@
         <input type="text" id="NombreBebe" name="NombreBebe" placeholder="Nombre del Bebé" value="Nom Bebe"/><br />
 
         <label for="FechaHoraNacimiento">Fecha y Hora de Nacimiento:</label>
-        <input type="datetime-local" id="FechaHoraNacimiento" name="FechaHoraNacimiento" value="01-01-2024" /><br />
+        <input type="datetime-local" id="FechaHoraNacimiento" name="FechaHoraNacimiento" value= "01-01-2024" /><br />
 
         <label for="FechaHoraExtraccion">Fecha y Hora de Extracción:</label>
         <input type="datetime-local" id="FechaHoraExtraccion" name="FechaHoraExtraccion" /><br />
 
         <label for="Sexo">Sexo:</label>
         <select id="Sexo" name="Sexo">
+            <option value="null"></option>
             <option value="M">Masculino</option>
             <option value="F">Femenino</option>
             <option value="I">Indeterminado</option>
@@ -44,6 +45,7 @@
 
         <label for="Alimentacion">Alimentación:</label>
         <select id="Alimentacion" name="Alimentacion" required>
+            <option value="null"></option>
             <option value="Biberon">Biberón</option>
             <option value="Pecho">Pecho</option>
             <option value="AyunoEnteral">Ayuno enteral</option>
@@ -61,6 +63,7 @@
 
         <label for="CondicionRN">Condición al Nacer:</label>
         <select id="CondicionRN" name="CondicionRN" required>
+            <option value="null"></option>
             <option value="Sano">Sano</option>
             <option value="Enfermo">Enfermo</option>
             <option value="CuidadosIntensivos">Cuidados Intensivos</option>
@@ -71,20 +74,23 @@
 
         <label for="Parto">Tipo de Parto:</label>
         <select id="Parto" name="Parto">
+            <option value="null"></option>
             <option value="Termino">A término</option>
             <option value="Prematuro">Prematuro</option>
         </select><br />
 
         <label for="EmbarazoMultiple">Embarazo Múltiple:</label>
-        <select id="EmbarazoMultiple" name="EmbarazoMultiple">
-            <option value="false">No</option>
+        <select id="EmbarazoMultiple" name="EmbarazoMultiple" required>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br />
 
         <label for="EmbarazoGemelar">Embarazo Gemelar:</label>
-        <select id="EmbarazoGemelar" name="EmbarazoGemelar">
-            <option value="false">No</option>
+        <select id="EmbarazoGemelar" name="EmbarazoGemelar" required>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br />
 
         <button type="button" onclick="goBack(1)">Anterior</button>
@@ -110,10 +116,10 @@
         </div>
 
         <label for="Domicilio">Domicilio de la Madre:</label>
-        <input type="text" id="Domicilio" name="Domicilio" autocomplete="off"><br>
+        <input type="text" id="Domicilio" name="Domicilio" autocomplete="off" value="dom madre"><br>
 
         <label for="Localidad">Localidad de la Madre:</label>
-        <input type="text" id="Localidad" name="Localidad" autocomplete="off"><br>
+        <input type="text" id="Localidad" name="Localidad" autocomplete="off" value="loc madre"><br>
 
         <label for="Telefono">Teléfono de la Madre:</label>
         <input type="tel" onkeyup="ConfirmarMinimo(7)" id="Telefono" name="Telefono" autocomplete="off" value=1234567><br>
@@ -125,54 +131,62 @@
         <input type="text" id="LugarControlEmbarazo" name="LugarControlEmbarazo" autocomplete="off" value="lug emb"><br>
 
         <label for="Antibioticos">Antibióticos durante el Embarazo:</label>
-        <select id="Antibioticos" name="Antibioticos">
-            <option value="false">No</option>
+        <select id="Antibioticos" name="Antibioticos" required>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br>
 
         <label for="DesinfectantesYodados">Desinfectantes Yodados:</label>
-        <select id="DesinfectantesYodados" name="DesinfectantesYodados">
-            <option value="false">No</option>
+        <select id="DesinfectantesYodados" name="DesinfectantesYodados" required>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br>
 
         <label for="Transfusion">Transfusión:</label>
-        <select id="Transfusion" name="Transfusion">
-            <option value="false">No</option>
+        <select id="Transfusion" name="Transfusion" required>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br>
 
         <label for="FechaTransfusion">Fecha de Transfusión:</label>
-        <input type="datetime-local" id="FechaTransfusion" name="FechaTransfusion" autocomplete="off"><br>
+        <input type="datetime-local" id="FechaTransfusion" name="FechaTransfusion" autocomplete="off" required><br>
 
         <label for="Dopamina">Dopamina:</label>
-        <select id="Dopamina" name="Dopamina">
-            <option value="false">No</option>
+        <select id="Dopamina" name="Dopamina" required>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br>
 
         <label for="Dobutamina">Dobutamina:</label>
-        <select id="Dobutamina" name="Dobutamina">
-            <option value="false">No</option>
+        <select id="Dobutamina" name="Dobutamina" required>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br>
 
         <label for="CorticoidesMadre">Corticoides (Madre):</label>
-        <select id="CorticoidesMadre" name="CorticoidesMadre">
-            <option value="false">No</option>
+        <select id="CorticoidesMadre" name="CorticoidesMadre" required>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br>
 
         <label for="CorticoidesBebe">Corticoides (Bebé):</label>
-        <select id="CorticoidesBebe" name="CorticoidesBebe">
-            <option value="false">No</option>
+        <select id="CorticoidesBebe" name="CorticoidesBebe" required>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br>
 
         <label for="Tiroidepatias">Tiroides (Patologías):</label>
-        <select id="Tiroidepatias" name="Tiroidepatias">
-            <option value="false">No</option>
+        <select id="Tiroidepatias" name="Tiroidepatias" required>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br>
 
         <label for="Otras">Otras Consideraciones:</label>
@@ -189,32 +203,37 @@
     <form id="formParte4">
         <label for="RepiteMuestra">Repite Muestra:</label>
         <select id="RepiteMuestra" name="RepiteMuestra">
-            <option value="false">No</option>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br>
 
         <label for="Prematuro">Prematuro:</label>
         <select id="Prematuro" name="Prematuro">
-            <option value="false">No</option>
+            <option value="null"></option>
             <option value="true">Sí</option>
+            <option value="false">No</option>
         </select><br>
 
         <label for="MalaMuestra">Mala Muestra:</label>
         <select id="MalaMuestra" name="MalaMuestra">
+            <option value="null"></option>
+            <option value="true" selected>Sí</option>
             <option value="false">No</option>
-            <option value="true">Sí</option>
         </select><br>
 
         <label for="ResultadoAlterado">Resultado Alterado:</label>
         <select id="ResultadoAlterado" name="ResultadoAlterado">
+            <option value="null"></option>
+            <option value="true" selected >Sí</option>
             <option value="false">No</option>
-            <option value="true">Sí</option>
         </select><br>
 
         <label for="Analitico">Es Analítico:</label>
         <select id="Analitico" name="Analitico">
+            <option value="null"></option>
+            <option value="true" selected>Sí</option>
             <option value="false">No</option>
-            <option value="true">Sí</option>
         </select><br>
 
         <button type="button" onclick="goBack(3)">Anterior</button>
@@ -233,9 +252,6 @@
         <label for="RolResponsable">Rol del Responsable:</label>
         <input type="text" id="RolResponsable" name="RolResponsable" autocomplete="off" value="rol"><br>
 
-        <label for="MyFile">Firma o Sello:</label>
-        <input name="MyFile" id="MyFile" type="file" placeholder="Subir Foto de la Mascota" required><br><br>
-
         <legend>Fechas de Envío y Llegada</legend>
         <label for="FechaEnvio">Fecha de Envío:</label>
         <input type="datetime-local" id="FechaEnvio" name="FechaEnvio" autocomplete="off" required><br>
@@ -247,19 +263,18 @@
             <legend>Observaciones</legend>
             <textarea id="Observaciones" name="Observaciones" rows="4" cols="50"></textarea><br>
         </div>
-
-        <input type="submit" role="button" value="Siguiente" id="submit" name="submit"
-            style="background-color: #003a9f;
-                   color: white;
-                   padding: 12px 20px;
-                   border: none;
-                   border-radius: 4px;
-                   cursor: pointer;
-                   font-size: 14px;
-                   transition: background-color 0.3s ease;">
-        <br><br>
-
         <button type="button" onclick="goBack(4)">Anterior</button>
+        <button type="button" onclick="saveParte5()">Siguiente</button>
+    </form>
+</div>
+
+<!-- Parte 6: Datos de Envío -->
+<div id="parte6">
+    <form id="formParte6" method = 'POST' enctype="multipart/form-data">
+    <h4>Termina de cargar tus datos</h4>
+        <label for="FirmaSello">Firma y Sello:</label>
+        <input name="FirmaSello" id="FirmaSello" type="file" placeholder="Subir foto de la firma" required><br><br>
+        <button type="button" onclick="goBack(5)">Anterior</button>
         <button type="button" onclick="submitForm()">Enviar</button>
     </form>
 </div>

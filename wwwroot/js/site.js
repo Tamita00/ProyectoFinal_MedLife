@@ -65,7 +65,7 @@ function saveParte1() {
     localStorage.setItem('formParte1', data);
     $("#parte1").hide();
     $("#parte2").show();
-    populateFormPart2();
+    populateFormPart('formParte2');
 }
 
 function saveParte2() {
@@ -73,7 +73,7 @@ function saveParte2() {
     localStorage.setItem('formParte2', data);
     $("#parte2").hide();
     $("#parte3").show();
-    populateFormPart3();
+    populateFormPart('formParte3');
 }
 
 function saveParte3() {
@@ -81,7 +81,7 @@ function saveParte3() {
     localStorage.setItem('formParte3', data);
     $("#parte3").hide();
     $("#parte4").show();
-    populateFormPart4();
+    populateFormPart('formParte4');
 }
 
 function saveParte4() {
@@ -89,7 +89,15 @@ function saveParte4() {
     localStorage.setItem('formParte4', data);
     $("#parte4").hide();
     $("#parte5").show();
-    populateFormPart5();
+    populateFormPart('formParte5');
+}
+
+function saveParte5() {
+    var data = $("#formParte5").serialize();
+    localStorage.setItem('formParte5', data);
+    $("#parte5").hide();
+    $("#parte6").show();
+    populateFormPart('formParte6');
 }
 
 function goBack(part) {
@@ -99,57 +107,34 @@ function goBack(part) {
     } else if (part === 2) {
         $("#parte2").show();
         $("#parte3").hide();
-        populateFormPart2();
+        populateFormPart('formParte2');
     } else if (part === 3) {
         $("#parte3").show();
         $("#parte4").hide();
-        populateFormPart3();
+        populateFormPart('formParte3');
     } else if (part === 4) {
         $("#parte4").show();
         $("#parte5").hide();
-        populateFormPart4();
+        populateFormPart('formParte4');
+    }
+    else if (part === 5) {
+        $("#parte4").show();
+        $("#parte5").hide();
+        populateFormPart('formParte5');
     }
 }
 
-function populateFormPart1() {
-    var data = localStorage.getItem('formParte1');
-    if (data) {
-        var formData = $.deparam(data);
-        $.each(formData, function(key, value) {
-            $("#formParte1 [name='" + key + "']").val(value);
+function populateFormPart(formulario) {
+    var data = localStorage.getItem(formulario);
 
-        });
-    }
-}
+    const params = new URLSearchParams(data);
+    // Convertir a un objeto
+    const obj = {};
+    params.forEach((value, key) => {
+    obj[key] = decodeURIComponent(value); // Decodificar los valores
+    });
 
-function populateFormPart2() {
-    var data = localStorage.getItem('formParte2');
-    if (data) {
-        var formData = $.deparam(data);
-        $.each(formData, function(key, value) {
-            $("#formParte2 [name='" + key + "']").val(value);
-        });
-    }
-}
-
-function populateFormPart3() {
-    var data = localStorage.getItem('formParte3');
-    if (data) {
-        var formData = $.deparam(data);
-        $.each(formData, function(key, value) {
-            $("#formParte3 [name='" + key + "']").val(value);
-        });
-    }
-}
-
-function populateFormPart4() {
-    var data = localStorage.getItem('formParte4');
-    if (data) {
-        var formData = $.deparam(data);
-        $.each(formData, function(key, value) {
-            $("#formParte4 [name='" + key + "']").val(value);
-        });
-    }
+    console.log(obj);
 }
 
 function submitForm() {
@@ -158,6 +143,7 @@ function submitForm() {
     var parte3Data = $("#formParte3").serializeArray();
     var parte4Data = $("#formParte4").serializeArray();
     var parte5Data = $("#formParte5").serializeArray();
+    var parte6Data = $("#formParte6").serializeArray();
 
     // Combina todos los datos en un solo objeto
     var convertToObj = function(dataArray) {
@@ -173,10 +159,11 @@ function submitForm() {
         parte2: convertToObj(parte2Data),
         parte3: convertToObj(parte3Data),
         parte4: convertToObj(parte4Data),
-        parte5: convertToObj(parte5Data)
+        parte5: convertToObj(parte5Data),
+        parte6: convertToObj(parte6Data)
     };
 
-console.log(finalData);
+    console.log(finalData);
     $.ajax({
         type: 'POST',
         url: '/Home/SaveMuestra',
@@ -190,41 +177,8 @@ console.log(finalData);
             console.error('Error al guardar datos:', error);
         }
     });
-    /*
-    $.post('/Home/SaveMuestra', finalData, function(response) {
-        if (response.success) {
-            alert('Formulario guardado exitosamente');
-            localStorage.getItem('formParte1');
-            localStorage.getItem('formParte2');
-            localStorage.getItem('formParte3');
-            localStorage.getItem('formParte4');
-            localStorage.getItem('formParte5');
-        } else {
-            alert('Error al guardar el formulario');
-        }
-    });*/
 }
 
-// Inicializar la página con los datos guardados
-$(document).ready(function() {
-   /* if (localStorage.removeItem('formParte5')) {
-        $("#parte5").show();
-        $("#parte4").hide();
-        populateFormPart5();
-    } else if (localStorage.removeItem('formParte4')) {
-        $("#parte4").show();
-        $("#parte3").hide();
-        populateFormPart4();
-    } else if (localStorage.removeItem('formParte3')) {
-        $("#parte3").show();
-        $("#parte2").hide();
-        populateFormPart3();
-    } else if (localStorage.removeItem('formParte2')) {
-        $("#parte2").show();
-        $("#parte1").hide();
-        populateFormPart2();
-    }*/
-});
 
 //-----------Lista sin procesar Guardados
 
