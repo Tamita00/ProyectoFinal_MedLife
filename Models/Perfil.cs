@@ -8,15 +8,15 @@ namespace ProyectoFinal_MedLife.Models {
         public string? Email {get; set;}
         public int Telefono {get; set;}
         public int IdHospital {get; set;}
-        public bool Lectura {get; set;}
-        public bool Edicion {get; set;}
-        public bool Impresion {get; set;}
+        public int Lectura {get; set;}
+        public int Edicion {get; set;}
+        public int Impresion {get; set;}
         public string? Contrasena {get; set;}
         [NotMapped]
         public bool MantenterActivo {get; set;}
 
         public Perfil(){}
-        public Perfil(int id, string nombre, string apellido, string email, int tel, int idHosp, bool lectura, bool edicion, bool impresion, string contra, bool mantAct)
+        public Perfil(int id, string nombre, string apellido, string email, int tel, int idHosp, int lectura, int edicion, int impresion, string contra, bool mantAct)
         {
             IdPerfil = id;
             Nombre = nombre;
