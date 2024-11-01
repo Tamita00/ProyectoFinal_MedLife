@@ -73,11 +73,18 @@ public IActionResult C_CrearPerfiles(int idUsuario)
     }
 
 public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
-    {
-        BD.CrearPerfil(miPerfil);
-        ViewBag.idUsuario = idUsuario;
-        return View("Home");
-    }
+{
+    miPerfil.Lectura = Request.Form.ContainsKey("Lectura") && Request.Form["Lectura"] == "true";
+    miPerfil.Edicion = Request.Form.ContainsKey("Edicion") && Request.Form["Edicion"] == "true";
+    miPerfil.Impresion = Request.Form.ContainsKey("Impresion") && Request.Form["Impresion"] == "true";
+    miPerfil.MantenterActivo = Request.Form.ContainsKey("mantenerActivo") && Request.Form["mantenerActivo"] == "true";
+
+    ViewBag.idUsuario = idUsuario;
+    BD.CrearPerfil(miPerfil);
+
+    return View("Home");
+}
+
 
 //CONTACTOS
 

@@ -196,7 +196,6 @@ function submitForm() {
     });
 }
 
-
 function submitForm2() {
     var parte6Data = $("#formParte6").serializeArray();
     console.log( parte6Data);
@@ -235,3 +234,41 @@ function submitForm2() {
         }
     });
 }
+
+function validarEmail() {
+    var emailField = document.getElementById('Email');
+    var validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
+    if (validEmail.test(emailField.value)) {
+        return true;
+    } else {
+        alert('Por favor, ingresar un email válido');
+        emailField.focus(); // Coloca el foco en el campo del email
+        return false;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const emailInput = document.getElementById('Email');
+    emailInput.addEventListener('blur', validarEmail);
+});
+
+function manejarEnvio(event) {
+    if (!validarEmail()) {
+        event.preventDefault();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.formCrearPerfil');
+    form.addEventListener('submit', manejarEnvio);
+});
+
+document.getElementById('nombreHospital').addEventListener('input', function() {
+    const options = document.querySelectorAll('#datalistHospitalesMuestra option');
+    options.forEach(option => {
+        if (option.value === this.value) {
+            document.getElementById('idHospital').value = option.getAttribute('data-id');
+        }
+    });
+});

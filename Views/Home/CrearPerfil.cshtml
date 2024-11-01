@@ -2,8 +2,8 @@
     <h2 class="titulo">Crear Perfil</h2>
     <div class="crearPerfil-container">
         <div class="cuadrado">
-            <form class = "formCrearPerfil" method="post" action='@Url.Action("C_GuardarPerfil")'>
-                <input type="hidden" id="idUsuario" name="idUsuario" value="@ViewBag.idUsuario">
+            <form class="formCrearPerfil" method="post" action='@Url.Action("C_GuardarPerfil")'>
+                
                 <div class="infoPerfil">
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" name="Nombre" autocomplete="off" required>
@@ -12,43 +12,52 @@
                     <input type="text" id="apellido" name="Apellido" autocomplete="off" required>
 
                     <label for="Telefono">Teléfono</label>
-                    <input type="text" id="Telefono" name="Telefono" autocomplete="off" required>
+                    <input type="number" id="Telefono" name="Telefono" autocomplete="off" required>
 
                     <label for="Email">Email</label>
                     <input type="email" id="Email" name="Email" autocomplete="off" required>
 
-                    <label for="HospitalMuestraInput">Hospital Muestra:</label>
-                    <input type="text" id="HospitalMuestraInput" list="datalistHospitalesMuestra" name="HospitalMuestra" autocomplete="off" placeholder="Hospital de la Muestra" value="Italiano" required>
+                    <label for="idHospital">Hospital</label>
+                    <input type="hidden" id="idHospital" name="IdHospital" value="">
+                    <input type="text" id="nombreHospital" list="datalistHospitalesMuestra" name="Hospital" autocomplete="off" required><br>
                     <datalist id="datalistHospitalesMuestra">
                         @foreach (Hospital hospital in ViewBag.Hospitales)
                         {
-                            <option value="@hospital.NombreHospital"></option>
+                            <option value="@hospital.NombreHospital" data-id="@hospital.IdHospital"></option>
                         }
                     </datalist>
+
 
                     <h3>Permisos:</h3>
                     <div class="permisos">
                         <div class="permiso">
                             <span>Lectura:</span>
-                            <label class="switch">
-                                <input type="checkbox" id="Lectura" name="Lectura">
+                            <label for="Lectura" class="switch">
+                                <input type="checkbox" id="Lectura" name="Lectura" value="true">
                                 <span class="slider"></span>
                             </label>
                         </div>
                         <div class="permiso">
                             <span>Edición:</span>
-                            <label class="switch">
-                                <input type="checkbox" name="Edicion">
+                            <label for="Edicion" class="switch">
+                                <input type="checkbox" id="Edicion" name="Edicion" value="true">
                                 <span class="slider"></span>
                             </label>
                         </div>
                         <div class="permiso">
                             <span>Impresión:</span>
-                            <label class="switch">
-                                <input type="checkbox" name="Impresion">
+                            <label for="Impresion" class="switch">
+                                <input type="checkbox" id="Impresion" name="Impresion" value="true">
                                 <span class="slider"></span>
                             </label>
-                        </div>
+                        </div>  
+                        <div class="permiso">
+                            <span>Mantener activo:</span>
+                            <label for="mantenerActivo" class="switch">
+                                <input type="checkbox" id="mantenerActivo" name="mantenerActivo" value="true">
+                                <span class="slider"></span>
+                            </label>
+                        </div>  
                     </div>
 
                     <label for="Contrasena">Contraseña</label>
