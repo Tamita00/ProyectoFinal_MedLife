@@ -52,7 +52,7 @@ public HomeController(IWebHostEnvironment environment)
         Perfil Usuario = BD.BuscarPerfilPorId(idUsuario);
         string home;
 
-        if(Usuario.Lectura == 1 && Usuario.Impresion == 1 && Usuario.Edicion == 1){
+        if(Usuario.Lectura == true && Usuario.Impresion == true && Usuario.Edicion == true){
             string[] titulosHome = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
             ViewBag.titulos = titulosHome;
 
