@@ -18,7 +18,7 @@ namespace ProyectoFinal_MedLife.Controllers;
 public class HomeController : Controller
 {
    
-private readonly IWebHostEnvironment _environment;
+private IWebHostEnvironment _environment;
 
 public HomeController(IWebHostEnvironment environment)
 {
@@ -252,16 +252,13 @@ public IActionResult Contactos(int idUsuario)
 
                 return idMuestra;
         }
-
-public bool ActualizarMuestra([FromBody] MuestraActualizada o)
+[HttpPost]
+public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
         {
-            int idMuestra = o.idMuestra;
-            Dictionary<string, object> data = o.data;
-
-             Parte6 parte6 = JsonConvert.DeserializeObject<Parte6>(data["parte6"].ToString()); // aca {0}
+            
+       
 
 
-            IFormFile firmaSello1 = (IFormFile)parte6.FirmaSello;
 
             if (firmaSello1 != null)
             {
@@ -276,11 +273,11 @@ public bool ActualizarMuestra([FromBody] MuestraActualizada o)
             
                 
                 // Dato de la Parte 6
-                string firmaSello = (parte6.FirmaSello != null ? parte6.FirmaSello.FileName : "");
+                string firmaSello = (firmaSello1 != null ? firmaSello1.FileName : "");
             
                 BD.ActualizarMuestra(idMuestra, firmaSello);
 
-                return true;
+                return View("SubirMuestras");
         }
         
 
@@ -330,46 +327,5 @@ public bool ActualizarMuestra([FromBody] MuestraActualizada o)
         ViewBag.Muestras = Muestras;
         return View("ListaSinProcesar");
     }
-
-    //ESTO ESTA MAL PERO ESTA SERIA LA IDEA -->
-    /*public IActionResult GuardarIndividual(int muestraId, string resultado)
-    {
-        try
-        {
-            BD.ActualizarMuestra(muestraId, resultado);
-
-            return Json(new { success = true });
-        }
-        catch (Exception ex)
-        {
-            return Json(new { success = false, message = ex.Message });
-        }
-    }
-
-    // Método para guardar todos los cambios (ejemplo)
-    public IActionResult GuardarTodos(List<MuestraViewModel> muestras)
-    {
-        try
-        {
-            foreach (var muestra in muestras)
-            {
-                BD.ActualizarMuestra(muestra.Id, muestra.Resultado);
-            }
-
-            return Json(new { success = true });
-        }
-        catch (Exception ex)
-        {
-            return Json(new { success = false, message = ex.Message });
-        }
-    }
-*/
-
-
-
-
-
-//CONTACTOS
-
 
 }
