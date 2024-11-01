@@ -1,5 +1,12 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
 
+:root {
+  --azul: #00276a;
+  --celeste: #e4f3ff;
+  --blanco: #f4f4f4;
+  --negro: #333;
+}
+
 body {
   margin: 0;
 	font-family: 'Montserrat', sans-serif;
@@ -34,13 +41,13 @@ h2 {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-h3 {
+.h3 {
   margin-left: 1.5em;
   color: #333;
 }
+
 label {
   display: block;
-  margin-left: 2em;
   margin-bottom: 6px;
   font-weight: bold;
 }
@@ -49,7 +56,7 @@ input[type="number"],
 input[type="datetime-local"],
 select,
 textarea {
-  width: 50%;
+  width: 100%;
   padding: 1em;
   margin-bottom: 1em;
   border: 1px solid #ddd;
@@ -212,6 +219,7 @@ nav {
 }
 
 .form-section input[type="text"],
+.form-section input[type="email"],
 .form-section input[type="number"],
 .form-section input[type="tel"],
 .form-section input[type="date"],
@@ -250,9 +258,6 @@ nav {
   color: #6e6e6e;
   font-size: 0.8em;
 }
-
-
-
 
 /*lISTAS SIN PROCESAR (TEMPORAL)*/
 
@@ -298,7 +303,7 @@ nav {
 /*INICIO SESION*/
 
 /* Estilos generales del formulario */
-form {
+.formInicioSesion {
   max-width: 500px;
   margin: 2em auto; /* Centro horizontal y espaciado superior e inferior */
   padding: 20px;
@@ -311,7 +316,7 @@ form {
 }
 
 /* Estilo para el título del formulario */
-form h1 {
+.formInicioSesion h1 {
   color: #03348a;
   margin-bottom: 1.5em;
   font-size: 1.8em; /* Tamaño del texto del título */
@@ -391,22 +396,6 @@ button.btn-primary:hover {
   margin-top: 1em;
   font-size: 0.9em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*HOSPITALES*/
 
@@ -631,101 +620,131 @@ button.btn-primary:hover {
 }
 /* CREAR PERFIL */
 
+.crearPerfil-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  background-color: var(--celeste);
+  margin: 5%;
+}
+
+.crearPerfilContainer h3 {
+  margin-left: 1.5em;
+  color: #333;
+}
+.crearPerfil-container input[type="text"],
+.crearPerfil-container input[type="email"],
+.crearPerfil-container input[type="number"],
+.crearPerfil-container input[type="tel"],
+.crearPerfil-container input[type="password"],
+.crearPerfil-container input[type="date"],
+.crearPerfil-container select,
+.crearPerfil-container textarea {
+  width: calc(100% - 12px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.titulo {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.cuadrado {
+  padding: 15px;
+  width: 100%;
+  margin: 1em 1em 1em 1em;
+  background-color: var(--celeste);
+}
+
 .infoPerfil {
-    position: relative;
-    background-color: #e4f3ff;
-    border-radius: 0.9em;
-    width: 72em; 
-    height:25em;
-    border: none;
-    border-radius: 0.6em;
-    padding: 1em;
-    text-align: left; 
-    font-size: 1em;
-    margin-top: 1em; 
+  display: flex;
+  flex-direction: column;
 }
 
-.cuadrado
-{
-    margin-top: 1em;
-    padding: 2em;
+label {
+  margin-bottom: 5px;
+  color: #555;
 }
 
-.fila{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align:left;
-}
-.botonPerfil{
-    display: block;
-    margin: 2em auto;
-    background-color: #ffffff; 
-    color: #fff;
-    border-radius: 1em;
-    width: 10em;
-    padding: 0.5em;
-    text-align: center;
-    font-size: 1.2em;
-    cursor: pointer;
+.permisos {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
 }
 
-
-select {
-    padding: 0.5em;
-    font-size: 1em;
-    background-color: #e4f3ff;
-    border-radius: 0.5em;
-    border: 1px solid #000000;
-    margin-left: 1em;
+.permiso {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
-p {
-    margin-bottom: 1em;
-}
-
-/* ON-OFF */
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 3.125em; 
-    height: 1.5em;  
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+  margin-left: 10px;
 }
 
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 1.5em; 
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 1.25em; 
-    width: 1.25em;  
-    left: 0.125em;  
-    bottom: 0.125em; 
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
 }
 
 input:checked + .slider {
-    background-color: #022f7c;
+  background-color: #007BFF;
 }
 
 input:checked + .slider:before {
-    transform: translateX(1.625em); 
+  transform: translateX(14px);
+}
+
+.botonPerfil {
+  background-color: var(--azul);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.botonPerfil:hover {
+  background-color: #0056b3;
+}
+
+.formCrearPerfil {
+  width: auto;
 }

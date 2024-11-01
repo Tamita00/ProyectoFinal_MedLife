@@ -5,18 +5,13 @@ namespace ProyectoFinal_MedLife.Models {
         public int IdPerfil {get; set;}
         public string Nombre {get; set;}
         public string Apellido {get; set;}
-
-        
         public string? Email {get; set;}
         public int Telefono {get; set;}
         public int IdHospital {get; set;}
         public bool Lectura {get; set;}
         public bool Edicion {get; set;}
         public bool Impresion {get; set;}
-
-        
         public string? Contrasena {get; set;}
-
         [NotMapped]
         public bool MantenterActivo {get; set;}
 

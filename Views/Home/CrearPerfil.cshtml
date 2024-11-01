@@ -1,64 +1,61 @@
 <body>
-    <br><br>
-    <h2>Crear Perfil</h2>
+    <h2 class="titulo">Crear Perfil</h2>
+    <div class="crearPerfil-container">
+        <div class="cuadrado">
+            <form class = "formCrearPerfil" method="post" action='@Url.Action("C_GuardarPerfil")'>
+                <input type="hidden" id="idUsuario" name="idUsuario" value="@ViewBag.idUsuario">
+                <div class="infoPerfil">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="Nombre" autocomplete="off" required>
 
-<div class="cuadrado">
-    <form method="post" action='@Url.Action("C_GuardarPerfil")'>
-        <div class="fila">
-            <div class="infoPerfil">
-            <input type="hidden" id="idUsuario" name="idUsuario" value="@ViewBag.idUsuario">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="Apellido" autocomplete="off" required>
 
-                <label for="Nombre">Nombre</label>
-                <input type="text" id="nombre" name="Nombre" autocomplete="off" required><br>
+                    <label for="Telefono">Teléfono</label>
+                    <input type="text" id="Telefono" name="Telefono" autocomplete="off" required>
 
-                <label for="Apellido">Apellido</label>
-                <input type="text" id="apellido" name="Apellido" autocomplete="off" required><br>
+                    <label for="Email">Email</label>
+                    <input type="email" id="Email" name="Email" autocomplete="off" required>
 
-                <label for="Telefono">Teléfono</label>
-                <input type="number" id="Telefono" name="Telefono" autocomplete="off" required><br>
+                    <label for="HospitalMuestraInput">Hospital Muestra:</label>
+                    <input type="text" id="HospitalMuestraInput" list="datalistHospitalesMuestra" name="HospitalMuestra" autocomplete="off" placeholder="Hospital de la Muestra" value="Italiano" required>
+                    <datalist id="datalistHospitalesMuestra">
+                        @foreach (Hospital hospital in ViewBag.Hospitales)
+                        {
+                            <option value="@hospital.NombreHospital"></option>
+                        }
+                    </datalist>
 
-                <label for="Email">Email</label>
-                <input type="email" id="Email" name="Email" autocomplete="off" required><br>
+                    <h3>Permisos:</h3>
+                    <div class="permisos">
+                        <div class="permiso">
+                            <span>Lectura:</span>
+                            <label class="switch">
+                                <input type="checkbox" id="Lectura" name="Lectura">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="permiso">
+                            <span>Edición:</span>
+                            <label class="switch">
+                                <input type="checkbox" name="Edicion">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="permiso">
+                            <span>Impresión:</span>
+                            <label class="switch">
+                                <input type="checkbox" name="Impresion">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
 
-                <label for="Hospital">Hospital Muestra:</label>
-                <input type="text" id="IdHospital" list="hospitales" name="IdHospital" autocomplete="off" placeholder="Hospital de la Muestra" required><br>
-                <datalist id="hospitales" name = "IdHospital">
-                    @foreach (var hospital in ViewBag.Hospitales)
-                    {
-                        <option value="@hospital.idHospial">@hospital.NombreHospital</option>
-                    }
-                </datalist>
-
-                <h3>Permisos:</h3>
-                <p>Lectura: 
-                    <label class="switch">
-                        <input type="checkbox" id= "Lectura" name="Lectura">
-                        <span class="slider"></span>
-                    </label>
-                </p>
-                <p>Edición: 
-                    <label class="switch">
-                        <input type="checkbox" name="Edicion">
-                        <span class="slider"></span>
-                    </label>
-                </p>
-                <p>Impresión: 
-                    <label class="switch">
-                        <input type="checkbox" name="Impresion">
-                        <span class="slider"></span>
-                    </label>
-                </p>
-
-                <label for="Contrasena">Contraseña</label>
-                <input type="text" id="Contrasena" name="Contrasena" autocomplete="off" required><br>
-
-            </div>
+                    <label for="Contrasena">Contraseña</label>
+                    <input type="password" id="Contrasena" name="Contrasena" autocomplete="off" required>
+                    <button type="submit" class="botonPerfil">Crear</button>
+                </div>
+            </form>
         </div>
-        <button type="submit" class="botonPerfil">Crear</button>
-    </form>
-</div>
-
-
+    </div>
 </body>
-
-

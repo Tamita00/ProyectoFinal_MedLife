@@ -23,12 +23,12 @@ public static class BD{
         }
 
 
-    // Método para seleccionar todos los hospitales de la base de datos
+    // Método para seleccionar todos los hospitales 
         public static List<Hospital> SeleccionarHospitales()
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
-                string sql = "SeleccionarHospitales"; // Nombre del procedimiento almacenado
+                string sql = "SeleccionarHospitales"; 
 
                 return db.Query<Hospital>(sql, commandType: CommandType.StoredProcedure).AsList();
             }
@@ -39,7 +39,7 @@ public static class BD{
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
-                string sql = "SeleccionarHospitalPorId"; // Nombre del procedimiento almacenado
+                string sql = "SeleccionarHospitalPorId";
                 var parameters = new { IdHospital = idHospital };
 
                 return db.QueryFirstOrDefault<Hospital>(sql, parameters, commandType: CommandType.StoredProcedure);

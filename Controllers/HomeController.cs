@@ -43,8 +43,6 @@ public HomeController(IWebHostEnvironment environment)
     }
     
 
-
-    
 //PÁGINA PRINCIPAL
 
     public IActionResult C_Home(int idUsuario)
