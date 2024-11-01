@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fA+HA7ABOy6ItMBHhD145h0bl75zZV5ixvqPsG0OM+Eh/tHWQabq8Ea8hCIAFO47gsbYgxnBZEAG9s5CVIZF1w==",
+  "dgSpecHash": "9s8sZdQuZXMzVY4yc2nGkEr+0N77mPud9tcU95fI4Q7nXyGSjQgAeLzZCytDC/vpnEPYVR8r5C1Iv18wn8wKxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\devandroid\\Desktop\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
+  "projectFilePath": "C:\\Users\\devandroid\\Downloads\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devandroid\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\devandroid\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

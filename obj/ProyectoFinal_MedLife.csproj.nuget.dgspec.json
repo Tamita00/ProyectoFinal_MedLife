@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\devandroid\\Desktop\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj": {}
+    "C:\\Users\\devandroid\\Downloads\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj": {}
   },
   "projects": {
-    "C:\\Users\\devandroid\\Desktop\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj": {
+    "C:\\Users\\devandroid\\Downloads\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devandroid\\Desktop\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
+        "projectUniqueName": "C:\\Users\\devandroid\\Downloads\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
         "projectName": "ProyectoFinal_MedLife",
-        "projectPath": "C:\\Users\\devandroid\\Desktop\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
+        "projectPath": "C:\\Users\\devandroid\\Downloads\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
         "packagesPath": "C:\\Users\\devandroid\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devandroid\\Desktop\\ProyectoFinal_MedLife\\obj\\",
+        "outputPath": "C:\\Users\\devandroid\\Downloads\\ProyectoFinal_MedLife\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
