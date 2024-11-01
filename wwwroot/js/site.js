@@ -186,6 +186,7 @@ function submitForm() {
         dataType: 'json',
         success: function(response) {
             alert('Datos guardados exitosamente');
+            $("#parte6IdMuestra").val(response);
             console.log(response);
             ultimaMuestra = response
         },
@@ -198,7 +199,7 @@ function submitForm() {
 
 function submitForm2() {
     var parte6Data = $("#formParte6").serializeArray();
-
+    console.log( parte6Data);
     // Combina todos los datos en un solo objeto
     var convertToObj = function(dataArray) {
         var dataObject = {};
@@ -208,12 +209,18 @@ function submitForm2() {
         return dataObject;
     };
 
-    var finalData = {
+    /*var finalData = {
         idMuestra : ultimaMuestra,
         data: convertToObj(parte6Data)
+    };*/
+
+    var finalData = {
+        idMuestra : ultimaMuestra,
+        data: {FirmaSello: parte6Data[0]}
     };
 
-    console.log(finalData);
+    console.log("parte 6" );
+    console.log( finalData);
     $.ajax({
         type: 'POST',
         url: '/Home/ActualizarMuestra',
