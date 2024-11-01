@@ -22,40 +22,44 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Contactos.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0b3MuY3NodG1s
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Contactos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxDb250YWN0b3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/CrearPerfil.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhclBlcmZpbC5jc2h0bWw=
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/CrearPerfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxDcmVhclBlcmZpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Home.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Hospitales.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb3NwaXRhbGVzLmNzaHRtbA==
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Hospitales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxIb3NwaXRhbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/ListaSinProcesar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxMaXN0YVNpblByb2Nlc2FyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/ListaSinProcesarFiltrado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxMaXN0YVNpblByb2Nlc2FyRmlsdHJhZG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/SubirMuestras.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxTdWJpck11ZXN0cmFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/ListaSinProcesar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0YVNpblByb2Nlc2FyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/ListaSinProcesarFiltrado.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMaXN0YVNpblByb2Nlc2FyRmlsdHJhZG8uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/SubirMuestras.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWJpck11ZXN0cmFzLmNzaHRtbA==
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Otros/HomeHospitales.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPdHJvc1xIb21lSG9zcGl0YWxlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Shared/Error.cshtml]

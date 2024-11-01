@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uK2sP5pEkOhgzlrjRQhS4NWVUX7FzrY+ZKqGdUG2qSE=",
+  "Hash": "6qo0x0i2uQflg5Rixw2EwmIZwnPSuW4OsTgDmmHiiFU=",
   "Source": "ProyectoFinal_MedLife",
   "BasePath": "_content/ProyectoFinal_MedLife",
   "Mode": "Default",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\bd\\sp por las dudas\\CrearPerfil.sql"
+    },
+    {
+      "Identity": "C:\\Users\\devandroid\\Desktop\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\CrearPerfilMica.sql",
+      "SourceId": "ProyectoFinal_MedLife",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\devandroid\\Desktop\\ProyectoFinal_MedLife\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinal_MedLife",
+      "RelativePath": "bd/sp por las dudas/CrearPerfilMica.sql",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bd\\sp por las dudas\\CrearPerfilMica.sql"
     },
     {
       "Identity": "C:\\Users\\devandroid\\Desktop\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\Insertar paciente.sql",

@@ -97,6 +97,10 @@
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\CrearPerfil.sql"
     },
     {
+      "Id": "C:\\Users\\devandroid\\Desktop\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\CrearPerfilMica.sql",
+      "PackagePath": "staticwebassets\\bd\\sp por las dudas\\CrearPerfilMica.sql"
+    },
+    {
       "Id": "C:\\Users\\devandroid\\Desktop\\ProyectoFinal_MedLife\\wwwroot\\bd\\sp por las dudas\\Insertar paciente.sql",
       "PackagePath": "staticwebassets\\bd\\sp por las dudas\\Insertar paciente.sql"
     },

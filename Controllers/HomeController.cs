@@ -43,14 +43,28 @@ public HomeController(IWebHostEnvironment environment)
     }
     
 
-//PÁGINA PRINCIPAL
+//PÁGINA PRINCIPAL ---- SEPARAR GARRAHAN DE OTROS
+
 
     public IActionResult C_Home(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
-        string[] titulosHome = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
-        ViewBag.titulos = titulosHome;
-        return View("Home");
+        Perfil Usuario = BD.BuscarPerfilPorId(idUsuario);
+        string home;
+
+        if(Usuario.Lectura == true && Usuario.Impresion == true && Usuario.Edicion == true){
+            string[] titulosHome = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
+            ViewBag.titulos = titulosHome;
+
+            home = "Garrahan/Home";
+        }
+        else{
+            string[] titulosHome = {"Hospitales", "Contactos", "Lista procesados",  "Subir muestras"};
+            ViewBag.titulos = titulosHome;
+            home = "Otros/HomeHospitales";
+        }
+        
+        return View(home);
     }
 
 //HOSPITALES
@@ -334,5 +348,10 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
         ViewBag.Muestras = Muestras;
         return View("ListaSinProcesar");
     }
+
+
+
+
+
 
 }
