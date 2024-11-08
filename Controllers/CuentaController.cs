@@ -59,9 +59,9 @@ namespace INFOTOOLSSV.Controllers
                                 AuthenticationProperties p = new();
 
                                 p.AllowRefresh = true;
-                                p.IsPersistent = u.MantenterActivo;
+                                p.IsPersistent = u.MantenerActivo;
 
-                                if (!u.MantenterActivo)
+                                if (!u.MantenerActivo)
                                     p.ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(1);
                                 else
                                     p.ExpiresUtc = DateTimeOffset.UtcNow.AddDays(1);

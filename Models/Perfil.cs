@@ -13,7 +13,7 @@ namespace ProyectoFinal_MedLife.Models {
         public bool ImpresionPermiso {get; set;}
         public string? Contrasena {get; set;}
         [NotMapped]
-        public bool MantenterActivo {get; set;}
+        public bool MantenerActivo {get; set;}
 
         public Perfil(){}
         public Perfil(int id, string nombre, string apellido, string email, int tel, int idHosp, bool lectura, bool edicion, bool impresion, string contra, bool mantAct)
@@ -28,7 +28,7 @@ namespace ProyectoFinal_MedLife.Models {
             EdicionPermiso = edicion;
             ImpresionPermiso = impresion;
             Contrasena = contra;
-            MantenterActivo = mantAct;
+            MantenerActivo = mantAct;
         }
     }
 }

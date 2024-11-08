@@ -84,7 +84,7 @@ public IActionResult C_CrearPerfiles(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
-        return View("CrearPerfil");
+        return View("Garrahan/CrearPerfil");
     }
 
 public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
@@ -92,12 +92,12 @@ public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
     miPerfil.LecturaPermiso = Request.Form.ContainsKey("Lectura") && Request.Form["Lectura"] == "true";
     miPerfil.EdicionPermiso = Request.Form.ContainsKey("Edicion") && Request.Form["Edicion"] == "true";
     miPerfil.ImpresionPermiso = Request.Form.ContainsKey("Impresion") && Request.Form["Impresion"] == "true";
-    miPerfil.MantenterActivo = Request.Form.ContainsKey("mantenerActivo") && Request.Form["mantenerActivo"] == "true";
+    miPerfil.MantenerActivo = Request.Form.ContainsKey("mantenerActivo") && Request.Form["mantenerActivo"] == "true";
 
     ViewBag.idUsuario = idUsuario;
     BD.CrearPerfil(miPerfil);
 
-    return View("Home");
+    return View("Garrahan/Home");
 }
 
 
@@ -107,7 +107,7 @@ public IActionResult Contactos(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         ViewBag.Contactos = BD.SeleccionarPerfiles();
-        return View("Contactos");
+        return View("Garrahan/Contactos");
     }
 //SUBIR MUESTRA
 
@@ -116,7 +116,7 @@ public IActionResult Contactos(int idUsuario)
     {   
         ViewBag.idUsuario = idUsuario;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
-        return View("SubirMuestras");
+        return View("Garrahan/SubirMuestras");
     }
 
         [HttpPost]
@@ -162,11 +162,6 @@ public IActionResult Contactos(int idUsuario)
              Parte4 parte4 = JsonConvert.DeserializeObject<Parte4>(data["parte4"].ToString());
              Parte5 parte5 = JsonConvert.DeserializeObject<Parte5>(data["parte5"].ToString());
              
-
-
-
-            
-            
                 // Datos de la Parte 1
                 string InstitucionNacimiento = parte1.InstitucionNacimiento;
                 string nombreHospital = parte1.HospitalMuestra;
@@ -278,10 +273,6 @@ public IActionResult Contactos(int idUsuario)
 public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
         {
             
-       
-
-
-
             if (firmaSello1 != null)
             {
                 if(firmaSello1.Length > 0){
@@ -292,7 +283,6 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
             }
 
             }
-            
                 
                 // Dato de la Parte 6
                 string firmaSello = (firmaSello1 != null ? firmaSello1.FileName : "");
@@ -308,7 +298,7 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
     public IActionResult C_ListaSinProcesarFiltrado(int idUsuario)
         {   
             ViewBag.idUsuario = idUsuario;
-            return View("ListaSinProcesarFiltrado");
+            return View("Garrahan/ListaSinProcesarFiltrado");
         }
 
     public IActionResult C_MostrarFiltrado(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)

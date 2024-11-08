@@ -105,7 +105,7 @@ public static class BD{
         {
             using (SqlConnection db = new SqlConnection(ConnectionString))
             {
-                string sql = "CrearPerfil"; // Nombre del procedimiento almacenado
+                string sql = "CrearPerfil"; 
                 var parameters = miPerfil;
 
                 db.QueryFirstOrDefault<Perfil>(sql, parameters, commandType: CommandType.StoredProcedure);
