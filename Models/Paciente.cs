@@ -4,7 +4,6 @@ public class Paciente{
     public int Acta {get; set;}
     public int Hc {get; set;}
     
-
     public Paciente(){}
     public Paciente(int idPaciente, int idMuestra, int acta, int hc)
     {

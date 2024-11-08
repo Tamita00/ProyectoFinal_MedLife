@@ -113,15 +113,17 @@ public static class BD{
         }
 
         // Método para seleccionar perfiles 
-        public static Perfil SeleccionarPerfiles()
-        {
-            using (SqlConnection db = new SqlConnection(ConnectionString))
-            {
-                string sql = "SeleccionarPerfiles"; // Nombre del procedimiento almacenado
 
-                return db.QueryFirstOrDefault<Perfil>(sql, commandType: CommandType.StoredProcedure);
-            }
-        }
+
+        // public static List<Hospital> SeleccionarPerfiles()
+        // {
+        //     using (SqlConnection db = new SqlConnection(ConnectionString))
+        //     {
+        //         string sql = "SeleccionarPerfiles"; 
+        //         return db.Query<Perfil>(sql, commandType: CommandType.StoredProcedure).AsList();
+        //     }
+        // }
+
 
 
     //......Actualizar

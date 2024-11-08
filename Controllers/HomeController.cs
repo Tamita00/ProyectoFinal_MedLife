@@ -46,7 +46,6 @@ public HomeController(IWebHostEnvironment environment)
 
 //PÁGINA PRINCIPAL ---- SEPARAR GARRAHAN DE OTROS
 
-
     public IActionResult C_Home(int idPerfil)
     {
         ViewBag.idUsuario = idPerfil;
@@ -74,7 +73,7 @@ public IActionResult C_Hospitales(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
-        return View("Hospitales");
+        return View("Garrahan/Hospitales");
     }
 
 
@@ -102,16 +101,29 @@ public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
 
 
 //CONTACTOS
-
 public IActionResult Contactos(int idUsuario)
     {
         ViewBag.idUsuario = idUsuario;
-        ViewBag.Contactos = BD.SeleccionarPerfiles();
+        //ViewBag.Contactos = BD.SeleccionarPerfiles();
         return View("Garrahan/Contactos");
     }
-//SUBIR MUESTRA
+public IActionResult ContactosHospitales(int idUsuario)
+    {
+        ViewBag.idUsuario = idUsuario;
+        //ViewBag.Contactos = BD.SeleccionarPerfiles();
+        return View("Otros/Contactos");
+    }
 
+//SUBIR MUESTRA MATERNIDADES/HOSPITALES
 
+public IActionResult C_SubirMuestraHospitales(int idUsuario)
+    {   
+        ViewBag.idUsuario = idUsuario;
+        ViewBag.Hospitales = BD.SeleccionarHospitales();
+        return View("Otros/SubirMuestraHospitales");
+    }
+
+//SUBIR MUESTRA ADMIN
     public IActionResult C_SubirMuestra(int idUsuario)
     {   
         ViewBag.idUsuario = idUsuario;
@@ -218,8 +230,6 @@ public IActionResult Contactos(int idUsuario)
                 DateTime fechaEnvio = parte5.FechaEnvio;
                 DateTime fechaLlegada = parte5.FechaEnvio;
                 string observaciones = parte5.Observaciones;
-
-                
             
                 int idMuestra = BD.InsertarMuestra(
                 InstitucionNacimiento, 
@@ -272,7 +282,6 @@ public IActionResult Contactos(int idUsuario)
 [HttpPost]
 public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
         {
-            
             if (firmaSello1 != null)
             {
                 if(firmaSello1.Length > 0){
@@ -280,16 +289,14 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
                     using(var stream = System.IO.File.Create(wwwRootLocal)){
                         firmaSello1.CopyToAsync(stream);
                     }
-            }
+                }
+            } 
+            // Dato de la Parte 6
+            string firmaSello = (firmaSello1 != null ? firmaSello1.FileName : "");
+        
+            BD.ActualizarMuestra(idMuestra, firmaSello);
 
-            }
-                
-                // Dato de la Parte 6
-                string firmaSello = (firmaSello1 != null ? firmaSello1.FileName : "");
-            
-                BD.ActualizarMuestra(idMuestra, firmaSello);
-
-                return View("SubirMuestras");
+            return View("SubirMuestras");
         }
         
 
@@ -339,7 +346,6 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
         ViewBag.Muestras = Muestras;
         return View("ListaSinProcesar");
     }
-
 
 
 
