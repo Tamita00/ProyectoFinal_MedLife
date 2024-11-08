@@ -45,9 +45,15 @@ namespace INFOTOOLSSV.Controllers
                         {
                             if (dr["Email"] != null && u.Email != null)
                             {
+                                int idPerfil = Convert.ToInt32(dr["IdPerfil"]); 
+                                bool lectura = Convert.ToBoolean(dr["LecturaPermiso"]);
+                                bool edicion = Convert.ToBoolean(dr["EdicionPermiso"]);
+                                bool impresion = Convert.ToBoolean(dr["ImpresionPermiso"]);
+
                                 List<Claim> c = new List<Claim>()
                                 {
-                                    new Claim(ClaimTypes.NameIdentifier, u.Email)
+                                    new Claim(ClaimTypes.NameIdentifier, u.Email),
+                                    new Claim("idPerfil", idPerfil.ToString())
                                 };
                                 ClaimsIdentity ci = new(c, CookieAuthenticationDefaults.AuthenticationScheme);
                                 AuthenticationProperties p = new();
@@ -55,14 +61,13 @@ namespace INFOTOOLSSV.Controllers
                                 p.AllowRefresh = true;
                                 p.IsPersistent = u.MantenterActivo;
 
-
                                 if (!u.MantenterActivo)
                                     p.ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(1);
                                 else
                                     p.ExpiresUtc = DateTimeOffset.UtcNow.AddDays(1);
 
                                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(ci), p);
-                                return RedirectToAction("Index", "Home");
+                                return RedirectToAction("Index", "Home", new { idPerfil = idPerfil });
                             }
                             else
                             {

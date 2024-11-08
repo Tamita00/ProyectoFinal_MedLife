@@ -8,9 +8,9 @@ namespace ProyectoFinal_MedLife.Models {
         public string? Email {get; set;}
         public int Telefono {get; set;}
         public int IdHospital {get; set;}
-        public bool Lectura {get; set;}
-        public bool Edicion {get; set;}
-        public bool Impresion {get; set;}
+        public bool LecturaPermiso {get; set;}
+        public bool EdicionPermiso {get; set;}
+        public bool ImpresionPermiso {get; set;}
         public string? Contrasena {get; set;}
         [NotMapped]
         public bool MantenterActivo {get; set;}
@@ -24,9 +24,9 @@ namespace ProyectoFinal_MedLife.Models {
             Email = email;
             Telefono = tel;
             IdHospital = idHosp;
-            Lectura = lectura;
-            Edicion = edicion;
-            Impresion = impresion;
+            LecturaPermiso = lectura;
+            EdicionPermiso = edicion;
+            ImpresionPermiso = impresion;
             Contrasena = contra;
             MantenterActivo = mantAct;
         }

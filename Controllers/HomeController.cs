@@ -25,8 +25,9 @@ public HomeController(IWebHostEnvironment environment)
     _environment = environment;
 }
 
-    public IActionResult Index()
+    public IActionResult Index(int idPerfil)
     {
+        ViewBag.idPerfil = idPerfil;
         return View();
     }
 
@@ -46,16 +47,16 @@ public HomeController(IWebHostEnvironment environment)
 //PÁGINA PRINCIPAL ---- SEPARAR GARRAHAN DE OTROS
 
 
-    public IActionResult C_Home(int idUsuario)
+    public IActionResult C_Home(int idPerfil)
     {
-        ViewBag.idUsuario = idUsuario;
-        Perfil Usuario = BD.BuscarPerfilPorId(idUsuario);
+        ViewBag.idUsuario = idPerfil;
+        Perfil Usuario = BD.BuscarPerfilPorId(idPerfil);
         string home;
 
-        if(Usuario.Lectura == true && Usuario.Impresion == true && Usuario.Edicion == true){
+        if(Usuario.LecturaPermiso == true && Usuario.ImpresionPermiso == true && Usuario.EdicionPermiso == true){
             string[] titulosHome = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
             ViewBag.titulos = titulosHome;
-
+            ViewBag.IdPerfil = Usuario.IdPerfil;
             home = "Garrahan/Home";
         }
         else{
@@ -88,9 +89,9 @@ public IActionResult C_CrearPerfiles(int idUsuario)
 
 public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
 {
-    miPerfil.Lectura = Request.Form.ContainsKey("Lectura") && Request.Form["Lectura"] == "true";
-    miPerfil.Edicion = Request.Form.ContainsKey("Edicion") && Request.Form["Edicion"] == "true";
-    miPerfil.Impresion = Request.Form.ContainsKey("Impresion") && Request.Form["Impresion"] == "true";
+    miPerfil.LecturaPermiso = Request.Form.ContainsKey("Lectura") && Request.Form["Lectura"] == "true";
+    miPerfil.EdicionPermiso = Request.Form.ContainsKey("Edicion") && Request.Form["Edicion"] == "true";
+    miPerfil.ImpresionPermiso = Request.Form.ContainsKey("Impresion") && Request.Form["Impresion"] == "true";
     miPerfil.MantenterActivo = Request.Form.ContainsKey("mantenerActivo") && Request.Form["mantenerActivo"] == "true";
 
     ViewBag.idUsuario = idUsuario;

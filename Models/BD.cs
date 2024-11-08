@@ -10,8 +10,6 @@ namespace ProyectoFinal_MedLife;
 public static class BD{
     private static string ConnectionString = @"Server=localhost;DataBase=MedLife;Trusted_Connection=True;";
 
-    //Seleccionar
-
     //Seleccionar MuestrasResultado por filtro
     public static List<MuestraResultado> SeleccionarMuestrasResultadoPorFiltro(string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
         {
@@ -22,7 +20,6 @@ public static class BD{
                 return db.Query<MuestraResultado>(sql, parameters, commandType: CommandType.StoredProcedure).AsList();
             }
         }
-
 
     // Método para seleccionar todos los hospitales 
         public static List<Hospital> SeleccionarHospitales()
