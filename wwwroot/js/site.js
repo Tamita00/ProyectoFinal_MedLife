@@ -249,3 +249,29 @@ document.getElementById('nombreHospital').addEventListener('input', function() {
         }
     });
 });
+
+
+/*Modal*/
+
+function MostrarHospital(Id)
+{
+    $.ajax(
+        {
+            type: 'POST',
+            dataType: 'JSON',
+            url : 'Hospitales/VerInfoHospitalAjax',
+            data: { idHospital: Id},
+            success:
+                function (response)
+                {
+                    $("NombreHospital").html(response.NombreHospital);
+                    $("Direccion").html(response.Direccion);
+                    $("Localidad").html(response.Localidad);
+                    $("Provincia").html(response.Provincia);
+                    $("Servicio").html(response.Servicio);
+                    $("Responsable").html(response.Responsable);
+                    $("Telefono").html(response.Telefono);
+                }
+        }
+    )
+}

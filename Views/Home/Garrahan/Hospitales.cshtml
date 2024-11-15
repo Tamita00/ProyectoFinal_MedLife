@@ -1,128 +1,52 @@
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Hospitales";
 }
-
-<body>
-<br><br><br>
-    <button class="mas-info-boton">Agregar</button>
-
-    <div id="myModal2" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="stroke">
-                <h3><b>Agregar Hospital</b></h3>
-            </div>
-            <div class="stroke">
-                <h3><b>Emails:</b></h3>
-                <div class="email-item">
-                    <input type="text" id="emailInput" placeholder="Ingrese un email" required>
-                    <button id="addEmailBtn">Agregar</button>
-                </div>
-                <div class="email-list" id="emailList"></div>
-            </div>
-            <p><b>Dirección:</b> Honorio Puerredón 7829 </p>
-            <p><b>Localidad:</b> CABA</p>
-            <p><b>Provincia:</b> Buenos Aires</p>
-            <p><b>Servicio:</b> Hospital de Pediatría</p>
-            <p><b>Responsable:</b></p>
-            <p><b>Teléfono:</b> 15 7365 7825</p>
-        </div>
+    <div>
+        <h2>Hospitales</h2>
     </div>
+    <div>
+        <!-- acá va a estar la búsqueda también-->
+        <button type="submit">Agregar hospital</button>
 
-    @foreach (Hospital hospital in ViewBag.Hospitales)
-    {
+    </div>
+    <div class = "hospitales-container">
+        @foreach (Hospital hospital in ViewBag.Hospitales)
+        {
         <div class="cont">
-        <div class="row">
-        <div class="infoHospi">
-          <h3>@hospital.NombreHospital</h3>
-          <p>Teléfono: @hospital.Telefono</p>
-          <p>Servicio: @hospital.Servicio</p>
-          <button class="mas-info-btn">Más info</button>
+            <div class="row">
+                <div class="infoHospi">
+                    <h3>@hospital.NombreHospital</h3>
+                    <p>Teléfono: @hospital.Telefono</p>
+                    <p>Servicio: @hospital.Servicio</p>
+                    <button type = "button" data-bs-toggle="modal" data-bs-target="#InfoModal" onclick="MostrarHospital(@hospital.IdHospital)">Más información</button>
+                </div>
+            </div>
         </div>
-    </div>
+        }
     </div>
 
 
-    <div id="myModal1" class="modal">
+<!-- Modal -->
+<div class="modal fade" id="InfoHospital" tabindex="-1" aria-labelledby="infoModal" aria-hidden="true"> 
+    <div class="modal-dialog">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="stroke">
-                <h2><b>@hospital.NombreHospital</b></h2>
+            <div class="modal-header">
+                <h5 class="modal-title" id="NombreHospital"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class = "stroke"> 
-                <br>
+            <div class="modal-body">
+                <div id="Direccion"></div>
+                <div id="Localidad"></div>
+                <div id="Provincia"></div>
+                <div id="Servicio"></div>
+                <div id="Responsable"></div>
+                <div id="Telefono"></div>
             </div>
-        <div class = "stroke" >
-            <p><b>Direccion:</b> Honorio Puerredón 7829 </p>
-            <p><b>Localidad:</b> CABA</p>
-            <p><b>Provincia:</b> Buenos Aires</p>
-            <p><b>Servicio:</b>@hospital.Servicio</p>
-            <p><b>Responsable:</b>@hospital.Responsable</p>
-            <p><b>Telefono:</b> @hospital.Telefono</p>
-        </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
         </div>
     </div>
-
-    }
-
- <script>
-
-         /*PRIMER MODAL*/
-         var modal1 = document.getElementById("myModal1");
-        var btnInfo = document.querySelector(".mas-info-btn");
-        var span1 = document.querySelector("#myModal1 .close");
-
-        /*SEGUNDO MODAL*/
-        var modal2 = document.getElementById("myModal2");
-        var btnAgregar = document.querySelector(".mas-info-boton");
-        var span2 = document.querySelector("#myModal2 .close");
-
-        /*FUNCION PARA CERRAR MODAL*/
-        btnInfo.onclick = function() {
-            modal1.style.display = "block";
-        }
-        span1.onclick = function() {
-            modal1.style.display = "none";
-        }
-        window.onclick = function(event) {
-            if (event.target == modal1) {
-                modal1.style.display = "none";
-            }
-        }
-
-        btnAgregar.onclick = function() {
-            modal2.style.display = "block";
-        }
-        span2.onclick = function() {
-            modal2.style.display = "none";
-        }
-        window.onclick = function(event) {
-            if (event.target == modal2) {
-                modal2.style.display = "none";
-            }
-        }
-        
-        var emailList = document.getElementById("emailList");
-        var emailInput = document.getElementById("emailInput");
-        var addEmailBtn = document.getElementById("addEmailBtn");
-
-        addEmailBtn.addEventListener("click", function() {
-            var email = emailInput.value.trim();
-            if (email !== "") {
-                var emailItem = document.createElement("div");
-                emailItem.classList.add("email-item");
-                emailItem.innerHTML = '<span>' + email + '</span><button class="removeEmailBtn">Eliminar</button>';
-                emailList.appendChild(emailItem);
-                emailInput.value = "";
-
-                // Añadir función para eliminar email
-                emailItem.querySelector(".removeEmailBtn").addEventListener("click", function() {
-                    emailList.removeChild(emailItem);
-                });
-            }
-        });
-
-</script>
-
-</body>
-</html>
+</div>

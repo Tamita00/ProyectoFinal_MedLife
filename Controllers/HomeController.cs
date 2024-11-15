@@ -69,19 +69,27 @@ public HomeController(IWebHostEnvironment environment)
 
 //HOSPITALES
 
-public IActionResult C_Hospitales(int idUsuario)
-    {
-        ViewBag.idUsuario = idUsuario;
-        ViewBag.Hospitales = BD.SeleccionarHospitales();
-        return View("Garrahan/Hospitales");
-    }
+public IActionResult C_Hospitales(int idPerfil)
+{
+    ViewBag.idUsuario = idPerfil;
+
+    ViewBag.Perfiles = BD.SeleccionarPerfiles();
+    ViewBag.Hospitales = BD.SeleccionarHospitales();
+
+    return View("Garrahan/Hospitales");
+}
+
+public Hospital VerDetalleHospital(int idHospital)
+{
+    return BD.SeleccionarHospitalPorId(idHospital);
+}
 
 
 //CREAR PERFIL
 
-public IActionResult C_CrearPerfiles(int idUsuario)
+public IActionResult C_CrearPerfiles(int idPerfil)
     {
-        ViewBag.idUsuario = idUsuario;
+        ViewBag.idUsuario = idPerfil;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
         return View("Garrahan/CrearPerfil");
     }
@@ -101,33 +109,42 @@ public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
 }
 
 
-//CONTACTOS
-public IActionResult Contactos(int idUsuario)
+//MUESTRAS ENVIADAS
+public IActionResult C_MuestrasEnviadas(int idPerfil)
     {
-        ViewBag.idUsuario = idUsuario;
+        ViewBag.idUsuario = idPerfil;
+        ViewBag.Hospitales = BD.SeleccionarHospitales();
+        //no se bien todavía qué viene acá :b
+        return View("Garrahan/MuestrasEnviadas");
+    }
+
+//CONTACTOS
+public IActionResult Contactos(int idPerfil)
+    {
+        ViewBag.idUsuario = idPerfil;
         //ViewBag.Contactos = BD.SeleccionarPerfiles();
         return View("Garrahan/Contactos");
     }
-public IActionResult ContactosHospitales(int idUsuario)
+public IActionResult ContactosHospitales(int idPerfil)
     {
-        ViewBag.idUsuario = idUsuario;
+        ViewBag.idUsuario = idPerfil;
         //ViewBag.Contactos = BD.SeleccionarPerfiles();
         return View("Otros/Contactos");
     }
 
 //SUBIR MUESTRA MATERNIDADES/HOSPITALES
 
-public IActionResult C_SubirMuestraHospitales(int idUsuario)
+public IActionResult C_SubirMuestraHospitales(int idPerfil)
     {   
-        ViewBag.idUsuario = idUsuario;
+        ViewBag.idUsuario = idPerfil;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
         return View("Otros/SubirMuestraHospitales");
     }
 
 //SUBIR MUESTRA ADMIN
-    public IActionResult C_SubirMuestra(int idUsuario)
+    public IActionResult C_SubirMuestra(int idPerfil)
     {   
-        ViewBag.idUsuario = idUsuario;
+        ViewBag.idUsuario = idPerfil;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
         return View("Garrahan/SubirMuestras");
     }
@@ -347,9 +364,5 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
         ViewBag.Muestras = Muestras;
         return View("ListaSinProcesar");
     }
-
-
-
-
 
 }

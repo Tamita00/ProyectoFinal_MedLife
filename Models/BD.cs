@@ -32,6 +32,33 @@ public static class BD{
             }
         }
 
+        public static List<Perfil> SeleccionarPerfiles()
+        {
+            using (SqlConnection db = new SqlConnection(ConnectionString))
+            {
+                string sql = "SeleccionarPerfiles"; 
+                return db.Query<Perfil>(sql, commandType: CommandType.StoredProcedure).AsList();
+            }
+        }
+        public static List<string> SeleccionarEmailsPorHospital(int idHospital)
+        {
+            using (SqlConnection db = new SqlConnection(ConnectionString))
+            {
+                string sql = "SeleccionarEmailsPorHospital"; 
+                var parameters = new { idHospital = idHospital }; 
+                return db.Query<string>(sql, parameters, commandType: CommandType.StoredProcedure).AsList();
+            }
+        }
+        public static List<string> SeleccionarReferentesPorHospital(int idHospital)
+        {
+            using (SqlConnection db = new SqlConnection(ConnectionString))
+            {
+                string sql = "SeleccionarReferentesPorHospital";
+                var parameters = new { idHospital = idHospital }; 
+                return db.Query<string>(sql, parameters, commandType: CommandType.StoredProcedure).AsList();
+            }
+        }
+
     // Método para seleccionar un hospital por su Id
         public static Hospital SeleccionarHospitalPorId(int idHospital)
         {
