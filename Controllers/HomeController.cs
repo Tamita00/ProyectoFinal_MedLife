@@ -86,6 +86,7 @@ public IActionResult C_CrearPerfiles(int idUsuario)
         return View("Garrahan/CrearPerfil");
     }
 
+[HttpPost]
 public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
 {
     miPerfil.LecturaPermiso = Request.Form.ContainsKey("Lectura") && Request.Form["Lectura"] == "true";
@@ -93,10 +94,10 @@ public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
     miPerfil.ImpresionPermiso = Request.Form.ContainsKey("Impresion") && Request.Form["Impresion"] == "true";
     miPerfil.MantenerActivo = Request.Form.ContainsKey("mantenerActivo") && Request.Form["mantenerActivo"] == "true";
 
-    ViewBag.idUsuario = idUsuario;
+
     BD.CrearPerfil(miPerfil);
 
-    return View("Garrahan/Home");
+    return RedirectToAction("C_Home","Home", new {idPerfil = idUsuario});
 }
 
 

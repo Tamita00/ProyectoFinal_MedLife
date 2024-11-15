@@ -9,87 +9,87 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProyectoFinal_MedLife
 build_property.RootNamespace = ProyectoFinal_MedLife
-build_property.ProjectDir = c:\Users\devandroid\Desktop\ProyectoFinal_MedLife\
+build_property.ProjectDir = C:\Users\devandroid\Desktop\ProyectoFinal_MedLife\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\devandroid\Desktop\ProyectoFinal_MedLife
+build_property.MSBuildProjectDirectory = C:\Users\devandroid\Desktop\ProyectoFinal_MedLife
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Cuenta/Login.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Cuenta/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Contactos.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Contactos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxDb250YWN0b3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/CrearPerfil.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/CrearPerfil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxDcmVhclBlcmZpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Home.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Hospitales.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Hospitales.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxIb3NwaXRhbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/ListaSinProcesar.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/ListaSinProcesar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxMaXN0YVNpblByb2Nlc2FyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/ListaSinProcesarFiltrado.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/ListaSinProcesarFiltrado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxMaXN0YVNpblByb2Nlc2FyRmlsdHJhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Privacy.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/SubirMuestras.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Garrahan/SubirMuestras.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHYXJyYWhhblxTdWJpck11ZXN0cmFzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Index.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Otros/Contactos.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Otros/Contactos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPdHJvc1xDb250YWN0b3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Otros/HomeHospitales.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Otros/HomeHospitales.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPdHJvc1xIb21lSG9zcGl0YWxlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Otros/ListaProcesadosHospitales.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Otros/ListaProcesadosHospitales.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPdHJvc1xMaXN0YVByb2Nlc2Fkb3NIb3NwaXRhbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Otros/SubirMuestraHospitales.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Home/Otros/SubirMuestraHospitales.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPdHJvc1xTdWJpck11ZXN0cmFIb3NwaXRhbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Shared/Error.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/_ViewImports.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/_ViewStart.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Shared/_Layout.cshtml]
+[C:/Users/devandroid/Desktop/ProyectoFinal_MedLife/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2lrq25730r

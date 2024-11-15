@@ -6,8 +6,8 @@
     <h2 class="titulo">Crear Perfil</h2>
     <div class="crearPerfil-container">
         <div class="cuadrado">
-            <form class="formCrearPerfil" method="post" action='@Url.Action("C_GuardarPerfil")'>
-                
+            <form class="formCrearPerfil" method="post" action='@Url.Action("C_GuardarPerfil", "Home")'>
+                <input type="hidden" name="idUsuario" value="@ViewBag.idUsuario">
                 <div class="infoPerfil">
                     <label for="nombre">Nombre</label>
                     <input type="text" id="nombre" name="Nombre" autocomplete="off" required>
