@@ -5,9 +5,7 @@
         <h2>Hospitales</h2>
     </div>
     <div>
-        <!-- acá va a estar la búsqueda también-->
         <button type="submit">Agregar hospital</button>
-
     </div>
     <div class = "hospitales-container">
         @foreach (Hospital hospital in ViewBag.Hospitales)
@@ -18,23 +16,27 @@
                     <h3>@hospital.NombreHospital</h3>
                     <p>Teléfono: @hospital.Telefono</p>
                     <p>Servicio: @hospital.Servicio</p>
-                    <button type = "button" data-bs-toggle="modal" data-bs-target="#InfoModal" onclick="MostrarHospital(@hospital.IdHospital)">Más información</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#masInfo"
+                    data-nombre="@hospital.NombreHospital"
+                    data-direccion="@hospital.Direccion"
+                    data-localidad="@hospital.Localidad"
+                    data-provincia="@hospital.Provincia"
+                    data-servicio="@hospital.Servicio"
+                    data-responsable="@hospital.Responsable"
+                    data-telefono="@hospital.Telefono">Más información</button>
                 </div>
             </div>
         </div>
         }
-    </div>
+</div>
 
-
-<!-- Modal -->
-<div class="modal fade" id="InfoHospital" tabindex="-1" aria-labelledby="infoModal" aria-hidden="true"> 
+<!-- Modal más información-->
+<div class="modal fade" id="masInfo" tabindex="-1" aria-labelledby="masInfoLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="NombreHospital"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
+                <h1 class="modal-title fs-5" id="nombreHospital"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div id="Direccion"></div>
@@ -45,8 +47,27 @@
                 <div id="Telefono"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Modal agregar hospital-->
+<div class="modal fade" id="agregarHospital" tabindex="-1" aria-labelledby="agregarHospitalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="nombreHospital"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

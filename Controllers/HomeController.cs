@@ -108,7 +108,6 @@ public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
     return RedirectToAction("C_Home","Home", new {idPerfil = idUsuario});
 }
 
-
 //MUESTRAS ENVIADAS
 public IActionResult C_MuestrasEnviadas(int idPerfil)
     {
@@ -122,7 +121,8 @@ public IActionResult C_MuestrasEnviadas(int idPerfil)
 public IActionResult Contactos(int idPerfil)
     {
         ViewBag.idUsuario = idPerfil;
-        //ViewBag.Contactos = BD.SeleccionarPerfiles();
+        ViewBag.Contactos = BD.SeleccionarPerfiles();
+        ViewBag.hospitales = BD.SeleccionarHospitales();
         return View("Garrahan/Contactos");
     }
 public IActionResult ContactosHospitales(int idPerfil)
@@ -314,7 +314,7 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
         
             BD.ActualizarMuestra(idMuestra, firmaSello);
 
-            return View("SubirMuestras");
+            return View("Garrahan/SubirMuestras");
         }
         
 
@@ -343,7 +343,7 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
         }
         ViewBag.Muestras = Muestras;
         ViewBag.idUsuario = idUsuario;
-        return View("ListaSinProcesar");
+        return View("Garrahan/ListaSinProcesar");
     }
 
     public IActionResult C_GuardarMuestras(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
@@ -362,7 +362,7 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
             }
         }
         ViewBag.Muestras = Muestras;
-        return View("ListaSinProcesar");
+        return View("Garrahan/ListaSinProcesar");
     }
 
 }
