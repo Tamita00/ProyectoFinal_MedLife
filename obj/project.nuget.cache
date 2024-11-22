@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WVmePpp61DQBQrJx4oAFM2xS/psfy3hcEqAM3Q8ZBj4jtcozUojb+wqLcrHjqDvx5fIyeguWB62PkN6565PSVg==",
+  "dgSpecHash": "1F8glwb/zAro9NQx8kj0iJmvRz/CeJh6aNQsdMnuIcAuwC4SSRSaDCoSOFLbhOujPKH+kgrjbFbfnlSAqlK0ig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\47807159\\Downloads\\ProyectoFinal_MedLife\\ProyectoFinal_MedLife.csproj",
+  "projectFilePath": "C:\\Users\\47807159\\Downloads\\ProyectoFinal_MedLife-7839105bd4ff6eff8307f39998dcce3108538d16\\ProyectoFinal_MedLife-7839105bd4ff6eff8307f39998dcce3108538d16\\ProyectoFinal_MedLife.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\47807159\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\47807159\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

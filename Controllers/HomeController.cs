@@ -14,7 +14,6 @@ using System.Web;
 
 namespace ProyectoFinal_MedLife.Controllers;
 
- [Authorize]
 public class HomeController : Controller
 {
    
@@ -25,8 +24,14 @@ public HomeController(IWebHostEnvironment environment)
     _environment = environment;
 }
 
-    public IActionResult Index(int idPerfil)
+    public IActionResult Index()
     {
+        int idPerfil=0;
+        if (HttpContext.Session.GetString("idperfil") != null)
+        {
+            idPerfil = Convert.ToInt32(HttpContext.Session.GetString("idperfil"));
+
+        }
         ViewBag.idPerfil = idPerfil;
         return View();
     }
@@ -46,32 +51,25 @@ public HomeController(IWebHostEnvironment environment)
 
 //PÁGINA PRINCIPAL ---- SEPARAR GARRAHAN DE OTROS
 
-    public IActionResult C_Home()
+    public IActionResult C_Home(int idPerfil)
     {
-        if (HttpContext.Session.GetString("idperfil") != null)
-        {
-            int idPerfil = Convert.ToInt32(HttpContext.Session.GetString("idperfil"));
-            ViewBag.idUsuario = idPerfil;
-            Perfil Usuario = BD.BuscarPerfilPorId(idPerfil);
-            string home;
+        ViewBag.idUsuario = idPerfil;
+        Perfil Usuario = BD.BuscarPerfilPorId(idPerfil);
+        string home;
 
-            if(Usuario.LecturaPermiso == true && Usuario.ImpresionPermiso == true && Usuario.EdicionPermiso == true){
-                string[] titulosHome = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
-                ViewBag.titulos = titulosHome;
-                ViewBag.IdPerfil = Usuario.IdPerfil;
-                home = "Garrahan/Home";
-            }
-            else{
-                string[] titulosHome = {"Hospitales", "Contactos", "Lista procesados",  "Subir muestras"};
-                ViewBag.titulos = titulosHome;
-                home = "Otros/HomeHospitales";
-            }
-            
-            return View(home);
-        }  
-        else{
-            return RedirectToAction("Login","Cuenta");
+        if(Usuario.LecturaPermiso == true && Usuario.ImpresionPermiso == true && Usuario.EdicionPermiso == true){
+            string[] titulosHome = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
+            ViewBag.titulos = titulosHome;
+            ViewBag.IdPerfil = Usuario.IdPerfil;
+            home = "Garrahan/Home";
         }
+        else{
+            string[] titulosHome = {"Hospitales", "Contactos", "Lista procesados",  "Subir muestras"};
+            ViewBag.titulos = titulosHome;
+            home = "Otros/HomeHospitales";
+        }
+        
+        return View(home);
     }
 
 //HOSPITALES
@@ -102,6 +100,11 @@ public IActionResult C_CrearPerfiles(int idPerfil)
     }
 
 [HttpPost]
+public int UsarAjax(int iduser)
+{
+    return 0;
+}
+[HttpPost]
 public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
 {
     miPerfil.LecturaPermiso = Request.Form.ContainsKey("Lectura") && Request.Form["Lectura"] == "true";
@@ -114,6 +117,7 @@ public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
 
     return RedirectToAction("C_Home","Home", new {idPerfil = idUsuario});
 }
+
 
 //MUESTRAS ENVIADAS
 public IActionResult C_MuestrasEnviadas(int idPerfil)
@@ -128,8 +132,7 @@ public IActionResult C_MuestrasEnviadas(int idPerfil)
 public IActionResult Contactos(int idPerfil)
     {
         ViewBag.idUsuario = idPerfil;
-        ViewBag.Contactos = BD.SeleccionarPerfiles();
-        ViewBag.hospitales = BD.SeleccionarHospitales();
+        //ViewBag.Contactos = BD.SeleccionarPerfiles();
         return View("Garrahan/Contactos");
     }
 public IActionResult ContactosHospitales(int idPerfil)
@@ -141,8 +144,16 @@ public IActionResult ContactosHospitales(int idPerfil)
 
 //SUBIR MUESTRA MATERNIDADES/HOSPITALES
 
-public IActionResult C_SubirMuestraHospitales(int idPerfil)
+public IActionResult C_SubirMuestraHospitales()
     {   
+
+         int idPerfil=0;
+        if (HttpContext.Session.GetString("idperfil") != null)
+        {
+            idPerfil = Convert.ToInt32(HttpContext.Session.GetString("idperfil"));
+
+        }
+
         ViewBag.idUsuario = idPerfil;
         ViewBag.Hospitales = BD.SeleccionarHospitales();
         return View("Otros/SubirMuestraHospitales");
@@ -190,6 +201,7 @@ public IActionResult C_SubirMuestraHospitales(int idPerfil)
             TempData["Parte5"] = form;
             return Json(new { success = true });
         }
+        [HttpPost]
         public int SaveMuestra([FromBody] Dictionary<string, object> data)
         {
 
@@ -321,7 +333,7 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
         
             BD.ActualizarMuestra(idMuestra, firmaSello);
 
-            return View("Home");
+            return RedirectToAction("C_SubirMuestra","Home");
         }
         
 
@@ -350,7 +362,7 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
         }
         ViewBag.Muestras = Muestras;
         ViewBag.idUsuario = idUsuario;
-        return View("Garrahan/ListaSinProcesar");
+        return View("ListaSinProcesar");
     }
 
     public IActionResult C_GuardarMuestras(int idUsuario, string provincia, string hospital, string apellidoBebe, string apellidoMama, DateTime fechaDesde, DateTime fechaHasta, string ordenadoPor)
@@ -369,7 +381,7 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
             }
         }
         ViewBag.Muestras = Muestras;
-        return View("Garrahan/ListaSinProcesar");
+        return View("ListaSinProcesar");
     }
 
 }

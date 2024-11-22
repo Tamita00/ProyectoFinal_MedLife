@@ -1,20 +1,16 @@
 <body>
-    <div>
-        <h1 style="display: flex; justify-content: center">Contactos</h1>
-            @foreach (Perfil contacto in ViewBag.Contactos)
-            {
-                <div class="cont">
-                    <div class="row">
-                        <div class="infoHospi">
-                            <h3><b>Nombre: @contacto.Nombre</b></h3>
-                            <p>Hospital: @contacto.IdHospital</p>
-                            <p>@contacto.Email</p>
-                            <p>Tel: @contacto.Telefono</p>
-                        </div>
-                    </div>
+    @foreach (Perfil contacto in ViewBag.Contactos)
+    {
+        <div class="cont">
+            <div class="row">
+                <div class="infoHospi">
+                    <h3><b>Nombre: @contacto.Nombre</b></h3>
+                    <p>Hospital: @contacto.IdHospital</p>
+                    <p>@contacto.Email</p>
+                    <p>Tel: @contacto.Telefono</p>
                 </div>
-            }
-    </div>
+            </div>
+        </div>
+    }
 </body>
 
-<!-- hay que hacer que con el id del hospital consiga el hospital y no aparezca el id -->

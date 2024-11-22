@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Text;
 
-
 namespace INFOTOOLSSV.Controllers
 {
     public class CuentaController : Controller
@@ -24,7 +23,6 @@ namespace INFOTOOLSSV.Controllers
             if (c.Identity != null)
             {
                 if (c.Identity.IsAuthenticated)
-                    
                     return RedirectToAction("Index", "Home");
             }
             return View();
@@ -53,12 +51,13 @@ namespace INFOTOOLSSV.Controllers
                                 bool edicion = Convert.ToBoolean(dr["EdicionPermiso"]);
                                 bool impresion = Convert.ToBoolean(dr["ImpresionPermiso"]);
 
+                                HttpContext.Session.SetString("idperfil", idPerfil.ToString());
+
                                 List<Claim> c = new List<Claim>()
                                 {
                                     new Claim(ClaimTypes.NameIdentifier, u.Email),
                                     new Claim("idPerfil", idPerfil.ToString())
                                 };
-                                HttpContext.Session.SetString("idperfil", idPerfil.ToString());
                                 ClaimsIdentity ci = new(c, CookieAuthenticationDefaults.AuthenticationScheme);
                                 AuthenticationProperties p = new();
 
@@ -71,7 +70,7 @@ namespace INFOTOOLSSV.Controllers
                                     p.ExpiresUtc = DateTimeOffset.UtcNow.AddDays(1);
 
                                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(ci), p);
-                                return RedirectToAction("Index", "Home", new { idPerfil = idPerfil });
+                                return RedirectToAction("Index", "Home");
                             }
                             else
                             {

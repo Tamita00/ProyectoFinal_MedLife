@@ -1,4 +1,21 @@
-﻿function ConfirmarDNI() {
+﻿function UsarAjax()
+{
+    $.ajax({
+        type: 'POST',
+        url: '/Home/UsarAjax',
+        contentType: 'application/json',
+        data: {iduser:1},
+        dataType: 'json',
+        success: function(response) {
+            alert('Datos guardados exitosamente');
+        },
+        error: function(xhr, status, error) {
+            console.error('Error al guardar datos:', error);
+        }
+    });
+
+}
+function ConfirmarDNI() {
     let mensajeA = document.getElementById("mensajeB");
 
     const dni = document.getElementById("Documento").value.trim();
@@ -186,8 +203,8 @@ function submitForm() {
         dataType: 'json',
         success: function(response) {
             alert('Datos guardados exitosamente');
-            $("#parte6").css("display", "block");
             $("#parte6IdMuestra").val(response);
+            $("#parte6").css("display","block")
             console.log(response);
             ultimaMuestra = response
         },
@@ -195,7 +212,7 @@ function submitForm() {
             console.error('Error al guardar datos:', error);
         }
     });
-}   
+}
 
 function submitForm2() {
     var parte6Data = $("#formParte6").serializeArray();
@@ -252,28 +269,27 @@ document.getElementById('nombreHospital').addEventListener('input', function() {
 });
 
 
-/*Modal de prueba*/
+/*Modal*/
 
-// Escuchar el evento cuando se abre el modal
-$('#masInfo').on('show.bs.modal', function (event) {
-    var button = $(event.relatedTarget); // Botón que disparó el modal
-    var nombreHospital = button.data('nombre');
-    var direccion = button.data('direccion');
-    var localidad = button.data('localidad');
-    var provincia = button.data('provincia');
-    var servicio = button.data('servicio');
-    var responsable = button.data('responsable');
-    var telefono = button.data('telefono');
-  
-    // Asignar los datos al modal
-    var modal = $(this);
-    modal.find('#nombreHospital').text(nombreHospital);
-    modal.find('#Direccion').text('Dirección: ' + direccion);
-    modal.find('#Localidad').text('Localidad: ' + localidad);
-    modal.find('#Provincia').text('Provincia: ' + provincia);
-    modal.find('#Servicio').text('Servicio: ' + servicio);
-    modal.find('#Responsable').text('Responsable: ' + responsable);
-    modal.find('#Telefono').text('Teléfono: ' + telefono);
-  });
-  
-
+function MostrarHospital(Id)
+{
+    $.ajax(
+        {
+            type: 'POST',
+            dataType: 'JSON',
+            url : 'Hospitales/VerInfoHospitalAjax',
+            data: { idHospital: Id},
+            success:
+                function (response)
+                {
+                    $("NombreHospital").html(response.NombreHospital);
+                    $("Direccion").html(response.Direccion);
+                    $("Localidad").html(response.Localidad);
+                    $("Provincia").html(response.Provincia);
+                    $("Servicio").html(response.Servicio);
+                    $("Responsable").html(response.Responsable);
+                    $("Telefono").html(response.Telefono);
+                }
+        }
+    )
+}
