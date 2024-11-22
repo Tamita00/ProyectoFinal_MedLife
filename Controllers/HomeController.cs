@@ -46,25 +46,32 @@ public HomeController(IWebHostEnvironment environment)
 
 //PÁGINA PRINCIPAL ---- SEPARAR GARRAHAN DE OTROS
 
-    public IActionResult C_Home(int idPerfil)
+    public IActionResult C_Home()
     {
-        ViewBag.idUsuario = idPerfil;
-        Perfil Usuario = BD.BuscarPerfilPorId(idPerfil);
-        string home;
+        if (HttpContext.Session.GetString("idperfil") != null)
+        {
+            int idPerfil = Convert.ToInt32(HttpContext.Session.GetString("idperfil"));
+            ViewBag.idUsuario = idPerfil;
+            Perfil Usuario = BD.BuscarPerfilPorId(idPerfil);
+            string home;
 
-        if(Usuario.LecturaPermiso == true && Usuario.ImpresionPermiso == true && Usuario.EdicionPermiso == true){
-            string[] titulosHome = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
-            ViewBag.titulos = titulosHome;
-            ViewBag.IdPerfil = Usuario.IdPerfil;
-            home = "Garrahan/Home";
-        }
+            if(Usuario.LecturaPermiso == true && Usuario.ImpresionPermiso == true && Usuario.EdicionPermiso == true){
+                string[] titulosHome = {"Hospitales", "Muestras enviadas", "Contactos", "Crear perfil", "Lista procesados", "Lista sin procesar", "Subir muestras", "Estadísticas"};
+                ViewBag.titulos = titulosHome;
+                ViewBag.IdPerfil = Usuario.IdPerfil;
+                home = "Garrahan/Home";
+            }
+            else{
+                string[] titulosHome = {"Hospitales", "Contactos", "Lista procesados",  "Subir muestras"};
+                ViewBag.titulos = titulosHome;
+                home = "Otros/HomeHospitales";
+            }
+            
+            return View(home);
+        }  
         else{
-            string[] titulosHome = {"Hospitales", "Contactos", "Lista procesados",  "Subir muestras"};
-            ViewBag.titulos = titulosHome;
-            home = "Otros/HomeHospitales";
+            return RedirectToAction("Login","Cuenta");
         }
-        
-        return View(home);
     }
 
 //HOSPITALES
@@ -314,7 +321,7 @@ public IActionResult ActualizarMuestra(int idMuestra, IFormFile firmaSello1)
         
             BD.ActualizarMuestra(idMuestra, firmaSello);
 
-            return View("SubirMuestras");
+            return View("Home");
         }
         
 
