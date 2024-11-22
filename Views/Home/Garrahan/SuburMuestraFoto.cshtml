@@ -1,0 +1,12 @@
+
+<!-- Parte 6: Datos de Envío -->
+<div id="parte6">
+    <form id="formParte6" method = 'POST' enctype="multipart/form-data" action = '@Url.Action("ActualizarMuestra")'>
+    <input type = hidden id= "idMuestra"name="idMuestra">
+    <input type = hidden id= "idUsuario"name="idMuestra">
+    <h4>Termina de cargar tus datos</h4>
+        <label for="FirmaSello">Firma y Sello:</label>
+        <input id="FirmaSello" type="file" name="firmaSello1" placeholder="Subir foto de la firma" required><br><br>
+        <input type="submit" value = "enviar">
+    </form>
+</div>

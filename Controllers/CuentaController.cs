@@ -5,6 +5,8 @@ using ProyectoFinal_MedLife.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
+
 
 namespace INFOTOOLSSV.Controllers
 {
@@ -22,6 +24,7 @@ namespace INFOTOOLSSV.Controllers
             if (c.Identity != null)
             {
                 if (c.Identity.IsAuthenticated)
+                    
                     return RedirectToAction("Index", "Home");
             }
             return View();
@@ -55,6 +58,7 @@ namespace INFOTOOLSSV.Controllers
                                     new Claim(ClaimTypes.NameIdentifier, u.Email),
                                     new Claim("idPerfil", idPerfil.ToString())
                                 };
+                                HttpContext.Session.SetString("idperfil", idPerfil.ToString());
                                 ClaimsIdentity ci = new(c, CookieAuthenticationDefaults.AuthenticationScheme);
                                 AuthenticationProperties p = new();
 

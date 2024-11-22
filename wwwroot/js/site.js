@@ -186,6 +186,7 @@ function submitForm() {
         dataType: 'json',
         success: function(response) {
             alert('Datos guardados exitosamente');
+            $("#parte6").css("display", "block");
             $("#parte6IdMuestra").val(response);
             console.log(response);
             ultimaMuestra = response
@@ -194,7 +195,7 @@ function submitForm() {
             console.error('Error al guardar datos:', error);
         }
     });
-}
+}   
 
 function submitForm2() {
     var parte6Data = $("#formParte6").serializeArray();
