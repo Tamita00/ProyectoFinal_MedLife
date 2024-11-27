@@ -2,4 +2,4 @@
 
 2) Tocar F5
 
-¡AVISO! (A corregir) --> Antes de utilizar la página, deber tocar Salir y después volver a Iniciar Sesión
+¡AVISO! (A corregir) --> Antes de utilizar la página, deber tocar Salir (arriba a la derecha) y después volver a Iniciar Sesión
