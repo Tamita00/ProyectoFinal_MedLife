@@ -227,43 +227,48 @@ public static class BD{
     
     //Insertar
 
-        public static void InsertarHospital(string nombreHospital, string email1, string email2, string email3, string email4, string email5,
-            string referente1, string referente2, string referente3, string referente4, string referente5,
-            int tel1, int? tel2, int? tel3, int? tel4, int? tel5,
-            string direccion, string localidad, string provincia, int telefono, string responsable, string servicio)
+        public static void InsertarHospital(Hospital hospital)
+{
+    try
+    {
+        using (SqlConnection db = new SqlConnection(ConnectionString))
         {
-            using (SqlConnection db = new SqlConnection(ConnectionString))
+            string sql = "InsertarHospital";
+            var parameters = new
             {
-                string sql = "InsertarHospital"; // Nombre del procedimiento almacenado
-                var parameters = new
-                {
-                    NombreHospital = nombreHospital,
-                    Email1 = email1,
-                    Email2 = email2,
-                    Email3 = email3,
-                    Email4 = email4,
-                    Email5 = email5,
-                    Referente1 = referente1,
-                    Referente2 = referente2,
-                    Referente3 = referente3,
-                    Referente4 = referente4,
-                    Referente5 = referente5,
-                    Tel1 = tel1,
-                    Tel2 = tel2,
-                    Tel3 = tel3,
-                    Tel4 = tel4,
-                    Tel5 = tel5,
-                    Direccion = direccion,
-                    Localidad = localidad,
-                    Provincia = provincia,
-                    Telefono = telefono,
-                    Responsable = responsable,
-                    Servicio = servicio
-                };
+                NombreHospital = hospital.NombreHospital,
+                Email1 = hospital.EmailsRef[0],
+                Email2 = hospital.EmailsRef[1],
+                Email3 = hospital.EmailsRef[2],
+                Email4 = hospital.EmailsRef[3],
+                Email5 = hospital.EmailsRef[4],
+                Referente1 = hospital.Referentes[0],
+                Referente2 = hospital.Referentes[1],
+                Referente3 = hospital.Referentes[2],
+                Referente4 = hospital.Referentes[3],
+                Referente5 = hospital.Referentes[4],
+                Tel1 = hospital.TelefonosRef[0],
+                Tel2 = hospital.TelefonosRef[1],
+                Tel3 = hospital.TelefonosRef[2],
+                Tel4 = hospital.TelefonosRef[3],
+                Tel5 = hospital.TelefonosRef[4],
+                Direccion = hospital.Direccion,
+                Localidad = hospital.Localidad,
+                Provincia = hospital.Provincia,
+                Telefono = hospital.Telefono,
+                Responsable = hospital.Responsable,
+                Servicio = hospital.Servicio
+            };
 
-                db.Execute(sql, parameters, commandType: CommandType.StoredProcedure);
-            }
+            db.Execute(sql, parameters, commandType: CommandType.StoredProcedure);
         }
+    }
+    catch (Exception ex)
+    {
+        // Aquí se puede registrar el error o manejarlo de la forma que necesites.
+        Console.WriteLine($"Error al insertar hospital: {ex.Message}");
+    }
+}
 
     // Método para insertar una nueva muestra en la base de datos
         public static int InsertarMuestra( string institucionNacimiento, int idHospitalMuestra,

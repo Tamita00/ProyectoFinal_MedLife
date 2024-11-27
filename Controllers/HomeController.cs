@@ -74,6 +74,8 @@ public HomeController(IWebHostEnvironment environment)
 
 //HOSPITALES
 
+//HOSPITALES
+
 public IActionResult C_Hospitales(int idPerfil)
 {
     ViewBag.idUsuario = idPerfil;
@@ -84,6 +86,14 @@ public IActionResult C_Hospitales(int idPerfil)
     return View("Garrahan/Hospitales");
 }
 
+[HttpPost]
+public IActionResult C_AgregarHospital(Hospital hospital)
+{
+    BD.InsertarHospital(hospital);
+
+    ViewBag.hospitales = BD.SeleccionarHospitales();
+    return View("Garrahan/Hospitales");
+}
 public Hospital VerDetalleHospital(int idHospital)
 {
     return BD.SeleccionarHospitalPorId(idHospital);
@@ -100,18 +110,12 @@ public IActionResult C_CrearPerfiles(int idPerfil)
     }
 
 [HttpPost]
-public int UsarAjax(int iduser)
-{
-    return 0;
-}
-[HttpPost]
 public IActionResult C_GuardarPerfil(int idUsuario, Perfil miPerfil)
 {
     miPerfil.LecturaPermiso = Request.Form.ContainsKey("Lectura") && Request.Form["Lectura"] == "true";
     miPerfil.EdicionPermiso = Request.Form.ContainsKey("Edicion") && Request.Form["Edicion"] == "true";
     miPerfil.ImpresionPermiso = Request.Form.ContainsKey("Impresion") && Request.Form["Impresion"] == "true";
     miPerfil.MantenerActivo = Request.Form.ContainsKey("mantenerActivo") && Request.Form["mantenerActivo"] == "true";
-
 
     BD.CrearPerfil(miPerfil);
 

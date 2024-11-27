@@ -5,9 +5,7 @@
         <h2>Hospitales</h2>
     </div>
     <div>
-        <!-- acá va a estar la búsqueda también-->
-        <button type="submit">Agregar hospital</button>
-
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Agregar hospital</button>
     </div>
     <div class = "hospitales-container">
         @foreach (Hospital hospital in ViewBag.Hospitales)
@@ -18,23 +16,27 @@
                     <h3>@hospital.NombreHospital</h3>
                     <p>Teléfono: @hospital.Telefono</p>
                     <p>Servicio: @hospital.Servicio</p>
-                    <button type = "button" data-bs-toggle="modal" data-bs-target="#InfoModal" onclick="MostrarHospital(@hospital.IdHospital)">Más información</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    data-nombre="@hospital.NombreHospital"
+                    data-direccion="@hospital.Direccion"
+                    data-localidad="@hospital.Localidad"
+                    data-provincia="@hospital.Provincia"
+                    data-servicio="@hospital.Servicio"
+                    data-responsable="@hospital.Responsable"
+                    data-telefono="@hospital.Telefono">Más información</button>
                 </div>
             </div>
         </div>
         }
-    </div>
+</div>
 
-
-<!-- Modal -->
-<div class="modal fade" id="InfoHospital" tabindex="-1" aria-labelledby="infoModal" aria-hidden="true"> 
+<!-- Modal más información-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="NombreHospital"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
+                <h1 class="modal-title fs-5" id="nombreHospital"></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div id="Direccion"></div>
@@ -45,8 +47,71 @@
                 <div id="Telefono"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>
+</div>
+
+<!-- Modal agregar hospital-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar hospital</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulario agregar hospital -->
+        <form id="hospitalForm" action='@Url.Action("C_AgregarHospital")' method='POST'>
+            <div class="mb-3">
+              <label for="nombreHospital" class="form-label">Nombre del Hospital</label>
+              <input type="text" class="form-control" name="NombreHospital"  required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Emails</label>
+              <div id="emailsContainer">
+                <input type="email" class="form-control mb-2" name="EmailsRef[0]" placeholder="Email" required>
+              </div>
+              <button type="button" class="btn btn-link" id="addEmailBtn">Agregar otro email</button>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Referentes</label>
+              <div id="referentesContainer">
+                <input type="text" class="form-control mb-2" name="Referentes[0]" placeholder="Referente" required>
+              </div>
+              <button type="button" class="btn btn-link" id="addReferenteBtn">Agregar otro referente</button>
+            </div>
+
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Teléfono</label>
+              <input type="tel" class="form-control" name="TelefonosRef[0]" required>
+            </div>
+            <div class="mb-3">
+              <label for="direccion" class="form-label">Dirección</label>
+              <input type="text" class="form-control" name="Direccion" required>
+            </div>
+            <div class="mb-3">
+              <label for="localidad" class="form-label">Localidad</label>
+              <input type="text" class="form-control" name="Localidad" required>
+            </div>
+            <div class="mb-3">
+              <label for="provincia" class="form-label">Provincia</label>
+              <input type="text" class="form-control" name="Provincia" required>
+            </div>
+            <div class="mb-3">
+              <label for="servicio" class="form-label">Servicio</label>
+              <input type="text" class="form-control" name="Servicio" required>
+            </div>
+            <div class="mb-3">
+              <label for="responsable" class="form-label">Responsable</label>
+              <input type="text" class="form-control" name="Responsable" required>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Guardar">
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
