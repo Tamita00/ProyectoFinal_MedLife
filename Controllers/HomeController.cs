@@ -51,8 +51,14 @@ public HomeController(IWebHostEnvironment environment)
 
 //PÁGINA PRINCIPAL ---- SEPARAR GARRAHAN DE OTROS
 
-    public IActionResult C_Home(int idPerfil)
+    public IActionResult C_Home()
     {
+         int idPerfil=0;
+        if (HttpContext.Session.GetString("idperfil") != null)
+        {
+            idPerfil = Convert.ToInt32(HttpContext.Session.GetString("idperfil"));
+
+        }
         ViewBag.idUsuario = idPerfil;
         Perfil Usuario = BD.BuscarPerfilPorId(idPerfil);
         string home;

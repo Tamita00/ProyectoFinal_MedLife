@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "X3MIE/FBBy4Qc47maQAph4cjC8jFPAnm4kPx9QCX/EY=",
+  "Hash": "aB8ZzfUlZDQhWdU4vh2pe8TczbiXD8Lx3+81AR4aMpI=",
   "Source": "ProyectoFinal_MedLife",
   "BasePath": "_content/ProyectoFinal_MedLife",
   "Mode": "Default",
@@ -775,6 +775,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\Firmas\\firma1.jfif"
+    },
+    {
+      "Identity": "C:\\Users\\47807159\\Downloads\\ProyectoFinal_MedLife\\wwwroot\\img\\Firmas\\Going-in-the-Right-Direction.jpg",
+      "SourceId": "ProyectoFinal_MedLife",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\47807159\\Downloads\\ProyectoFinal_MedLife\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinal_MedLife",
+      "RelativePath": "img/Firmas/Going-in-the-Right-Direction.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Firmas\\Going-in-the-Right-Direction.jpg"
     },
     {
       "Identity": "C:\\Users\\47807159\\Downloads\\ProyectoFinal_MedLife\\wwwroot\\img\\Firmas\\R.jfif",
